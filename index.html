@@ -77,7 +77,7 @@
       </nav>
 
       <div class="hidden sm:flex items-center gap-2">
-        <a href="#portal" class="focus-ring px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50 transition">School Portal</a>
+        <a href="admin.html" class="focus-ring px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50 transition">Admin Portal</a>
         <a href="#admissions" class="focus-ring px-5 py-2.5 rounded-xl bg-[#1f6b4b] text-white font-bold text-sm shadow hover:-translate-y-0.5 transition">Enquire Now</a>
       </div>
       <button id="menu" class="focus-ring xl:hidden p-2.5 rounded-xl hover:bg-slate-100" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile"><i data-lucide="menu"></i></button>
@@ -293,19 +293,19 @@
             <div class="flex items-center justify-between"><span class="text-xs font-bold uppercase tracking-wider text-[#1f6b4b]">Notices</span><i data-lucide="bell" class="w-5 h-5 text-slate-400"></i></div>
             <h3 class="mt-5 text-xl font-extrabold">Official school notices</h3>
             <p class="mt-3 text-sm text-slate-600 leading-6">A central place for admission notices, schedules and other official announcements.</p>
-            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-400"><i data-lucide="database" class="w-4 h-4"></i> Publishing system coming in Phase 2</div>
+            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-400"><i data-lucide="database" class="w-4 h-4"></i> Admin publishing interface ready · backend pending</div>
           </article>
           <article class="bg-white border border-slate-200 rounded-3xl p-7">
             <div class="flex items-center justify-between"><span class="text-xs font-bold uppercase tracking-wider text-amber-700">Events</span><i data-lucide="calendar-days" class="w-5 h-5 text-slate-400"></i></div>
             <h3 class="mt-5 text-xl font-extrabold">School calendar & activities</h3>
             <p class="mt-3 text-sm text-slate-600 leading-6">Events and activities can be published by authorised school staff after the database is connected.</p>
-            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-400"><i data-lucide="clock-3" class="w-4 h-4"></i> Content will be verified before publishing</div>
+            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-400"><i data-lucide="clock-3" class="w-4 h-4"></i> Staff publishing workflow · backend pending</div>
           </article>
           <article class="bg-white border border-slate-200 rounded-3xl p-7">
             <div class="flex items-center justify-between"><span class="text-xs font-bold uppercase tracking-wider text-slate-600">Gallery</span><i data-lucide="images" class="w-5 h-5 text-slate-400"></i></div>
             <h3 class="mt-5 text-xl font-extrabold">Campus & student moments</h3>
             <p class="mt-3 text-sm text-slate-600 leading-6">A managed gallery can be added so the school can share real campus photographs and activities.</p>
-            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-400"><i data-lucide="image-plus" class="w-4 h-4"></i> Gallery management in Phase 2</div>
+            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-400"><i data-lucide="image-plus" class="w-4 h-4"></i> Gallery interface ready · backend pending</div>
           </article>
         </div>
       </div>
@@ -342,7 +342,7 @@
             </div>
             <button type="submit" class="focus-ring mt-5 w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition">Submit admission enquiry</button>
             <div id="formStatus" class="hidden mt-4 rounded-xl px-4 py-3 text-sm font-semibold" role="status" aria-live="polite"></div>
-            <p class="mt-4 text-xs text-slate-400 leading-5">This public build shows the intended form experience. Database submission and staff access are being added in Phase 2.</p>
+            <p class="mt-4 text-xs text-slate-400 leading-5">This public build shows the intended form experience. The form interface is ready. Live submission will be connected when the backend is added.</p>
           </form>
         </div>
       </div>
@@ -355,9 +355,9 @@
           <div class="max-w-2xl">
             <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">School digital portal</span>
             <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold">One secure place for school administration.</h2>
-            <p class="mt-3 text-slate-600 leading-7">The next phase connects admissions, notices, events, gallery and staff administration to a secure database with role-based access.</p>
+            <p class="mt-3 text-slate-600 leading-7">The administration interface is now available as a frontend preview. Live authentication and data storage will be connected after the backend is selected.</p>
           </div>
-          <div class="shrink-0 flex items-center gap-3 px-5 py-4 rounded-2xl bg-white border border-slate-200"><div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="lock-keyhole"></i></div><div><div class="font-bold text-sm">Secure portal</div><div class="text-xs text-slate-500">Coming in Phase 2</div></div></div>
+          <a href="admin.html" class="shrink-0 flex items-center gap-3 px-5 py-4 rounded-2xl bg-white border border-slate-200 hover:border-[#b8d5c7] hover:bg-[#edf7f0] transition"><div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="lock-keyhole"></i></div><div><div class="font-bold text-sm">Admin preview</div><div class="text-xs text-slate-500">Open administration</div></div></a>
         </div>
       </div>
     </section>
