@@ -71,6 +71,8 @@
         <button class="nav-item" data-section="notices"><i data-lucide="bell"></i><span>Notices</span></button>
         <button class="nav-item" data-section="events"><i data-lucide="calendar-days"></i><span>Events</span></button>
         <button class="nav-item" data-section="gallery"><i data-lucide="images"></i><span>Gallery</span></button>
+        <button class="nav-item" data-section="achievements"><i data-lucide="trophy"></i><span>Achievements</span></button>
+        <button class="nav-item" data-section="culture"><i data-lucide="sparkles"></i><span>School Culture</span></button>
         <button class="nav-item" data-section="faculty"><i data-lucide="users"></i><span>Faculty</span></button>
         <div class="pt-6 pb-2 px-3 text-[10px] font-extrabold uppercase tracking-[.18em] text-white/35">System</div>
         <button class="nav-item" data-section="settings"><i data-lucide="settings-2"></i><span>Settings</span></button>
@@ -149,6 +151,16 @@
         <section id="gallery" class="admin-section hidden">
           <div class="section-heading"><div><p class="eyebrow">Website content</p><h1>Gallery</h1><p>Manage real school photographs and captions.</p></div><button class="primary-btn" data-open-modal="gallery"><i data-lucide="plus"></i> Add image</button></div>
           <div class="gallery-grid" id="galleryGrid"></div>
+        </section>
+
+        <section id="achievements" class="admin-section hidden">
+          <div class="section-heading"><div><p class="eyebrow">Student stories</p><h1>Achievements</h1><p>Add verified student achievements, awards, milestones and recognitions to the public school website.</p></div><button class="primary-btn" data-open-modal="achievement"><i data-lucide="plus"></i> Add achievement</button></div>
+          <div class="mb-5 rounded-2xl bg-amber-50 border border-amber-200 p-4 text-sm text-amber-900 flex gap-3"><i data-lucide="badge-check" class="w-5 h-5 shrink-0"></i><div><strong>Publish verified stories.</strong> Include the student's name, class, achievement, date and award/result where applicable. Photo and detailed evidence fields are prepared for the future database.</div></div>
+          <div class="content-grid" id="achievementsGrid"></div>
+        </section>
+        <section id="culture" class="admin-section hidden">
+          <div class="section-heading"><div><p class="eyebrow">School identity</p><h1>School culture</h1><p>Capture activities, celebrations, clubs, sports, projects and community experiences visitors should see.</p></div><button class="primary-btn" data-open-modal="culture"><i data-lucide="plus"></i> Add culture story</button></div>
+          <div class="content-grid" id="cultureGrid"></div>
         </section>
 
         <section id="faculty" class="admin-section hidden">
