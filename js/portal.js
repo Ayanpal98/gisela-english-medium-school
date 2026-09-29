@@ -20,7 +20,7 @@ function showPage(page){
  document.getElementById('portalSidebar').classList.remove('open');
 }
 document.querySelectorAll('[data-role]').forEach(b=>b.addEventListener('click',()=>setRole(b.dataset.role)));
-document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('loginStatus').classList.remove('hidden');document.getElementById('loginStatus').textContent='Preview mode: live authentication is not connected yet. The portal interface is ready for the backend phase.'});
+document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();setRole(state.role);document.getElementById('loginView').classList.add('hidden');document.getElementById('portalView').classList.remove('hidden');showPage('overview');icons();});
 document.getElementById('forgotBtn').addEventListener('click',()=>{const s=document.getElementById('loginStatus');s.classList.remove('hidden');s.textContent='Password recovery will use the school’s verified email workflow after authentication is connected.'});
 document.querySelectorAll('.portal-nav').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-pagego]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.pagego)));
