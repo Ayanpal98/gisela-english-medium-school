@@ -1,0 +1,11 @@
+{
+  "name":"Gisela English Medium High School",
+  "short_name":"Gisela School",
+  "description":"Official digital school experience for Gisela English Medium High School, Silachari, Tripura.",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#f7f9f7",
+  "theme_color":"#102f24",
+  "lang":"en-IN",
+  "icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
