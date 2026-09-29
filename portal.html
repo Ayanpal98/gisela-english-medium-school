@@ -162,16 +162,36 @@
 <p class="preview-note">Phase 4B is a frontend workflow preview. File uploads, real submissions, feedback, notifications and database persistence will be connected in the backend phase.</p>
 </section>
 <section data-pageview="results" class="portal-page hidden">
-<div class="page-heading"><span class="eyebrow">Results & performance</span><h1>Results</h1><p>Examination results and performance summaries.</p></div>
-<div class="grid sm:grid-cols-3 gap-4 mb-5">
- <div class="attendance-kpi"><span>Overall percentage</span><b id="resultPercentage">84%</b><small>Preview academic record</small></div>
- <div class="attendance-kpi"><span>Subjects</span><b>4</b><small>Current academic set</small></div>
- <div class="attendance-kpi"><span>Latest term</span><b>Term I</b><small>Preview examination</small></div>
+<div class="page-heading"><span class="eyebrow">Results & performance</span><h1>Results</h1><p>Examination results, performance summaries and report-card preparation.</p></div>
+<div id="resultTeacherTools" class="portal-card p-5 mb-5 teacher-admin-only hidden">
+ <div class="card-head -mx-5 -mt-5 mb-5"><div><h3>Result management</h3><p>Enter, review and publish term results for a class.</p></div><span class="preview-badge">Teacher</span></div>
+ <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+  <div><label class="field-label">Term</label><select id="resultTerm" class="field-input"><option>Term I</option><option>Term II</option><option>Annual</option></select></div>
+  <div><label class="field-label">Class</label><select id="resultClass" class="field-input"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
+  <div><label class="field-label">Subject</label><select id="resultSubject" class="field-input"><option>English</option><option>Mathematics</option><option>Science</option><option>Social Science</option></select></div>
+  <div><label class="field-label">Maximum marks</label><input id="resultMax" class="field-input" type="number" min="1" value="100"></div>
+ </div>
+ <div id="resultEntryRoster" class="mt-5 grid gap-2"></div>
+ <div class="flex flex-wrap gap-2 mt-4"><button id="saveResultMarks" class="attendance-action primary">Save result marks</button><button id="publishResults" class="attendance-action secondary">Publish term results</button></div>
+ <div id="resultManagementStatus" class="hidden mt-3 status-box"></div>
 </div>
-<div class="portal-card overflow-x-auto"><div class="card-head"><div><h3>Term I result card</h3><p>Subject-wise marks and grades.</p></div><button id="printResult" class="text-sm font-extrabold text-[#1f6b4b]">Print preview</button></div><table class="portal-table"><thead><tr><th>Subject</th><th>Max</th><th>Marks</th><th>Grade</th></tr></thead><tbody id="resultTable"></tbody></table></div>
-<p class="preview-note">Result values shown here are sample UI records for the prototype and are not official school results.</p>
+<div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-5">
+ <div class="attendance-kpi"><span>Overall percentage</span><b id="resultPercentage">84%</b><small id="resultPercentageNote">Preview academic record</small></div>
+ <div class="attendance-kpi"><span>Total marks</span><b id="resultTotalMarks">335 / 400</b><small>Current term subject set</small></div>
+ <div class="attendance-kpi"><span>Grade</span><b id="resultOverallGrade">A</b><small>Based on preview percentage</small></div>
+ <div class="attendance-kpi"><span>Result status</span><b id="resultPublishState">Published</b><small>Demo workflow</small></div>
+</div>
+<div class="grid xl:grid-cols-3 gap-5 mb-5">
+ <div class="portal-card xl:col-span-2 overflow-x-auto"><div class="card-head"><div><h3 id="resultCardTitle">Term I result card</h3><p>Subject-wise marks and grades.</p></div><button id="printResult" class="text-sm font-extrabold text-[#1f6b4b]">Print preview</button></div><table class="portal-table"><thead><tr><th>Subject</th><th>Max</th><th>Marks</th><th>Grade</th></tr></thead><tbody id="resultTable"></tbody></table></div>
+ <div class="portal-card"><div class="card-head"><div><h3>Performance summary</h3><p>Current subject set.</p></div></div><div id="performanceSummary" class="space-y-3"></div></div>
+</div>
+<div class="grid xl:grid-cols-2 gap-5">
+ <div class="portal-card"><div class="card-head"><div><h3>Assessment breakdown</h3><p>How the current result is composed.</p></div></div><div id="assessmentBreakdown" class="space-y-3"></div></div>
+ <div class="portal-card"><div class="card-head"><div><h3>Performance trend</h3><p>Available term-level records only.</p></div></div><div id="performanceTrend" class="space-y-3"></div></div>
+</div>
+<p class="preview-note">Phase 4C uses demo records only. Live result publishing, permissions, database persistence and report-card storage will be connected through the secure backend phase.</p>
 </section>
-      <section data-pageview="calendar" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Calendar</span><h1>School calendar</h1><p>Examinations, meetings, holidays and activities.</p></div><div class="portal-card p-5"><div class="calendar-row"><b>04</b><div><strong>Mathematics assessment</strong><small>October 2026 · Academic activity</small></div></div><div class="calendar-row"><b>08</b><div><strong>Parent meeting</strong><small>October 2026 · School activity</small></div></div><div class="calendar-row"><b>10</b><div><strong>School activity</strong><small>October 2026 · Details to be published</small></div></div></div></section>
+<section data-pageview="calendar" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Calendar</span><h1>School calendar</h1><p>Examinations, meetings, holidays and activities.</p></div><div class="portal-card p-5"><div class="calendar-row"><b>04</b><div><strong>Mathematics assessment</strong><small>October 2026 · Academic activity</small></div></div><div class="calendar-row"><b>08</b><div><strong>Parent meeting</strong><small>October 2026 · School activity</small></div></div><div class="calendar-row"><b>10</b><div><strong>School activity</strong><small>October 2026 · Details to be published</small></div></div></div></section>
       <section data-pageview="notices" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Notices</span><h1>School notices</h1><p>Official announcements published by authorised school staff.</p></div><div id="noticeList" class="content-list"></div></section>
       <section data-pageview="fees" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Fees</span><h1>Fee information</h1><p>Fee records and receipts will be available to authorised parents.</p></div><div class="portal-card p-6"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="receipt"></i></div><div><h3 class="font-extrabold">Live fee records are not connected</h3><p class="text-sm text-slate-500 mt-1">The interface is ready; payment and fee data will be connected after the database phase.</p></div></div></div></section>
     </main>
