@@ -1,5 +1,5 @@
 const state={role:'parent',page:'overview'};
-const attendanceStudents=[['GE-26001','Ananya Das','Class 5','present'],['GE-26018','Rahul Das','Class 8','present'],['GE-26031','Mira Deb','Class 10','leave'],['GE-26044','Arjun Reang','Class 7','absent'],['GE-26052','Riya Jamatia','Class 5','present'],['GE-26063','Kabir Debbarma','Class 5','present']];
+const attendanceStudents=[['GE-26001','Ananya Das','Class 5','Section A','present'],['GE-26052','Riya Jamatia','Class 5','Section A','present'],['GE-26063','Kabir Debbarma','Class 5','Section B','present'],['GE-26011','Ishaan Deb','Class 6','Section A','absent'],['GE-26072','Naina Reang','Class 6','Section B','present'],['GE-26044','Arjun Reang','Class 7','Section A','absent'],['GE-26077','Tania Jamatia','Class 7','Section B','present'],['GE-26018','Rahul Das','Class 8','Section A','present'],['GE-26081','Rohan Debbarma','Class 8','Section B','leave'],['GE-26091','Puja Reang','Class 9','Section A','present'],['GE-26095','Milan Deb','Class 9','Section B','present'],['GE-26031','Mira Deb','Class 10','Section A','leave'],['GE-26102','Ankit Jamatia','Class 10','Section B','present']];
 const attendanceHistory=[['29 Sep','Present','Class 5 · Section A'],['28 Sep','Present','Class 5 · Section A'],['27 Sep','Leave','Class 5 · Section A'],['26 Sep','Present','Class 5 · Section A'],['25 Sep','Absent','Class 5 · Section A']];
 const roles={parent:{label:'Parent portal',profile:'Parent view · Linked child records will appear here.',avatar:'P'},student:{label:'Student portal',profile:'Student view · Your academic journey will appear here.',avatar:'S'},teacher:{label:'Teacher portal',profile:'Teacher view · Assigned classes and teaching tools will appear here.',avatar:'T'}};
 const notices=[['Admissions information','Official admission details will be published here by authorised school staff.'],['Parent meeting','Meeting schedules and circulars will appear here once published.'],['School calendar','Examinations, holidays and activities will be listed in the calendar.']];
@@ -13,50 +13,48 @@ function renderNotices(){
 }
 function renderAttendance(){
  const roster=document.getElementById('attendanceRoster'); if(!roster)return;
- const cl=document.getElementById('attendanceClass')?.value||'Class 5';
- const list=attendanceStudents.filter(s=>s[2]===cl);
- roster.innerHTML=list.map((s,i)=>'<div class="attendance-student"><div class="student-avatar">'+s[1].split(' ').map(x=>x[0]).join('').slice(0,2)+'</div><div class="min-w-0 flex-1"><b>'+s[1]+'</b><small>'+s[0]+'</small></div><div class="attendance-choice"><button class="att-btn present '+(s[3]==='present'?'selected':'')+'" data-att="'+i+'" data-status="present">Present</button><button class="att-btn absent '+(s[3]==='absent'?'selected':'')+'" data-att="'+i+'" data-status="absent">Absent</button><button class="att-btn leave '+(s[3]==='leave'?'selected':'')+'" data-att="'+i+'" data-status="leave">Leave</button></div></div>').join('');
- roster.querySelectorAll('.att-btn').forEach(b=>b.addEventListener('click',()=>{const visible=attendanceStudents.filter(s=>s[2]===cl); visible[Number(b.dataset.att)][3]=b.dataset.status; renderAttendance(); renderAttendanceSummary()}));
+ const cl=document.getElementById('attendanceClass')?.value||'Class 5',sec=document.getElementById('attendanceSection')?.value||'Section A';
+ const list=attendanceStudents.filter(s=>s[2]===cl&&s[3]===sec);
+ roster.innerHTML=list.map((s,i)=>'<div class="attendance-student"><div class="student-avatar">'+s[1].split(' ').map(x=>x[0]).join('').slice(0,2)+'</div><div class="min-w-0 flex-1"><b>'+s[1]+'</b><small>'+s[0]+' · '+s[3]+'</small></div><div class="attendance-choice"><button class="att-btn present '+(s[4]==='present'?'selected':'')+'" data-att="'+i+'" data-status="present">Present</button><button class="att-btn absent '+(s[4]==='absent'?'selected':'')+'" data-att="'+i+'" data-status="absent">Absent</button><button class="att-btn leave '+(s[4]==='leave'?'selected':'')+'" data-att="'+i+'" data-status="leave">Leave</button></div></div>').join('')||'<div class="p-5 text-sm text-slate-400">No students found for this class and section.</div>';
+ roster.querySelectorAll('.att-btn').forEach(b=>b.addEventListener('click',()=>{const visible=attendanceStudents.filter(s=>s[2]===cl&&s[3]===sec);visible[Number(b.dataset.att)][4]=b.dataset.status;renderAttendance();renderAttendanceSummary()}));
 }
 function renderAttendanceSummary(){
- const cl=document.getElementById('attendanceClass')?.value||'Class 5', list=attendanceStudents.filter(s=>s[2]===cl);
- const counts={present:list.filter(s=>s[3]==='present').length,absent:list.filter(s=>s[3]==='absent').length,leave:list.filter(s=>s[3]==='leave').length};
- const total=list.length||1, pct=Math.round(counts.present/total*100);
- const el=document.getElementById('attendanceSummary'); if(!el)return;
- el.innerHTML=[['Present',counts.present,'green'],['Absent',counts.absent,'red'],['Leave',counts.leave,'gold']].map(x=>'<div class="attendance-kpi"><span>'+x[0]+'</span><b>'+x[1]+'</b><small>'+Math.round(x[1]/total*100)+'% of class · '+cl+'</small></div>').join('');
- const hist=document.getElementById('attendanceHistory'); if(hist)hist.innerHTML=attendanceHistory.map(x=>'<div class="history-row"><span>'+x[0]+'</span><b class="history-'+x[1].toLowerCase()+'">'+x[1]+'</b><small>'+x[2]+'</small></div>').join('');
+ const cl=document.getElementById('attendanceClass')?.value||'Class 5',sec=document.getElementById('attendanceSection')?.value||'Section A',list=attendanceStudents.filter(s=>s[2]===cl&&s[3]===sec);
+ const counts={present:list.filter(s=>s[4]==='present').length,absent:list.filter(s=>s[4]==='absent').length,leave:list.filter(s=>s[4]==='leave').length};
+ const total=list.length||1,el=document.getElementById('attendanceSummary');if(!el)return;
+ el.innerHTML=[['Present',counts.present],['Absent',counts.absent],['Leave',counts.leave]].map(x=>'<div class="attendance-kpi"><span>'+x[0]+'</span><b>'+x[1]+'</b><small>'+Math.round(x[1]/total*100)+'% of class · '+cl+' · '+sec+'</small></div>').join('');
+ const hist=document.getElementById('attendanceHistory');if(hist)hist.innerHTML=attendanceHistory.map(x=>'<div class="history-row"><span>'+x[0]+'</span><b class="history-'+x[1].toLowerCase()+'">'+x[1]+'</b><small>'+x[2]+'</small></div>').join('');
 }
 function setRole(role){
  state.role=role;document.querySelectorAll('.role-btn').forEach(b=>b.classList.toggle('active',b.dataset.role===role));
  document.querySelectorAll('.parent-only,.parent-only-card').forEach(el=>el.style.display=role==='parent'?'':'none');
  document.getElementById('attendanceTeacherTools')?.classList.toggle('hidden',role!=='teacher');
+ document.querySelectorAll('.teacher-admin-only').forEach(el=>el.classList.toggle('hidden',role!=='teacher'));
+ if(role!=='teacher'&&state.page==='students')showPage('overview');
  document.getElementById('attendanceSummary')?.classList.toggle('hidden',role!=='teacher');
  document.getElementById('attendancePersonal')?.classList.toggle('hidden',role==='teacher');
  document.getElementById('attendanceSubtitle').textContent=role==='teacher'?'Mark and review daily class attendance.':'View your attendance percentage, monthly totals and recent attendance.';
  document.getElementById('roleLabel').textContent=roles[role].label;document.getElementById('profileText').textContent=roles[role].profile;document.querySelector('.avatar').textContent=roles[role].avatar;icons();
 }
 function showPage(page){
+ if(page==='students'&&state.role!=='teacher')page='overview';
  state.page=page;document.querySelectorAll('[data-pageview]').forEach(s=>s.classList.toggle('hidden',s.dataset.pageview!==page));
  document.querySelectorAll('.portal-nav').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
- const title=page.charAt(0).toUpperCase()+page.slice(1);document.getElementById('pageTitle').textContent=title;
- document.getElementById('portalSidebar').classList.remove('open');
+ document.getElementById('pageTitle').textContent=page.charAt(0).toUpperCase()+page.slice(1);document.getElementById('portalSidebar').classList.remove('open');
 }
 document.querySelectorAll('[data-role]').forEach(b=>b.addEventListener('click',()=>setRole(b.dataset.role)));
-document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();setRole(state.role);document.getElementById('loginView').classList.add('hidden');document.getElementById('portalView').classList.remove('hidden');showPage('overview');icons();});
+document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();setRole(state.role);document.getElementById('loginView').classList.add('hidden');document.getElementById('portalView').classList.remove('hidden');showPage('overview');icons()});
 document.getElementById('forgotBtn').addEventListener('click',()=>{const s=document.getElementById('loginStatus');s.classList.remove('hidden');s.textContent='Password recovery will use the school’s verified email workflow after authentication is connected.'});
 function renderStudents(){
- const q=(document.getElementById('studentSearch')?.value||'').toLowerCase(), cl=document.getElementById('classFilter')?.value||'';
- const list=students.filter(s=>(!q||s.join(' ').toLowerCase().includes(q))&&(!cl||s[2]===cl));
- const el=document.getElementById('studentList'); if(!el)return;
+ const q=(document.getElementById('studentSearch')?.value||'').toLowerCase(),cl=document.getElementById('classFilter')?.value||'',list=students.filter(s=>(!q||s.join(' ').toLowerCase().includes(q))&&(!cl||s[2]===cl)),el=document.getElementById('studentList');if(!el)return;
  el.innerHTML=list.map(s=>'<div class="student-row"><div class="student-avatar">'+s[1].split(' ').map(x=>x[0]).join('').slice(0,2)+'</div><div class="min-w-0 flex-1"><div class="font-extrabold text-sm">'+s[1]+'</div><div class="text-xs text-slate-500 mt-1">'+s[2]+' · '+s[0]+'</div></div><span class="tag">'+s[3]+'</span></div>').join('')||'<div class="p-8 text-center text-sm text-slate-400">No matching students.</div>';
 }
 document.querySelectorAll('.portal-nav').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-pagego]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.pagego)));
 document.getElementById('mobilePortalMenu').addEventListener('click',()=>document.getElementById('portalSidebar').classList.toggle('open'));
-document.getElementById('studentSearch')?.addEventListener('input',renderStudents);
-document.getElementById('classFilter')?.addEventListener('change',renderStudents);
+document.getElementById('studentSearch')?.addEventListener('input',renderStudents);document.getElementById('classFilter')?.addEventListener('change',renderStudents);
 document.getElementById('logout').addEventListener('click',()=>{document.getElementById('portalView').classList.add('hidden');document.getElementById('loginView').classList.remove('hidden')});
 window.addEventListener('DOMContentLoaded',()=>{renderNotices();renderStudents();renderAttendance();renderAttendanceSummary();const d=document.getElementById('attendanceDate');if(d)d.value='2026-09-29';icons()});
-document.getElementById('attendanceClass')?.addEventListener('change',()=>{renderAttendance();renderAttendanceSummary()});
-document.getElementById('markAllPresent')?.addEventListener('click',()=>{const cl=document.getElementById('attendanceClass').value;attendanceStudents.filter(s=>s[2]===cl).forEach(s=>s[3]='present');renderAttendance();renderAttendanceSummary()});
+document.getElementById('attendanceClass')?.addEventListener('change',()=>{renderAttendance();renderAttendanceSummary()});document.getElementById('attendanceSection')?.addEventListener('change',()=>{renderAttendance();renderAttendanceSummary()});
+document.getElementById('markAllPresent')?.addEventListener('click',()=>{const cl=document.getElementById('attendanceClass').value,sec=document.getElementById('attendanceSection').value;attendanceStudents.filter(s=>s[2]===cl&&s[3]===sec).forEach(s=>s[4]='present');renderAttendance();renderAttendanceSummary()});
 document.getElementById('saveAttendance')?.addEventListener('click',()=>{const s=document.getElementById('attendanceStatus');s.classList.remove('hidden');s.textContent='Attendance saved in preview mode. Live database persistence will be enabled in the backend phase.'});
