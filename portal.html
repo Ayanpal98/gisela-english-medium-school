@@ -60,7 +60,7 @@
       <button class="portal-nav active" data-page="overview"><i data-lucide="layout-dashboard"></i>Overview</button>
       <button class="portal-nav" data-page="attendance"><i data-lucide="clipboard-check"></i>Attendance</button>
       <button class="portal-nav teacher-admin-only hidden" data-page="students"><i data-lucide="users"></i>Students</button><button class="portal-nav" data-page="academics"><i data-lucide="book-open"></i>Academics</button>
-      <button class="portal-nav" data-page="assignments"><i data-lucide="notebook-tabs"></i>Assignments</button>
+      <button class="portal-nav" data-page="assignments"><i data-lucide="notebook-tabs"></i>Assignments</button><button class="portal-nav" data-page="results"><i data-lucide="award"></i>Results</button>
       <button class="portal-nav" data-page="calendar"><i data-lucide="calendar-days"></i>Calendar</button>
       <button class="portal-nav" data-page="notices"><i data-lucide="bell"></i>Notices</button>
       <button class="portal-nav parent-only" data-page="fees"><i data-lucide="receipt"></i>Fees</button>
@@ -103,8 +103,49 @@
 <p class="preview-note">Phase 3C uses demo records only. Live attendance storage and role permissions will be connected through the secure backend phase.</p>
 </section>
       <div id="attendanceStudentView" class="hidden"></div><section data-pageview="students" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Student management</span><h1>Student directory</h1><p>Profiles, class placement and guardian information.</p></div><div class="portal-card p-5"><div class="flex flex-col sm:flex-row gap-3 justify-between mb-5"><input id="studentSearch" class="field-input sm:max-w-sm" placeholder="Search student or admission ID"><select id="classFilter" class="field-input sm:max-w-xs"><option value="">All classes</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div><div class="grid gap-3" id="studentList"></div></div></section>
-      <section data-pageview="academics" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Academics</span><h1>Academic performance</h1><p>Subjects, marks and examination records.</p></div><div class="portal-card overflow-x-auto"><table class="portal-table"><thead><tr><th>Subject</th><th>Latest assessment</th><th>Marks</th><th>Updated</th></tr></thead><tbody><tr><td>English</td><td>Class Test</td><td>—</td><td>Backend pending</td></tr><tr><td>Mathematics</td><td>Class Test</td><td>—</td><td>Backend pending</td></tr><tr><td>Science</td><td>Class Test</td><td>—</td><td>Backend pending</td></tr></tbody></table></div><p class="preview-note">Marks are intentionally not fabricated in the production data model.</p></section>
-      <section data-pageview="assignments" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Assignments</span><h1>Homework & assignments</h1><p>Track assigned work and due dates.</p></div><div class="content-list"><article class="portal-card p-5"><div class="flex justify-between gap-3"><div><span class="tag">Mathematics</span><h3 class="font-extrabold mt-3">Chapter exercise</h3><p class="text-sm text-slate-500 mt-1">Assignment details will be published by the teacher.</p></div><span class="due">Due soon</span></div></article><article class="portal-card p-5"><div class="flex justify-between gap-3"><div><span class="tag blue">English</span><h3 class="font-extrabold mt-3">Reading activity</h3><p class="text-sm text-slate-500 mt-1">Submission and teacher feedback will be enabled with the backend.</p></div><span class="due">Upcoming</span></div></article></div></section>
+      <section data-pageview="academics" class="portal-page hidden">
+<div class="page-heading"><span class="eyebrow">Academic management</span><h1>Academics</h1><p>Subjects, assessments and student performance in one workspace.</p></div>
+<div id="academicTeacherTools" class="portal-card p-5 mb-5 teacher-admin-only hidden">
+ <div class="card-head -mx-5 -mt-5 mb-5"><div><h3>Teacher assessment entry</h3><p>Preview workflow for recording marks.</p></div><span class="preview-badge">Demo</span></div>
+ <div class="grid sm:grid-cols-4 gap-3">
+  <div><label class="field-label">Class</label><select id="academicClass" class="field-input"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
+  <div><label class="field-label">Subject</label><select id="academicSubject" class="field-input"><option>English</option><option>Mathematics</option><option>Science</option><option>Social Science</option></select></div>
+  <div><label class="field-label">Assessment</label><select id="academicAssessment" class="field-input"><option>Class Test</option><option>Unit Test</option><option>Term Examination</option></select></div>
+  <div><label class="field-label">Maximum marks</label><input id="academicMax" class="field-input" type="number" value="100"></div>
+ </div>
+ <div id="academicRoster" class="mt-5 grid gap-2"></div>
+ <button id="saveAcademic" class="mt-4 attendance-action primary">Save marks in preview</button>
+ <div id="academicStatus" class="hidden mt-3 status-box"></div>
+</div>
+<div class="portal-card overflow-x-auto"><div class="card-head"><div><h3>My academic subjects</h3><p>Latest available assessment records.</p></div><span class="tag">Preview records</span></div><table class="portal-table"><thead><tr><th>Subject</th><th>Assessment</th><th>Marks</th><th>Grade</th></tr></thead><tbody id="academicTable"></tbody></table></div>
+<p class="preview-note">Phase 4 academic records are demo data. Real marks require authenticated teacher entry and database persistence.</p>
+</section>
+      <section data-pageview="assignments" class="portal-page hidden">
+<div class="page-heading"><span class="eyebrow">Assignment management</span><h1>Assignments</h1><p>Create, track and review class work.</p></div>
+<div id="assignmentTeacherTools" class="portal-card p-5 mb-5 teacher-admin-only hidden">
+ <div class="card-head -mx-5 -mt-5 mb-5"><div><h3>Create assignment</h3><p>Teacher workflow preview.</p></div></div>
+ <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+  <input id="assignmentTitle" class="field-input" placeholder="Assignment title">
+  <select id="assignmentSubject" class="field-input"><option>Mathematics</option><option>English</option><option>Science</option><option>Social Science</option></select>
+  <select id="assignmentClass" class="field-input"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select>
+  <input id="assignmentDue" class="field-input" type="date" value="2026-10-05">
+ </div>
+ <textarea id="assignmentDescription" class="field-input mt-3" rows="3" placeholder="Assignment instructions"></textarea>
+ <button id="createAssignment" class="mt-3 attendance-action primary">Publish in preview</button><div id="assignmentStatus" class="hidden mt-3 status-box"></div>
+</div>
+<div id="assignmentList" class="content-list"></div>
+<p class="preview-note">Submission uploads, teacher feedback and notifications will be connected with authentication and storage later.</p>
+</section>
+<section data-pageview="results" class="portal-page hidden">
+<div class="page-heading"><span class="eyebrow">Results & performance</span><h1>Results</h1><p>Examination results and performance summaries.</p></div>
+<div class="grid sm:grid-cols-3 gap-4 mb-5">
+ <div class="attendance-kpi"><span>Overall percentage</span><b id="resultPercentage">84%</b><small>Preview academic record</small></div>
+ <div class="attendance-kpi"><span>Subjects</span><b>4</b><small>Current academic set</small></div>
+ <div class="attendance-kpi"><span>Latest term</span><b>Term I</b><small>Preview examination</small></div>
+</div>
+<div class="portal-card overflow-x-auto"><div class="card-head"><div><h3>Term I result card</h3><p>Subject-wise marks and grades.</p></div><button id="printResult" class="text-sm font-extrabold text-[#1f6b4b]">Print preview</button></div><table class="portal-table"><thead><tr><th>Subject</th><th>Max</th><th>Marks</th><th>Grade</th></tr></thead><tbody id="resultTable"></tbody></table></div>
+<p class="preview-note">Result values shown here are sample UI records for the prototype and are not official school results.</p>
+</section>
       <section data-pageview="calendar" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Calendar</span><h1>School calendar</h1><p>Examinations, meetings, holidays and activities.</p></div><div class="portal-card p-5"><div class="calendar-row"><b>04</b><div><strong>Mathematics assessment</strong><small>October 2026 · Academic activity</small></div></div><div class="calendar-row"><b>08</b><div><strong>Parent meeting</strong><small>October 2026 · School activity</small></div></div><div class="calendar-row"><b>10</b><div><strong>School activity</strong><small>October 2026 · Details to be published</small></div></div></div></section>
       <section data-pageview="notices" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Notices</span><h1>School notices</h1><p>Official announcements published by authorised school staff.</p></div><div id="noticeList" class="content-list"></div></section>
       <section data-pageview="fees" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Fees</span><h1>Fee information</h1><p>Fee records and receipts will be available to authorised parents.</p></div><div class="portal-card p-6"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="receipt"></i></div><div><h3 class="font-extrabold">Live fee records are not connected</h3><p class="text-sm text-slate-500 mt-1">The interface is ready; payment and fee data will be connected after the database phase.</p></div></div></div></section>
