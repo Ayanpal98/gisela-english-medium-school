@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102f24">
+<title>School Portal | Gisela English Medium High School</title>
+<meta name="description" content="Gisela English Medium High School school portal preview for parents, students and teachers.">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/portal.css">
+</head>
+<body class="bg-[#f7f9f7] text-[#12221b]">
+<div id="loginView" class="min-h-screen grid lg:grid-cols-2">
+  <section class="bg-[#102f24] text-white p-7 sm:p-10 lg:p-14 flex flex-col justify-between relative overflow-hidden">
+    <div class="absolute -right-32 -top-32 w-96 h-96 rounded-full bg-[#d9aa45]/10 blur-3xl"></div>
+    <div class="relative">
+      <a href="index.html" class="inline-flex items-center gap-3 font-extrabold"><span class="w-11 h-11 rounded-2xl bg-[#1f6b4b] grid place-items-center">GE</span> Gisela English Medium</a>
+      <div class="max-w-xl mt-24 sm:mt-32">
+        <span class="eyebrow-light">School digital portal</span>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight">Everything important, in one secure place.</h1>
+        <p class="mt-6 text-emerald-50/65 leading-8">A future-ready portal for parents, students and teachers. Attendance, academics, notices and school communication can live here.</p>
+      </div>
+    </div>
+    <div class="relative mt-12 grid grid-cols-3 gap-3 max-w-xl">
+      <div class="portal-feature"><i data-lucide="calendar-days"></i><span>Calendar</span></div>
+      <div class="portal-feature"><i data-lucide="clipboard-check"></i><span>Attendance</span></div>
+      <div class="portal-feature"><i data-lucide="book-open"></i><span>Academics</span></div>
+    </div>
+  </section>
+  <section class="p-5 sm:p-8 lg:p-14 flex items-center justify-center">
+    <div class="w-full max-w-md">
+      <div class="mb-8"><span class="eyebrow">Portal access</span><h2 class="mt-2 text-3xl font-extrabold">Sign in</h2><p class="mt-2 text-slate-500">Choose your role to preview the portal experience.</p></div>
+      <div class="grid grid-cols-3 gap-2 mb-5" id="rolePicker">
+        <button class="role-btn active" data-role="parent"><i data-lucide="users"></i>Parent</button>
+        <button class="role-btn" data-role="student"><i data-lucide="graduation-cap"></i>Student</button>
+        <button class="role-btn" data-role="teacher"><i data-lucide="presentation"></i>Teacher</button>
+      </div>
+      <form id="loginForm" class="portal-card p-6 sm:p-7">
+        <label class="field-label">Email / ID</label>
+        <input id="loginId" class="field-input" placeholder="Enter portal ID" autocomplete="username" required>
+        <label class="field-label mt-4">Password</label>
+        <input id="loginPassword" type="password" class="field-input" placeholder="Enter password" autocomplete="current-password" required>
+        <div class="flex items-center justify-between mt-4 text-sm"><label class="flex gap-2 items-center text-slate-500"><input type="checkbox"> Remember me</label><button type="button" id="forgotBtn" class="font-bold text-[#1f6b4b]">Forgot password?</button></div>
+        <button class="mt-6 w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition">Continue to portal</button>
+        <div id="loginStatus" class="hidden mt-4 status-box" role="status"></div>
+      </form>
+      <p class="mt-5 text-xs text-slate-400 text-center">Live authentication will be connected in the backend phase. This build is a UI/UX preview.</p>
+      <a href="index.html" class="mt-5 flex justify-center text-sm font-bold text-slate-500 hover:text-[#1f6b4b]">← Back to school website</a>
+    </div>
+  </section>
+</div>
+
+<div id="portalView" class="hidden min-h-screen">
+  <aside id="portalSidebar" class="portal-sidebar">
+    <div class="p-5 border-b border-white/10"><a href="index.html" class="flex items-center gap-3 text-white font-extrabold"><span class="w-10 h-10 rounded-xl bg-[#1f6b4b] grid place-items-center">GE</span><span>Gisela Portal</span></a></div>
+    <nav class="p-4 space-y-1">
+      <button class="portal-nav active" data-page="overview"><i data-lucide="layout-dashboard"></i>Overview</button>
+      <button class="portal-nav" data-page="attendance"><i data-lucide="clipboard-check"></i>Attendance</button>
+      <button class="portal-nav" data-page="academics"><i data-lucide="book-open"></i>Academics</button>
+      <button class="portal-nav" data-page="assignments"><i data-lucide="notebook-tabs"></i>Assignments</button>
+      <button class="portal-nav" data-page="calendar"><i data-lucide="calendar-days"></i>Calendar</button>
+      <button class="portal-nav" data-page="notices"><i data-lucide="bell"></i>Notices</button>
+      <button class="portal-nav parent-only" data-page="fees"><i data-lucide="receipt"></i>Fees</button>
+    </nav>
+    <div class="mt-auto p-4"><div class="rounded-2xl bg-white/7 border border-white/10 p-4 text-white/70 text-xs leading-5">Live records will appear here after database and authentication are connected.</div><button id="logout" class="mt-3 w-full py-2.5 rounded-xl bg-white/8 text-white text-sm font-bold">Sign out</button></div>
+  </aside>
+  <div class="lg:pl-72 min-h-screen">
+    <header class="portal-topbar"><div class="flex items-center gap-3"><button id="mobilePortalMenu" class="lg:hidden p-2 rounded-xl hover:bg-slate-100"><i data-lucide="menu"></i></button><div><div class="text-xs text-slate-400 font-bold uppercase tracking-wider" id="roleLabel">Parent portal</div><h2 class="font-extrabold text-lg" id="pageTitle">Overview</h2></div></div><div class="flex items-center gap-3"><span class="preview-badge">Preview</span><div class="avatar">P</div></div></header>
+    <main class="p-4 sm:p-6 lg:p-8 max-w-[1500px] mx-auto">
+      <section data-pageview="overview" class="portal-page">
+        <div class="mb-7"><p class="text-sm font-bold text-[#1f6b4b]" id="greeting">Good morning</p><h1 class="mt-1 text-3xl sm:text-4xl font-extrabold">Your school overview</h1><p class="mt-2 text-slate-500" id="profileText">Parent view · Student records will be linked here.</p></div>
+        <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
+          <div class="portal-stat"><span class="stat-icon green"><i data-lucide="clipboard-check"></i></span><div class="stat-label">Attendance</div><div class="stat-value">92%</div><div class="stat-note">Preview value</div></div>
+          <div class="portal-stat"><span class="stat-icon gold"><i data-lucide="notebook-tabs"></i></span><div class="stat-label">Assignments</div><div class="stat-value">8</div><div class="stat-note">Preview value</div></div>
+          <div class="portal-stat"><span class="stat-icon blue"><i data-lucide="calendar-days"></i></span><div class="stat-label">Upcoming</div><div class="stat-value">3</div><div class="stat-note">School activities</div></div>
+          <div class="portal-stat parent-only-card"><span class="stat-icon slate"><i data-lucide="receipt"></i></span><div class="stat-label">Fee status</div><div class="stat-value">—</div><div class="stat-note">Connect backend</div></div>
+        </div>
+        <div class="mt-6 grid xl:grid-cols-3 gap-5">
+          <div class="portal-card xl:col-span-2"><div class="card-head"><div><h3>Latest notices</h3><p>Official school communication</p></div><button data-pagego="notices">View all →</button></div><div class="divide-y" id="noticePreview"></div></div>
+          <div class="portal-card"><div class="card-head"><div><h3>Upcoming</h3><p>School calendar</p></div></div><div class="space-y-3" id="eventPreview"></div></div>
+        </div>
+      </section>
+      <section data-pageview="attendance" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Attendance</span><h1>Attendance record</h1><p>Your attendance history and monthly overview.</p></div><div class="grid lg:grid-cols-3 gap-5"><div class="portal-card p-6"><div class="text-sm font-bold text-slate-500">Current attendance</div><div class="text-5xl font-extrabold mt-2">92%</div><div class="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-[#1f6b4b] w-[92%]"></div></div></div><div class="portal-card lg:col-span-2 p-6"><h3 class="font-extrabold">Monthly summary</h3><div class="mt-5 grid grid-cols-3 gap-3 text-center"><div class="summary-cell"><b>21</b><span>Present</span></div><div class="summary-cell"><b>2</b><span>Absent</span></div><div class="summary-cell"><b>1</b><span>Leave</span></div></div></div></div><p class="preview-note">Sample values shown for interface demonstration only. Live attendance will come from authorised school records.</p></section>
+      <section data-pageview="academics" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Academics</span><h1>Academic performance</h1><p>Subjects, marks and examination records.</p></div><div class="portal-card overflow-x-auto"><table class="portal-table"><thead><tr><th>Subject</th><th>Latest assessment</th><th>Marks</th><th>Updated</th></tr></thead><tbody><tr><td>English</td><td>Class Test</td><td>—</td><td>Backend pending</td></tr><tr><td>Mathematics</td><td>Class Test</td><td>—</td><td>Backend pending</td></tr><tr><td>Science</td><td>Class Test</td><td>—</td><td>Backend pending</td></tr></tbody></table></div><p class="preview-note">Marks are intentionally not fabricated in the production data model.</p></section>
+      <section data-pageview="assignments" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Assignments</span><h1>Homework & assignments</h1><p>Track assigned work and due dates.</p></div><div class="content-list"><article class="portal-card p-5"><div class="flex justify-between gap-3"><div><span class="tag">Mathematics</span><h3 class="font-extrabold mt-3">Chapter exercise</h3><p class="text-sm text-slate-500 mt-1">Assignment details will be published by the teacher.</p></div><span class="due">Due soon</span></div></article><article class="portal-card p-5"><div class="flex justify-between gap-3"><div><span class="tag blue">English</span><h3 class="font-extrabold mt-3">Reading activity</h3><p class="text-sm text-slate-500 mt-1">Submission and teacher feedback will be enabled with the backend.</p></div><span class="due">Upcoming</span></div></article></div></section>
+      <section data-pageview="calendar" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Calendar</span><h1>School calendar</h1><p>Examinations, meetings, holidays and activities.</p></div><div class="portal-card p-5"><div class="calendar-row"><b>04</b><div><strong>Mathematics assessment</strong><small>October 2026 · Academic activity</small></div></div><div class="calendar-row"><b>08</b><div><strong>Parent meeting</strong><small>October 2026 · School activity</small></div></div><div class="calendar-row"><b>10</b><div><strong>School activity</strong><small>October 2026 · Details to be published</small></div></div></div></section>
+      <section data-pageview="notices" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Notices</span><h1>School notices</h1><p>Official announcements published by authorised school staff.</p></div><div id="noticeList" class="content-list"></div></section>
+      <section data-pageview="fees" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Fees</span><h1>Fee information</h1><p>Fee records and receipts will be available to authorised parents.</p></div><div class="portal-card p-6"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="receipt"></i></div><div><h3 class="font-extrabold">Live fee records are not connected</h3><p class="text-sm text-slate-500 mt-1">The interface is ready; payment and fee data will be connected after the database phase.</p></div></div></div></section>
+    </main>
+  </div>
+</div>
+<script src="js/portal.js"></script>
+</body>
+</html>
