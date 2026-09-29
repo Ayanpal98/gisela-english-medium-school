@@ -30,6 +30,9 @@ function setRole(role){
  state.role=role;document.querySelectorAll('.role-btn').forEach(b=>b.classList.toggle('active',b.dataset.role===role));
  document.querySelectorAll('.parent-only,.parent-only-card').forEach(el=>el.style.display=role==='parent'?'':'none');
  document.getElementById('attendanceTeacherTools')?.classList.toggle('hidden',role!=='teacher');
+ document.getElementById('attendanceSummary')?.classList.toggle('hidden',role!=='teacher');
+ document.getElementById('attendancePersonal')?.classList.toggle('hidden',role==='teacher');
+ document.getElementById('attendanceSubtitle').textContent=role==='teacher'?'Mark and review daily class attendance.':'View your attendance percentage, monthly totals and recent attendance.';
  document.getElementById('roleLabel').textContent=roles[role].label;document.getElementById('profileText').textContent=roles[role].profile;document.querySelector('.avatar').textContent=roles[role].avatar;icons();
 }
 function showPage(page){
