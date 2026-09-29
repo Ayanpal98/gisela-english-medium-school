@@ -60,7 +60,31 @@ document.getElementById('attendanceClass')?.addEventListener('change',()=>{rende
 document.getElementById('markAllPresent')?.addEventListener('click',()=>{const cl=document.getElementById('attendanceClass').value,sec=document.getElementById('attendanceSection').value;attendanceStudents.filter(s=>s[2]===cl&&s[3]===sec).forEach(s=>s[4]='present');renderAttendance();renderAttendanceSummary()});
 document.getElementById('saveAttendance')?.addEventListener('click',()=>{const s=document.getElementById('attendanceStatus');s.classList.remove('hidden');s.textContent='Attendance saved in preview mode. Live database persistence will be enabled in the backend phase.'});
 const academicRecords=[['English','Class Test','84','A'],['Mathematics','Unit Test','91','A+'],['Science','Class Test','78','B+'],['Social Science','Class Test','82','A']];
-const resultRecords=[['English','100','84','A'],['Mathematics','100','91','A+'],['Science','100','78','B+'],['Social Science','100','82','A']];
+let resultRecords=[['English','100','84','A'],['Mathematics','100','91','A+'],['Science','100','78','B+'],['Social Science','100','82','A']];
+let resultPublished=true;
+const resultStudents=[['GE-26001','Ananya Das','84'],['GE-26052','Riya Jamatia','88'],['GE-26063','Kabir Debbarma','76']];
+const resultTrend=[['Term I','84%','A'],['Previous assessment','81%','A-']];
+function resultGrade(pct){if(pct>=90)return'A+';if(pct>=80)return'A';if(pct>=70)return'B+';if(pct>=60)return'B';if(pct>=50)return'C';if(pct>=40)return'D';return'F'}
+function renderResultEntry(){
+ const el=document.getElementById('resultEntryRoster');if(!el)return;
+ el.innerHTML=resultStudents.map((s,i)=>'<div class="attendance-student"><div class="student-avatar">'+s[1].split(' ').map(x=>x[0]).join('').slice(0,2)+'</div><div class="min-w-0 flex-1"><b>'+s[1]+'</b><small>'+s[0]+' · '+document.getElementById('resultClass').value+'</small></div><input class="field-input result-mark" data-index="'+i+'" type="number" min="0" max="100" value="'+s[2]+'" style="max-width:110px"></div>').join('');
+}
+function renderResults(){
+ const max=Number(document.getElementById('resultMax')?.value||100);
+ const rows=resultRecords.map(r=>({subject:r[0],max:Number(r[1]),marks:Number(r[2]),grade:r[3]}));
+ const total=rows.reduce((a,r)=>a+r.marks,0),maxTotal=rows.reduce((a,r)=>a+r.max,0),pct=maxTotal?Math.round(total/maxTotal*100):0;
+ const grade=resultGrade(pct);
+ const t=document.getElementById('resultTable');if(t)t.innerHTML=rows.map(r=>'<tr><td>'+r.subject+'</td><td>'+r.max+'</td><td>'+r.marks+'</td><td><span class="tag">'+r.grade+'</span></td></tr>').join('');
+ const p=document.getElementById('resultPercentage');if(p)p.textContent=pct+'%';
+ const tm=document.getElementById('resultTotalMarks');if(tm)tm.textContent=total+' / '+maxTotal;
+ const g=document.getElementById('resultOverallGrade');if(g)g.textContent=grade;
+ const st=document.getElementById('resultPublishState');if(st)st.textContent=resultPublished?'Published':'Draft';
+ const title=document.getElementById('resultCardTitle');if(title)title.textContent=(document.getElementById('resultTerm')?.value||'Term I')+' result card';
+ const summary=document.getElementById('performanceSummary');if(summary)summary.innerHTML=rows.map(r=>'<div class="flex items-center justify-between gap-3 rounded-xl border border-slate-100 p-3"><div><b class="text-sm">'+r.subject+'</b><div class="text-xs text-slate-400">'+r.marks+'/'+r.max+'</div></div><span class="tag">'+r.grade+'</span></div>').join('');
+ const breakdown=document.getElementById('assessmentBreakdown');if(breakdown)breakdown.innerHTML=rows.map(r=>'<div><div class="flex justify-between text-xs font-bold"><span>'+r.subject+'</span><span>'+Math.round(r.marks/r.max*100)+'%</span></div><div class="mt-2 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-[#1f6b4b]" style="width:'+Math.min(100,r.marks/r.max*100)+'%"></div></div></div>').join('');
+ const trend=document.getElementById('performanceTrend');if(trend)trend.innerHTML=resultTrend.map(r=>'<div class="flex items-center justify-between rounded-xl bg-slate-50 p-3"><div><b class="text-sm">'+r[0]+'</b><div class="text-xs text-slate-400">Published record</div></div><div class="text-right"><b>'+r[1]+'</b><div class="text-xs text-slate-400">'+r[2]+'</div></div></div>').join('');
+}
+
 const academicStudents=[['GE-26001','Ananya Das','82'],['GE-26052','Riya Jamatia','88'],['GE-26063','Kabir Debbarma','76']];
 let assignments=[
  {id:'ASG-001',subject:'Mathematics',title:'Chapter exercise',className:'Class 5',section:'All sections',due:'05 Oct 2026',dueState:'Due soon',priority:'Important',status:'Published',description:'Complete the assigned textbook questions.',submissions:{submitted:2,pending:1}},
@@ -114,4 +138,20 @@ document.getElementById('createAssignment')?.addEventListener('click',()=>{
 document.getElementById('clearAssignment')?.addEventListener('click',()=>{['assignmentTitle','assignmentDescription'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=''});const s=document.getElementById('assignmentStatus');s.classList.add('hidden')});
 ['assignmentFilterClass','assignmentFilterStatus','assignmentFilterDue'].forEach(id=>document.getElementById(id)?.addEventListener('change',renderAssignments));
 document.getElementById('printResult')?.addEventListener('click',()=>window.print());
-renderAcademics();renderAssignments();syncPhase4Role();
+document.getElementById('resultClass')?.addEventListener('change',renderResultEntry);
+document.getElementById('resultTerm')?.addEventListener('change',renderResults);
+document.getElementById('resultSubject')?.addEventListener('change',renderResultEntry);
+document.getElementById('saveResultMarks')?.addEventListener('click',()=>{
+ const subject=document.getElementById('resultSubject')?.value||'English',max=Number(document.getElementById('resultMax')?.value||100);
+ const marks=[...document.querySelectorAll('.result-mark')].map(x=>Number(x.value||0));
+ const avg=marks.length?Math.round(marks.reduce((a,b)=>a+b,0)/marks.length):0;
+ const grade=resultGrade(avg);
+ const existing=resultRecords.findIndex(r=>r[0]===subject);
+ const record=[subject,String(max),String(Math.min(max,avg)),grade];
+ if(existing>=0)resultRecords[existing]=record;else resultRecords.push(record);
+ resultPublished=false;renderResults();const s=document.getElementById('resultManagementStatus');s.classList.remove('hidden');s.textContent='Result marks saved as draft in preview mode.';
+});
+document.getElementById('publishResults')?.addEventListener('click',()=>{
+ resultPublished=true;renderResults();const s=document.getElementById('resultManagementStatus');s.classList.remove('hidden');s.textContent='Term results published in preview mode. Live publishing permissions will be connected in the backend.';
+});
+renderAcademics();renderAssignments();renderResultEntry();renderResults();syncPhase4Role();
