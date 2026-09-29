@@ -22,6 +22,14 @@ const demoData = {
     {id:"G-002",caption:"Classroom activity",category:"Classroom",published:true},
     {id:"G-003",caption:"School activity",category:"Activities",published:false}
   ],
+  achievements:[
+    {id:"A-001",student:"Ananya Das",className:"Class 5",category:"Academic",title:"Mathematics assessment recognition",date:"29 Sep 2026",award:"Verified school recognition",description:"Placeholder record — replace with the school's actual verified achievement before publishing.",published:false,featured:true},
+    {id:"A-002",student:"Student story",className:"Class —",category:"Sports",title:"Add a verified sports achievement",date:"",award:"",description:"Record the competition, position, event and verified result here.",published:false,featured:false}
+  ],
+  culture:[
+    {id:"C-001",title:"School activities & participation",category:"Student Life",date:"",description:"Document sports, cultural programmes, competitions, projects and celebrations that represent the school community.",published:false},
+    {id:"C-002",title:"Learning beyond the classroom",category:"Learning",date:"",description:"Capture field activities, exhibitions, clubs, community engagement and other learning experiences.",published:false}
+  ],
   faculty:[
     {id:"F-001",name:"Faculty profile",designation:"Teacher",subject:"Academic",published:true},
     {id:"F-002",name:"Staff profile",designation:"Teacher",subject:"Academic",published:false}
@@ -33,7 +41,12 @@ const demoData = {
   ]
 };
 
+const savedAchievements=(()=>{try{return JSON.parse(localStorage.getItem("giselaAchievements")||"null")}catch(e){return null}})();
+const savedCulture=(()=>{try{return JSON.parse(localStorage.getItem("giselaCulture")||"null")}catch(e){return null}})();
 const state = {section:"dashboard", data:structuredClone(demoData)};
+if(savedAchievements) state.data.achievements=savedAchievements;
+if(savedCulture) state.data.culture=savedCulture;
+const persistPublicContent=()=>{localStorage.setItem("giselaAchievements",JSON.stringify(state.data.achievements));localStorage.setItem("giselaCulture",JSON.stringify(state.data.culture));};
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const statusClass = s => ({New:"status-new","Under Review":"status-review",Contacted:"status-contacted",Approved:"status-approved",Rejected:"status-rejected"}[s] || "status-new");
@@ -48,10 +61,10 @@ function setSection(section){
   state.section=section;
   document.querySelectorAll(".admin-section").forEach(el=>el.classList.toggle("hidden",el.id!==section));
   document.querySelectorAll(".nav-item").forEach(el=>el.classList.toggle("active",el.dataset.section===section));
-  const titles={dashboard:"Dashboard",admissions:"Admissions",notices:"Notices",events:"Events",gallery:"Gallery",faculty:"Faculty",settings:"Settings",audit:"Audit Log"};
+  const titles={dashboard:"Dashboard",admissions:"Admissions",notices:"Notices",events:"Events",gallery:"Gallery",achievements:"Achievements",culture:"School Culture",faculty:"Faculty",settings:"Settings",audit:"Audit Log"};
   $("pageTitle").textContent=titles[section] || "Dashboard"; closeMobile();
   if(section==="dashboard") renderDashboard(); if(section==="admissions") renderAdmissions(); if(section==="notices") renderNotices();
-  if(section==="events") renderEvents(); if(section==="gallery") renderGallery(); if(section==="faculty") renderFaculty(); if(section==="audit") renderAudit();
+  if(section==="events") renderEvents(); if(section==="gallery") renderGallery(); if(section==="achievements") renderAchievements(); if(section==="culture") renderCulture(); if(section==="faculty") renderFaculty(); if(section==="audit") renderAudit();
   lucide.createIcons();
 }
 function renderDashboard(){
@@ -78,6 +91,13 @@ window.viewAdmission=id=>{
   openModal("Admission details",'<div class="space-y-5"><div class="flex items-start justify-between gap-4"><div><div class="text-xs uppercase tracking-wider font-extrabold text-[#1f6b4b]">'+esc(x.id)+'</div><h3 class="mt-1 text-2xl font-extrabold">'+esc(x.student)+'</h3></div>'+pill(x.status)+'</div><div class="grid sm:grid-cols-2 gap-4 text-sm"><div><div class="admin-label">Parent / Guardian</div><div class="font-bold">'+esc(x.parent)+'</div></div><div><div class="admin-label">Phone</div><div class="font-bold">'+esc(x.phone)+'</div></div><div><div class="admin-label">Class</div><div class="font-bold">'+esc(x.cls)+'</div></div><div><div class="admin-label">Hostel</div><div class="font-bold">'+esc(x.hostel)+'</div></div></div><div><label class="admin-label">Internal notes</label><textarea class="admin-input" rows="4" placeholder="Add a private follow-up note..."></textarea></div><div class="flex justify-end gap-2"><button class="secondary-btn" data-close-modal>Close</button><button class="primary-btn" onclick="showToast('Note saved in preview mode.');closeModal()">Save note</button></div></div>');
 };
 
+function renderAchievements(){
+  $("achievementsGrid").innerHTML=state.data.achievements.map(x=>'<article class="content-card"><div class="flex items-center justify-between gap-3"><span class="content-meta">'+esc(x.category)+'</span><span class="text-[10px] font-extrabold '+(x.published?"text-emerald-700":"text-slate-400")+'">'+(x.published?"LIVE":"DRAFT")+'</span></div><h3>'+esc(x.title)+'</h3><p class="font-bold text-[#1f6b4b]">'+esc(x.student)+' · '+esc(x.className)+'</p><p>'+esc(x.description)+'</p><div class="mt-4 text-xs text-slate-400">'+esc(x.date||"Date to be added")+(x.award?" · "+esc(x.award):"")+'</div><div class="mt-5 pt-4 border-t border-slate-100 flex gap-2"><button class="secondary-btn" onclick="togglePublish('achievement','\${x.id}')">'+(x.published?"Unpublish":"Publish")+'</button></div></article>').join("");
+}
+function renderCulture(){
+  $("cultureGrid").innerHTML=state.data.culture.map(x=>'<article class="content-card"><div class="flex items-center justify-between gap-3"><span class="content-meta">'+esc(x.category)+'</span><span class="text-[10px] font-extrabold '+(x.published?"text-emerald-700":"text-slate-400")+'">'+(x.published?"LIVE":"DRAFT")+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p><div class="mt-4 text-xs text-slate-400">'+esc(x.date||"Date to be added")+'</div><div class="mt-5 pt-4 border-t border-slate-100"><button class="secondary-btn" onclick="togglePublish('culture','\${x.id}')">'+(x.published?"Unpublish":"Publish")+'</button></div></article>').join("");
+}
+
 function renderNotices(){
   $("noticesGrid").innerHTML=state.data.notices.map(x=>'<article class="content-card"><div class="flex items-center justify-between gap-3"><span class="content-meta">'+esc(x.category)+'</span><span class="text-[10px] font-extrabold px-2 py-1 rounded-full '+(x.published?"bg-emerald-50 text-emerald-700":"bg-slate-100 text-slate-500")+'">'+(x.published?"Published":"Draft")+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p><div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between"><span class="text-xs text-slate-400">'+esc(x.date)+' · '+esc(x.priority)+'</span><button class="secondary-btn" onclick="togglePublish(\'notice\',\''+x.id+'\')">'+(x.published?"Unpublish":"Publish")+'</button></div></article>').join("");
 }
@@ -92,9 +112,9 @@ function renderFaculty(){
 }
 function renderAudit(){$("auditTable").innerHTML=state.data.audit.map(x=>'<tr><td class="text-slate-400">'+esc(x.time)+'</td><td class="font-bold">'+esc(x.user)+'</td><td><span class="text-[10px] font-extrabold px-2 py-1 rounded-full bg-slate-100 text-slate-600">'+esc(x.action)+'</span></td><td>'+esc(x.entity)+'</td><td class="text-slate-500">'+esc(x.details)+'</td></tr>').join("");}
 window.togglePublish=(type,id)=>{
-  const map={notice:"notices",event:"events",gallery:"gallery",faculty:"faculty"}[type],x=state.data[map].find(a=>a.id===id);if(!x)return;x.published=!x.published;
+  const map={notice:"notices",event:"events",gallery:"gallery",faculty:"faculty",achievement:"achievements",culture:"culture"}[type],x=state.data[map].find(a=>a.id===id);if(!x)return;x.published=!x.published;
   state.data.audit.unshift({time:"29 Sep 2026 · now",user:"Administrator",action:x.published?"PUBLISH":"UNPUBLISH",entity:type,details:id});
-  ({notice:renderNotices,event:renderEvents,gallery:renderGallery,faculty:renderFaculty}[type])();renderDashboard();showToast((x.published?"Published":"Unpublished")+" in preview mode.");
+  if(type==="achievement"){persistPublicContent();renderAchievements()} else if(type==="culture"){persistPublicContent();renderCulture()} else ({notice:renderNotices,event:renderEvents,gallery:renderGallery,faculty:renderFaculty}[type])();renderDashboard();showToast((x.published?"Published":"Unpublished")+" in preview mode.");
 };
 function openModal(title,body){
   $("modalRoot").innerHTML='<div class="modal-backdrop" role="dialog" aria-modal="true"><div class="modal"><div class="modal-header"><h2 class="font-extrabold text-lg">'+esc(title)+'</h2><button class="modal-close" data-close-modal aria-label="Close"><i data-lucide="x"></i></button></div><div class="modal-body">'+body+'</div></div></div>';
@@ -102,15 +122,20 @@ function openModal(title,body){
 }
 function closeModal(){$("modalRoot").innerHTML=""} window.closeModal=closeModal;
 function newContent(type){
-  const labels={notice:["New notice","Title","Description","Category"],event:["New event","Event name","Description","Category"],gallery:["Add gallery image","Caption","Image URL","Category"],faculty:["Add faculty","Name","Short bio","Subject"]};
+  const labels={notice:["New notice","Title","Description","Category"],event:["New event","Event name","Description","Category"],gallery:["Add gallery image","Caption","Image URL","Category"],faculty:["Add faculty","Name","Short bio","Subject"],achievement:["Add student achievement","Achievement title","Achievement description","Category"],culture:["Add school culture story","Story title","What happened / why it matters","Category"]};
   const [title,a,b,c]=labels[type];
-  openModal(title,'<form id="contentForm" class="form-grid"><div class="full"><label class="admin-label">'+a+'</label><input required class="admin-input" name="a"></div><div class="full"><label class="admin-label">'+b+'</label><textarea required class="admin-input" rows="3" name="b"></textarea></div><div><label class="admin-label">'+c+'</label><input class="admin-input" name="c"></div><div><label class="admin-label">Publish</label><select class="admin-input" name="published"><option value="false">Draft</option><option value="true">Publish</option></select></div><div class="full flex justify-end gap-2 pt-2"><button type="button" class="secondary-btn" data-close-modal>Cancel</button><button class="primary-btn">Save</button></div></form>');
+  const special=type==="achievement"||type==="culture";
+  const fields=special?(type==="achievement"?'<div><label class="admin-label">Student name</label><input required class="admin-input" name="student"></div><div><label class="admin-label">Class</label><input class="admin-input" name="className" placeholder="Class 5"></div><div><label class="admin-label">Date</label><input class="admin-input" name="date" placeholder="29 Sep 2026"></div><div><label class="admin-label">Award / result</label><input class="admin-input" name="award" placeholder="Position, medal, certificate, result..."></div>':'<div><label class="admin-label">Date</label><input class="admin-input" name="date" placeholder="29 Sep 2026"></div><div><label class="admin-label">Image URL (optional)</label><input class="admin-input" name="image"></div>'):'';
+  openModal(title,'<form id="contentForm" class="form-grid">'+(special?fields:'<div class="full"><label class="admin-label">'+a+'</label><input required class="admin-input" name="a"></div><div class="full"><label class="admin-label">'+b+'</label><textarea required class="admin-input" rows="3" name="b"></textarea></div><div><label class="admin-label">'+c+'</label><input class="admin-input" name="c"></div>')+(special&&type==="achievement"?'<div><label class="admin-label">Category</label><select class="admin-input" name="category"><option>Academic</option><option>Sports</option><option>Cultural</option><option>Competition</option><option>Leadership</option><option>Community</option><option>Other</option></select></div>':'')+(special&&type==="culture"?'<div><label class="admin-label">Category</label><select class="admin-input" name="category"><option>Student Life</option><option>Sports</option><option>Cultural</option><option>Learning</option><option>Community</option><option>Celebration</option></select></div>':'')+'<div><label class="admin-label">Publish</label><select class="admin-input" name="published"><option value="false">Draft</option><option value="true">Publish</option></select></div><div class="full flex justify-end gap-2 pt-2"><button type="button" class="secondary-btn" data-close-modal>Cancel</button><button class="primary-btn">Save</button></div></form>');
   $("contentForm").addEventListener("submit",e=>{
     e.preventDefault();const f=new FormData(e.target),id=type[0].toUpperCase()+"-"+String(Date.now()).slice(-4),published=f.get("published")==="true";
     if(type==="notice")state.data.notices.unshift({id,title:f.get("a"),description:f.get("b"),category:f.get("c")||"General",date:"29 Sep 2026",priority:"Normal",published});
     if(type==="event")state.data.events.unshift({id,title:f.get("a"),description:f.get("b"),date:"To be confirmed",time:"",location:"School Campus",published});
     if(type==="gallery")state.data.gallery.unshift({id,caption:f.get("a"),category:f.get("c")||"Other",published});
     if(type==="faculty")state.data.faculty.unshift({id,name:f.get("a"),designation:"Teacher",subject:f.get("c")||"Academic",published});
+    if(type==="achievement")state.data.achievements.unshift({id,student:f.get("student"),className:f.get("className")||"Class —",category:f.get("category")||"Other",title:f.get("a"),description:f.get("b"),date:f.get("date")||"Date to be added",award:f.get("award")||"",published,featured:false});
+    if(type==="culture")state.data.culture.unshift({id,title:f.get("a"),description:f.get("b"),category:f.get("category")||"Student Life",date:f.get("date")||"Date to be added",image:f.get("image")||"",published});
+    if(type==="achievement"||type==="culture")persistPublicContent();
     state.data.audit.unshift({time:"29 Sep 2026 · now",user:"Administrator",action:"CREATE",entity:type,details:id});
     closeModal();setSection(type==="notice"?"notices":type==="event"?"events":type);showToast("Saved in preview mode.");
   });
