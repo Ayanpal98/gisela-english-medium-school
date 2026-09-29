@@ -2,6 +2,7 @@ const state={role:'parent',page:'overview'};
 const roles={parent:{label:'Parent portal',profile:'Parent view · Linked child records will appear here.',avatar:'P'},student:{label:'Student portal',profile:'Student view · Your academic journey will appear here.',avatar:'S'},teacher:{label:'Teacher portal',profile:'Teacher view · Assigned classes and teaching tools will appear here.',avatar:'T'}};
 const notices=[['Admissions information','Official admission details will be published here by authorised school staff.'],['Parent meeting','Meeting schedules and circulars will appear here once published.'],['School calendar','Examinations, holidays and activities will be listed in the calendar.']];
 const events=[['04','Mathematics assessment'],['08','Parent meeting'],['10','School activity']];
+const students=[['GE-26001','Ananya Das','Class 5','Parent linked'],['GE-26018','Rahul Das','Class 8','Parent linked'],['GE-26031','Mira Deb','Class 10','Parent linked'],['GE-26044','Arjun Reang','Class 7','Parent linked']];
 function icons(){if(window.lucide)lucide.createIcons()}
 function renderNotices(){
  document.getElementById('noticePreview').innerHTML=notices.slice(0,3).map(n=>'<div class="notice-row"><span class="notice-dot"></span><div><h4>'+n[0]+'</h4><p>'+n[1]+'</p></div></div>').join('');
@@ -22,8 +23,16 @@ function showPage(page){
 document.querySelectorAll('[data-role]').forEach(b=>b.addEventListener('click',()=>setRole(b.dataset.role)));
 document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();setRole(state.role);document.getElementById('loginView').classList.add('hidden');document.getElementById('portalView').classList.remove('hidden');showPage('overview');icons();});
 document.getElementById('forgotBtn').addEventListener('click',()=>{const s=document.getElementById('loginStatus');s.classList.remove('hidden');s.textContent='Password recovery will use the school’s verified email workflow after authentication is connected.'});
+function renderStudents(){
+ const q=(document.getElementById('studentSearch')?.value||'').toLowerCase(), cl=document.getElementById('classFilter')?.value||'';
+ const list=students.filter(s=>(!q||s.join(' ').toLowerCase().includes(q))&&(!cl||s[2]===cl));
+ const el=document.getElementById('studentList'); if(!el)return;
+ el.innerHTML=list.map(s=>'<div class="student-row"><div class="student-avatar">'+s[1].split(' ').map(x=>x[0]).join('').slice(0,2)+'</div><div class="min-w-0 flex-1"><div class="font-extrabold text-sm">'+s[1]+'</div><div class="text-xs text-slate-500 mt-1">'+s[2]+' · '+s[0]+'</div></div><span class="tag">'+s[3]+'</span></div>').join('')||'<div class="p-8 text-center text-sm text-slate-400">No matching students.</div>';
+}
 document.querySelectorAll('.portal-nav').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-pagego]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.pagego)));
 document.getElementById('mobilePortalMenu').addEventListener('click',()=>document.getElementById('portalSidebar').classList.toggle('open'));
+document.getElementById('studentSearch')?.addEventListener('input',renderStudents);
+document.getElementById('classFilter')?.addEventListener('change',renderStudents);
 document.getElementById('logout').addEventListener('click',()=>{document.getElementById('portalView').classList.add('hidden');document.getElementById('loginView').classList.remove('hidden')});
-window.addEventListener('DOMContentLoaded',()=>{renderNotices();icons()});
+window.addEventListener('DOMContentLoaded',()=>{renderNotices();renderStudents();icons()});
