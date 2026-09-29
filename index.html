@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#12372a">
   <title>Gisela English Medium High School | Silachari, Tripura</title>
-  <meta name="description" content="Gisela English Medium High School, Silachari, Gomati District, Tripura. Explore academics, campus life, hostel support, admissions and school updates.">
+  <meta name="description" content="Gisela English Medium High School in Silachari, Gomati District, Tripura. Explore the school, academics, campus, hostel information and admission enquiry.">
   <meta name="keywords" content="Gisela English Medium High School, GEMHS Silachari, Silachari school, Gomati Tripura school, English medium school Tripura">
   <meta name="author" content="Gisela English Medium High School">
   <link rel="canonical" href="https://giselaenglishmedium.edu.in">
   <meta property="og:title" content="Gisela English Medium High School | Silachari, Tripura">
-  <meta property="og:description" content="A modern school website for Gisela English Medium High School, Silachari, Tripura.">
+  <meta property="og:description" content="School information, admissions and campus life for Gisela English Medium High School, Silachari, Tripura.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -18,20 +19,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root { --forest:#12372a; --green:#1f6b4b; --mint:#eaf5ee; --gold:#d8a83e; --ink:#10221b; }
-    body { font-family:'DM Sans',sans-serif; color:var(--ink); background:#f8faf9; }
-    h1,h2,h3,h4,h5 { font-family:'Manrope',sans-serif; }
-    .hero-grid { background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px); background-size:34px 34px; }
-    .glass { background:rgba(255,255,255,.78); backdrop-filter:blur(18px); }
-    .reveal { animation:rise .7s ease both; }
-    @keyframes rise { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
-    .float { animation:float 5s ease-in-out infinite; }
-    @keyframes float { 50%{transform:translateY(-8px)} }
+    :root{--forest:#102f24;--green:#1f6b4b;--mint:#edf7f0;--gold:#d9aa45;--ink:#12221b;--muted:#66736d}
+    *{box-sizing:border-box}
+    body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#f7f9f7}
+    h1,h2,h3,h4{font-family:'Manrope',sans-serif}
+    .hero-grid{background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:36px 36px}
+    .glass{background:rgba(255,255,255,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+    .soft-shadow{box-shadow:0 24px 70px rgba(16,47,36,.12)}
+    .reveal{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{50%{transform:translateY(-7px)}}
+    .marquee{overflow:hidden;white-space:nowrap}
+    .marquee-track{display:inline-flex;min-width:100%;justify-content:space-around;animation:marquee 24s linear infinite}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    .focus-ring:focus-visible{outline:3px solid rgba(217,170,69,.65);outline-offset:3px}
+    @media(prefers-reduced-motion:reduce){.reveal,.float,.marquee-track{animation:none}.scroll-smooth{scroll-behavior:auto}}
   </style>
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org","@type":"School",
-    "name":"Gisela English Medium High School","alternateName":"GEMHS Silachari",
+    "@context":"https://schema.org",
+    "@type":"School",
+    "name":"Gisela English Medium High School",
+    "alternateName":"GEMHS Silachari",
     "url":"https://giselaenglishmedium.edu.in",
     "address":{"@type":"PostalAddress","addressLocality":"Silachari","addressRegion":"Tripura","postalCode":"799104","addressCountry":"IN"},
     "foundingDate":"2003"
@@ -39,85 +49,96 @@
   </script>
 </head>
 <body>
-  <div class="bg-[#12372a] text-white text-xs sm:text-sm">
-    <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-col sm:flex-row justify-between gap-2 text-center sm:text-left">
-      <span class="flex items-center justify-center sm:justify-start gap-2"><i data-lucide="megaphone" class="w-4 h-4 text-[#e6bd58]"></i> Admissions information for the 2026–27 session</span>
-      <a href="#admissions" class="font-semibold text-[#e6bd58] hover:text-white">Explore admission process →</a>
+  <!-- Simple, credible notice bar: no fabricated promotions or sponsored claims. -->
+  <div class="bg-[#102f24] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm">
+      <div class="flex items-center gap-2"><i data-lucide="bell" class="w-4 h-4 text-[#d9aa45]"></i><span>Admission enquiries for the 2026–27 session</span></div>
+      <a class="focus-ring font-bold text-[#f0c96c] hover:text-white transition" href="#admissions">View admission information <span aria-hidden="true">→</span></a>
     </div>
   </div>
 
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-2xl bg-[#12372a] text-white grid place-items-center font-extrabold shadow-lg">GE</div>
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[74px] flex items-center justify-between">
+      <a href="#home" class="focus-ring flex items-center gap-3 rounded-xl">
+        <div class="w-11 h-11 rounded-2xl bg-[#102f24] text-white grid place-items-center font-extrabold shadow-lg">GE</div>
         <div>
-          <div class="font-extrabold text-base sm:text-lg leading-tight">Gisela English Medium</div>
-          <div class="text-[10px] sm:text-xs font-bold tracking-[.16em] uppercase text-[#1f6b4b]">High School • Silachari</div>
+          <div class="font-extrabold text-sm sm:text-base leading-tight">Gisela English Medium</div>
+          <div class="text-[9px] sm:text-[10px] font-bold tracking-[.16em] uppercase text-[#1f6b4b]">High School • Silachari</div>
         </div>
       </a>
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
-        <a href="#about" class="hover:text-[#1f6b4b]">About</a>
-        <a href="#academics" class="hover:text-[#1f6b4b]">Academics</a>
-        <a href="#campus" class="hover:text-[#1f6b4b]">Campus</a>
-        <a href="#hostel" class="hover:text-[#1f6b4b]">Hostel</a>
-        <a href="#updates" class="hover:text-[#1f6b4b]">Updates</a>
-        <a href="#contact" class="hover:text-[#1f6b4b]">Contact</a>
+
+      <nav class="hidden xl:flex items-center gap-7 text-sm font-semibold text-slate-600" aria-label="Main navigation">
+        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#about">About</a>
+        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#academics">Academics</a>
+        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#campus">Campus</a>
+        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#hostel">Hostel</a>
+        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#updates">Updates</a>
+        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#contact">Contact</a>
       </nav>
+
       <div class="hidden sm:flex items-center gap-2">
-        <a href="#portal" class="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50">School Portal</a>
-        <a href="#admissions" class="px-5 py-2.5 rounded-xl bg-[#1f6b4b] text-white font-bold text-sm shadow hover:-translate-y-0.5 transition">Enquire Now</a>
+        <a href="#portal" class="focus-ring px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50 transition">School Portal</a>
+        <a href="#admissions" class="focus-ring px-5 py-2.5 rounded-xl bg-[#1f6b4b] text-white font-bold text-sm shadow hover:-translate-y-0.5 transition">Enquire Now</a>
       </div>
-      <button id="menu" class="lg:hidden p-2 rounded-xl hover:bg-slate-100" aria-label="Open menu"><i data-lucide="menu"></i></button>
+      <button id="menu" class="focus-ring xl:hidden p-2.5 rounded-xl hover:bg-slate-100" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile"><i data-lucide="menu"></i></button>
     </div>
-    <div id="mobile" class="hidden lg:hidden border-t bg-white px-4 py-4 space-y-1">
-      <a href="#about" class="block p-3 rounded-xl hover:bg-[#eaf5ee]">About</a>
-      <a href="#academics" class="block p-3 rounded-xl hover:bg-[#eaf5ee]">Academics</a>
-      <a href="#campus" class="block p-3 rounded-xl hover:bg-[#eaf5ee]">Campus & Facilities</a>
-      <a href="#hostel" class="block p-3 rounded-xl hover:bg-[#eaf5ee]">Hostel Life</a>
-      <a href="#updates" class="block p-3 rounded-xl hover:bg-[#eaf5ee]">School Updates</a>
-      <a href="#contact" class="block p-3 rounded-xl hover:bg-[#eaf5ee]">Contact</a>
-      <a href="#admissions" class="block text-center p-3 rounded-xl bg-[#1f6b4b] text-white font-bold">Admission Enquiry</a>
+
+    <div id="mobile" class="hidden xl:hidden border-t bg-white px-4 py-4 space-y-1" aria-label="Mobile navigation">
+      <a href="#about" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">About</a>
+      <a href="#academics" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Academics</a>
+      <a href="#campus" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Campus & Facilities</a>
+      <a href="#hostel" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Hostel Life</a>
+      <a href="#updates" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">School Updates</a>
+      <a href="#contact" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Contact</a>
+      <a href="#admissions" class="focus-ring block text-center p-3 rounded-xl bg-[#1f6b4b] text-white font-bold">Admission Enquiry</a>
     </div>
   </header>
 
   <main id="home">
-    <section class="relative overflow-hidden bg-[#102c22] text-white">
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-[#102f24] text-white">
       <div class="absolute inset-0 hero-grid opacity-60"></div>
-      <div class="absolute -right-32 -top-32 w-96 h-96 rounded-full bg-emerald-400/15 blur-3xl"></div>
-      <div class="absolute -left-40 bottom-0 w-96 h-96 rounded-full bg-[#d8a83e]/10 blur-3xl"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28 relative">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="absolute -right-32 -top-40 w-[28rem] h-[28rem] rounded-full bg-emerald-400/15 blur-3xl"></div>
+      <div class="absolute -left-40 bottom-0 w-[30rem] h-[30rem] rounded-full bg-[#d9aa45]/10 blur-3xl"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div class="lg:col-span-7 reveal">
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/8 border border-white/15 text-emerald-100 text-xs sm:text-sm font-semibold">
-              <span class="w-2 h-2 rounded-full bg-[#e6bd58]"></span> Established 2003 • Silachari, Tripura
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/8 border border-white/15 text-emerald-50 text-xs sm:text-sm font-semibold">
+              <span class="w-2 h-2 rounded-full bg-[#d9aa45]"></span>
+              Established 2003 · Silachari, Gomati, Tripura
             </div>
-            <h1 class="mt-6 text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05]">A strong foundation for <span class="text-[#e6bd58]">bright futures.</span></h1>
-            <p class="mt-6 text-base sm:text-lg text-emerald-50/75 max-w-2xl leading-8">Gisela English Medium High School is a community-focused school in Silachari, Gomati District, supporting academic learning, character, confidence and all-round student development.</p>
+            <h1 class="mt-6 text-4xl sm:text-5xl lg:text-[4.4rem] font-extrabold tracking-tight leading-[1.03]">A place to <span class="text-[#e8bf63]">learn, grow</span> and move forward.</h1>
+            <p class="mt-6 max-w-2xl text-base sm:text-lg text-emerald-50/75 leading-8">Gisela English Medium High School provides English-medium schooling from Class 1 to Class 10 in Silachari, with a focus on learning, discipline, participation and student development.</p>
             <div class="mt-8 flex flex-col sm:flex-row gap-3">
-              <a href="#admissions" class="inline-flex justify-center items-center gap-2 bg-white text-[#12372a] px-6 py-3.5 rounded-xl font-extrabold shadow-xl hover:bg-emerald-50 transition"><i data-lucide="send" class="w-4 h-4"></i> Admission Enquiry</a>
-              <a href="#about" class="inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl border border-white/20 bg-white/5 font-bold hover:bg-white/10 transition"><i data-lucide="arrow-down" class="w-4 h-4"></i> Discover the School</a>
+              <a href="#admissions" class="focus-ring inline-flex justify-center items-center gap-2 bg-white text-[#102f24] px-6 py-3.5 rounded-xl font-extrabold shadow-xl hover:bg-emerald-50 transition"><i data-lucide="file-pen-line" class="w-4 h-4"></i> Admission Enquiry</a>
+              <a href="#about" class="focus-ring inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl border border-white/20 bg-white/5 font-bold hover:bg-white/10 transition"><i data-lucide="arrow-down" class="w-4 h-4"></i> Explore the School</a>
             </div>
-            <div class="mt-10 grid grid-cols-3 max-w-xl border-t border-white/10 pt-7">
-              <div><div class="text-2xl sm:text-3xl font-extrabold">2003</div><div class="text-xs text-emerald-100/60 mt-1">Established</div></div>
-              <div><div class="text-2xl sm:text-3xl font-extrabold">1–10</div><div class="text-xs text-emerald-100/60 mt-1">Classes</div></div>
-              <div><div class="text-2xl sm:text-3xl font-extrabold">Gomati</div><div class="text-xs text-emerald-100/60 mt-1">District</div></div>
+            <div class="mt-10 pt-7 border-t border-white/10 grid grid-cols-3 max-w-xl">
+              <div><div class="text-2xl sm:text-3xl font-extrabold">2003</div><div class="text-xs text-emerald-100/55 mt-1">Established</div></div>
+              <div><div class="text-2xl sm:text-3xl font-extrabold">1–10</div><div class="text-xs text-emerald-100/55 mt-1">Classes</div></div>
+              <div><div class="text-2xl sm:text-3xl font-extrabold">Gomati</div><div class="text-xs text-emerald-100/55 mt-1">District</div></div>
             </div>
           </div>
-          <div class="lg:col-span-5 reveal" style="animation-delay:.15s">
-            <div class="float relative rounded-[2rem] bg-white p-3 shadow-2xl">
-              <div class="rounded-[1.5rem] overflow-hidden bg-gradient-to-br from-[#1f6b4b] via-[#12372a] to-[#0b1d16] min-h-[390px] p-7 flex flex-col justify-between">
-                <div class="flex justify-between items-start">
-                  <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 grid place-items-center"><i data-lucide="graduation-cap" class="w-7 h-7 text-[#e6bd58]"></i></div>
-                  <span class="text-[11px] uppercase tracking-[.18em] font-bold text-emerald-100/70">GEMHS</span>
-                </div>
-                <div>
-                  <div class="text-sm text-emerald-100/70 mb-2">WELCOME TO SILACHARI</div>
-                  <h2 class="text-3xl font-extrabold">Learn. Grow.<br>Lead.</h2>
-                  <p class="mt-4 text-sm text-emerald-50/70 leading-6">A school experience built around knowledge, values, participation and confidence.</p>
-                </div>
-                <div class="grid grid-cols-2 gap-3">
-                  <div class="rounded-2xl bg-white/8 border border-white/10 p-4"><i data-lucide="book-open" class="w-5 h-5 text-[#e6bd58]"></i><div class="font-bold mt-2">Academics</div><div class="text-xs text-white/55 mt-1">Learning journey</div></div>
-                  <div class="rounded-2xl bg-white/8 border border-white/10 p-4"><i data-lucide="users" class="w-5 h-5 text-[#e6bd58]"></i><div class="font-bold mt-2">Community</div><div class="text-xs text-white/55 mt-1">School life</div></div>
+
+          <!-- Editorial school profile card instead of an invented campus photograph. -->
+          <div class="lg:col-span-5 reveal" style="animation-delay:.12s">
+            <div class="float rounded-[2rem] bg-white p-2.5 shadow-2xl">
+              <div class="rounded-[1.55rem] overflow-hidden bg-[#163e30]">
+                <div class="p-7 sm:p-8 min-h-[410px] flex flex-col justify-between relative">
+                  <div class="absolute right-0 top-0 w-44 h-44 rounded-full bg-[#d9aa45]/10 blur-2xl"></div>
+                  <div class="relative flex items-start justify-between">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 grid place-items-center"><i data-lucide="graduation-cap" class="w-7 h-7 text-[#e8bf63]"></i></div>
+                    <span class="text-[10px] uppercase tracking-[.2em] font-extrabold text-emerald-100/55">School profile</span>
+                  </div>
+                  <div class="relative">
+                    <div class="text-xs font-bold tracking-[.18em] text-[#e8bf63]">GEMHS · SILACHARI</div>
+                    <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Learn with purpose.</h2>
+                    <p class="mt-4 text-sm leading-7 text-emerald-50/65">A digital front door for parents, students and the school community.</p>
+                  </div>
+                  <div class="relative grid grid-cols-2 gap-3">
+                    <div class="rounded-2xl bg-white/7 border border-white/10 p-4"><i data-lucide="book-open" class="w-5 h-5 text-[#e8bf63]"></i><div class="font-bold mt-2">Academics</div><div class="text-xs text-white/45 mt-1">Classes 1–10</div></div>
+                    <div class="rounded-2xl bg-white/7 border border-white/10 p-4"><i data-lucide="home" class="w-5 h-5 text-[#e8bf63]"></i><div class="font-bold mt-2">Hostel</div><div class="text-xs text-white/45 mt-1">Enquiry support</div></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -126,136 +147,310 @@
       </div>
     </section>
 
+    <!-- TRUST STRIP -->
     <section class="bg-white border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid sm:grid-cols-3 gap-5">
-        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-[#eaf5ee] text-[#1f6b4b] grid place-items-center"><i data-lucide="map-pin" class="w-5 h-5"></i></div><div><div class="font-bold">Silachari, Gomati</div><div class="text-sm text-slate-500">Tripura • PIN 799104</div></div></div>
-        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="school" class="w-5 h-5"></i></div><div><div class="font-bold">Classes 1 to 10</div><div class="text-sm text-slate-500">English-medium schooling</div></div></div>
-        <div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="calendar-days" class="w-5 h-5"></i></div><div><div class="font-bold">Session 2026–27</div><div class="text-sm text-slate-500">Admission information available</div></div></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="map-pin" class="w-5 h-5"></i></div><div><div class="font-bold text-sm">Silachari, Gomati</div><div class="text-xs text-slate-500">Tripura · PIN 799104</div></div></div>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="school" class="w-5 h-5"></i></div><div><div class="font-bold text-sm">Classes 1–10</div><div class="text-xs text-slate-500">English-medium schooling</div></div></div>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="landmark" class="w-5 h-5"></i></div><div><div class="font-bold text-sm">Tripura Board</div><div class="text-xs text-slate-500">Secondary-level affiliation</div></div></div>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="badge-check" class="w-5 h-5"></i></div><div><div class="font-bold text-sm">UDISE</div><div class="text-xs text-slate-500">16071200409</div></div></div>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="py-20 lg:py-28">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
-        <div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5">
           <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">About the school</span>
-          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">A school rooted in learning and values.</h2>
-          <p class="mt-5 text-slate-600 leading-8">Gisela English Medium High School serves students in Silachari with an English-medium learning environment and a focus on academic development, discipline, participation and personal growth.</p>
-          <p class="mt-4 text-slate-600 leading-8">The website is being developed as a single digital home for prospective parents, students, alumni and the wider school community—making key information easier to discover and future services easier to access.</p>
-          <div class="mt-7 flex flex-wrap gap-2">
-            <span class="px-3 py-2 rounded-full bg-white border border-slate-200 text-sm font-semibold">Academic foundation</span>
-            <span class="px-3 py-2 rounded-full bg-white border border-slate-200 text-sm font-semibold">Character building</span>
-            <span class="px-3 py-2 rounded-full bg-white border border-slate-200 text-sm font-semibold">Student participation</span>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">Education with a local foundation.</h2>
+          <p class="mt-5 text-slate-600 leading-8">Gisela English Medium High School is based in Silachari, Gomati District, Tripura. The school’s public-facing website is designed to make essential information easier for families to find before they visit or enquire.</p>
+          <div class="mt-7 flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-200 soft-shadow">
+            <div class="w-12 h-12 rounded-2xl bg-[#102f24] text-[#e8bf63] grid place-items-center font-extrabold">23+</div>
+            <div><div class="font-extrabold">Years of school history</div><div class="text-sm text-slate-500">Established in 2003</div></div>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="rounded-3xl bg-[#12372a] text-white p-7 min-h-52 flex flex-col justify-between"><i data-lucide="target" class="w-7 h-7 text-[#e6bd58]"></i><div><div class="font-extrabold text-xl">Purpose</div><p class="text-sm text-white/65 mt-2">Help students build knowledge, confidence and responsible habits.</p></div></div>
-          <div class="rounded-3xl bg-[#eaf5ee] p-7 min-h-52 flex flex-col justify-between"><i data-lucide="heart-handshake" class="w-7 h-7 text-[#1f6b4b]"></i><div><div class="font-extrabold text-xl">Values</div><p class="text-sm text-slate-600 mt-2">Respect, discipline, curiosity and community.</p></div></div>
-          <div class="rounded-3xl bg-white border border-slate-200 p-7 min-h-52 flex flex-col justify-between"><i data-lucide="lightbulb" class="w-7 h-7 text-amber-600"></i><div><div class="font-extrabold text-xl">Learning</div><p class="text-sm text-slate-600 mt-2">An environment that encourages questions and participation.</p></div></div>
-          <div class="rounded-3xl bg-slate-900 text-white p-7 min-h-52 flex flex-col justify-between"><i data-lucide="sprout" class="w-7 h-7 text-emerald-300"></i><div><div class="font-extrabold text-xl">Growth</div><p class="text-sm text-white/60 mt-2">Academic and co-curricular development together.</p></div></div>
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+          <article class="rounded-3xl bg-[#102f24] text-white p-7 min-h-56 flex flex-col justify-between">
+            <div class="w-11 h-11 rounded-2xl bg-white/10 grid place-items-center"><i data-lucide="book-open" class="text-[#e8bf63]"></i></div>
+            <div><h3 class="text-xl font-extrabold">Learning</h3><p class="mt-2 text-sm text-white/60 leading-6">An English-medium environment for academic learning across Classes 1–10.</p></div>
+          </article>
+          <article class="rounded-3xl bg-[#edf7f0] p-7 min-h-56 flex flex-col justify-between">
+            <div class="w-11 h-11 rounded-2xl bg-white text-[#1f6b4b] grid place-items-center"><i data-lucide="heart-handshake"></i></div>
+            <div><h3 class="text-xl font-extrabold">Values</h3><p class="mt-2 text-sm text-slate-600 leading-6">A school experience shaped by discipline, respect, participation and responsibility.</p></div>
+          </article>
+          <article class="rounded-3xl bg-white border border-slate-200 p-7 min-h-56 flex flex-col justify-between">
+            <div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="lightbulb"></i></div>
+            <div><h3 class="text-xl font-extrabold">Confidence</h3><p class="mt-2 text-sm text-slate-600 leading-6">Room for students to ask questions, participate and develop beyond textbooks.</p></div>
+          </article>
+          <article class="rounded-3xl bg-slate-900 text-white p-7 min-h-56 flex flex-col justify-between">
+            <div class="w-11 h-11 rounded-2xl bg-white/10 grid place-items-center"><i data-lucide="sprout" class="text-emerald-300"></i></div>
+            <div><h3 class="text-xl font-extrabold">Growth</h3><p class="mt-2 text-sm text-white/60 leading-6">Academic and co-curricular development as part of a balanced school journey.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="academics" class="py-20 bg-white border-y border-slate-200">
+    <!-- ACADEMICS -->
+    <section id="academics" class="py-20 lg:py-28 bg-white border-y border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl"><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Academics</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">A clear path from foundational learning to secondary school.</h2><p class="mt-4 text-slate-600 leading-7">The public website will organize academic information by class, subject area and school activity so families can find what matters quickly.</p></div>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div class="max-w-2xl"><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Academics</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">A simple academic journey, clearly presented.</h2></div>
+          <p class="max-w-xl text-slate-600 leading-7">The website groups the learning journey into practical stages rather than making unsupported claims about results, rankings or faculty numbers.</p>
+        </div>
         <div class="mt-10 grid md:grid-cols-3 gap-5">
-          <article class="p-7 rounded-3xl border border-slate-200 bg-[#f8faf9]"><div class="w-12 h-12 rounded-2xl bg-[#eaf5ee] text-[#1f6b4b] grid place-items-center"><i data-lucide="blocks"></i></div><h3 class="mt-6 text-xl font-extrabold">Foundation</h3><p class="mt-2 text-sm text-slate-600 leading-6">Early classes focused on strong basics, communication, curiosity and learning habits.</p></article>
-          <article class="p-7 rounded-3xl border border-slate-200 bg-[#f8faf9]"><div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="flask-conical"></i></div><h3 class="mt-6 text-xl font-extrabold">Core Learning</h3><p class="mt-2 text-sm text-slate-600 leading-6">Structured subject learning with opportunities for practical activities and student participation.</p></article>
-          <article class="p-7 rounded-3xl border border-slate-200 bg-[#f8faf9]"><div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="award"></i></div><h3 class="mt-6 text-xl font-extrabold">Secondary Preparation</h3><p class="mt-2 text-sm text-slate-600 leading-6">Support for students progressing toward secondary-level assessments and future study choices.</p></article>
+          <article class="group p-7 rounded-3xl border border-slate-200 bg-[#f8faf9] hover:bg-white hover:shadow-xl transition">
+            <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="blocks"></i></div><span class="text-xs font-bold text-slate-400">01</span></div>
+            <h3 class="mt-6 text-xl font-extrabold">Foundational Years</h3><p class="mt-2 text-sm text-slate-600 leading-6">Build core understanding, communication and positive learning habits through the early classes.</p>
+          </article>
+          <article class="group p-7 rounded-3xl border border-slate-200 bg-[#f8faf9] hover:bg-white hover:shadow-xl transition">
+            <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="flask-conical"></i></div><span class="text-xs font-bold text-slate-400">02</span></div>
+            <h3 class="mt-6 text-xl font-extrabold">Core Learning</h3><p class="mt-2 text-sm text-slate-600 leading-6">Develop subject knowledge with classroom learning, activities and opportunities for participation.</p>
+          </article>
+          <article class="group p-7 rounded-3xl border border-slate-200 bg-[#f8faf9] hover:bg-white hover:shadow-xl transition">
+            <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="graduation-cap"></i></div><span class="text-xs font-bold text-slate-400">03</span></div>
+            <h3 class="mt-6 text-xl font-extrabold">Secondary Years</h3><p class="mt-2 text-sm text-slate-600 leading-6">Support students as they progress toward secondary-level assessments and their next stage of education.</p>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- CAMPUS -->
     <section id="campus" class="py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
-          <div><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Campus experience</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">More than a classroom.</h2></div>
-          <p class="max-w-xl text-slate-600 leading-7">A future-ready school website should make campus facilities, activities and student life easy for families to understand.</p>
+        <div class="grid lg:grid-cols-12 gap-10 items-end">
+          <div class="lg:col-span-6"><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Campus & facilities</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">The spaces that support school life.</h2></div>
+          <p class="lg:col-span-6 text-slate-600 leading-7">Facilities shown below are kept intentionally factual. Detailed photos, timings and facility specifications can be managed from the school admin area in the next phase.</p>
         </div>
         <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="rounded-3xl bg-[#12372a] text-white p-6 h-56 flex flex-col justify-between"><i data-lucide="book-open" class="text-[#e6bd58]"></i><div><h3 class="font-extrabold text-lg">Library</h3><p class="text-sm text-white/60 mt-1">A dedicated space for reading and self-learning.</p></div></div>
-          <div class="rounded-3xl bg-white border border-slate-200 p-6 h-56 flex flex-col justify-between"><i data-lucide="monitor" class="text-[#1f6b4b]"></i><div><h3 class="font-extrabold text-lg">Computer Learning</h3><p class="text-sm text-slate-500 mt-1">Digital skills and technology-supported learning.</p></div></div>
-          <div class="rounded-3xl bg-[#eaf5ee] p-6 h-56 flex flex-col justify-between"><i data-lucide="trophy" class="text-[#1f6b4b]"></i><div><h3 class="font-extrabold text-lg">Sports & Activities</h3><p class="text-sm text-slate-600 mt-1">Participation, teamwork and healthy activity.</p></div></div>
-          <div class="rounded-3xl bg-slate-900 text-white p-6 h-56 flex flex-col justify-between"><i data-lucide="users-round" class="text-amber-300"></i><div><h3 class="font-extrabold text-lg">Student Community</h3><p class="text-sm text-white/60 mt-1">Events, celebrations and shared school experiences.</p></div></div>
+          <article class="rounded-3xl bg-[#102f24] text-white p-6 min-h-64 flex flex-col justify-between">
+            <div class="flex justify-between"><i data-lucide="book-open" class="text-[#e8bf63]"></i><span class="text-xs text-white/35">01</span></div>
+            <div><h3 class="font-extrabold text-lg">Library</h3><p class="text-sm text-white/55 mt-2 leading-6">A dedicated space for reading and self-learning.</p></div>
+          </article>
+          <article class="rounded-3xl bg-white border border-slate-200 p-6 min-h-64 flex flex-col justify-between">
+            <div class="flex justify-between"><i data-lucide="monitor" class="text-[#1f6b4b]"></i><span class="text-xs text-slate-300">02</span></div>
+            <div><h3 class="font-extrabold text-lg">Computer Lab</h3><p class="text-sm text-slate-500 mt-2 leading-6">A space for foundational digital learning and computer-based activities.</p></div>
+          </article>
+          <article class="rounded-3xl bg-[#edf7f0] p-6 min-h-64 flex flex-col justify-between">
+            <div class="flex justify-between"><i data-lucide="trophy" class="text-[#1f6b4b]"></i><span class="text-xs text-slate-400">03</span></div>
+            <div><h3 class="font-extrabold text-lg">Sports & Playground</h3><p class="text-sm text-slate-600 mt-2 leading-6">Space for outdoor play, physical activity and teamwork.</p></div>
+          </article>
+          <article class="rounded-3xl bg-slate-900 text-white p-6 min-h-64 flex flex-col justify-between">
+            <div class="flex justify-between"><i data-lucide="shield-check" class="text-[#e8bf63]"></i><span class="text-xs text-white/35">04</span></div>
+            <div><h3 class="font-extrabold text-lg">School Campus</h3><p class="text-sm text-white/55 mt-2 leading-6">A school environment designed around everyday learning and student life.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="hostel" class="py-20 bg-[#eaf5ee]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-        <div><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Hostel life</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Residential support for families who need it.</h2><p class="mt-5 text-slate-600 leading-8">Hostel information is presented clearly here so parents can understand residential arrangements, supervision, routines and the enquiry process before making an admission decision.</p><div class="mt-7 space-y-3"><div class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#1f6b4b] shrink-0"></i><span class="text-sm font-semibold">Separate information for boys' and girls' residential arrangements where applicable</span></div><div class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#1f6b4b] shrink-0"></i><span class="text-sm font-semibold">Clear hostel enquiry and availability workflow planned</span></div><div class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#1f6b4b] shrink-0"></i><span class="text-sm font-semibold">Verified policies and fee details to be published in the next implementation phase</span></div></div></div>
-        <div class="rounded-[2rem] bg-[#12372a] text-white p-8 shadow-xl"><div class="flex justify-between items-center"><div class="w-14 h-14 rounded-2xl bg-white/10 grid place-items-center"><i data-lucide="home" class="text-[#e6bd58] w-7 h-7"></i></div><span class="text-xs font-bold uppercase tracking-[.18em] text-white/45">Residential</span></div><h3 class="mt-16 text-2xl font-extrabold">A second home for learning.</h3><p class="mt-3 text-sm leading-7 text-white/60">The final website will include verified hostel guidelines, facilities, daily routine, safety information and an enquiry path.</p><a href="#admissions" class="mt-7 inline-flex items-center gap-2 text-[#e6bd58] font-bold">Ask about hostel admission <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+    <!-- HOSTEL -->
+    <section id="hostel" class="py-20 bg-[#edf7f0]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Hostel information</span>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Residential support for families who need it.</h2>
+          <p class="mt-5 text-slate-600 leading-8">Hostel support is available as part of the school information journey. Parents can enquire about eligibility, availability, residential arrangements, fees and current rules directly through the admission process.</p>
+          <div class="mt-8 grid sm:grid-cols-2 gap-3">
+            <div class="rounded-2xl bg-white p-5 border border-white shadow-sm"><i data-lucide="message-circle-question" class="text-[#1f6b4b]"></i><div class="font-bold mt-3">Ask first</div><p class="text-sm text-slate-500 mt-1">Confirm current hostel availability and terms with the school.</p></div>
+            <div class="rounded-2xl bg-white p-5 border border-white shadow-sm"><i data-lucide="clipboard-list" class="text-[#1f6b4b]"></i><div class="font-bold mt-3">Enquire together</div><p class="text-sm text-slate-500 mt-1">Include your hostel requirement with the admission enquiry.</p></div>
+          </div>
+        </div>
+        <div class="lg:col-span-5 rounded-[2rem] bg-[#102f24] text-white p-8 sm:p-10 shadow-xl">
+          <div class="w-14 h-14 rounded-2xl bg-white/10 grid place-items-center"><i data-lucide="home" class="w-7 h-7 text-[#e8bf63]"></i></div>
+          <div class="mt-12 text-xs uppercase tracking-[.2em] text-white/40 font-bold">Residential enquiry</div>
+          <h3 class="mt-3 text-2xl font-extrabold">Need hostel information?</h3>
+          <p class="mt-3 text-sm leading-7 text-white/60">Tell us that residential accommodation is needed and the school team can handle the follow-up.</p>
+          <a href="#admissions" class="focus-ring mt-7 inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white text-[#102f24] font-bold text-sm hover:bg-emerald-50 transition">Ask about hostel <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
       </div>
     </section>
 
+    <!-- VIDEO -->
+    <section id="video-tour" class="py-20 lg:py-28 bg-white border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-5">
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">School video</span>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">See the school through its video tour.</h2>
+            <p class="mt-5 text-slate-600 leading-8">A video section gives families a quick visual introduction while keeping the rest of the website focused on useful school information.</p>
+            <a href="https://www.youtube.com/watch?v=nIdAtlc0f7Q" target="_blank" rel="noopener noreferrer" class="focus-ring mt-7 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#102f24] text-white font-bold text-sm hover:bg-[#1f6b4b] transition"><i data-lucide="youtube" class="w-4 h-4"></i> Open video on YouTube</a>
+          </div>
+          <div class="lg:col-span-7 rounded-[2rem] overflow-hidden bg-slate-950 shadow-xl aspect-video">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/nIdAtlc0f7Q" title="Gisela English Medium High School video tour" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPDATES: honest empty-state until Phase 2 database is connected -->
     <section id="updates" class="py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4"><div><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">School updates</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">What's happening at GEMHS</h2></div><span class="text-sm text-slate-500">Public updates • verified content to be managed in Phase 2</span></div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-5">
+          <div><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">School updates</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Notices, events & achievements.</h2></div>
+          <span class="text-sm text-slate-500">School-managed content · Phase 2</span>
+        </div>
         <div class="mt-10 grid md:grid-cols-3 gap-5">
-          <article class="bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition"><div class="flex justify-between items-center"><span class="text-xs font-bold uppercase tracking-wider text-[#1f6b4b]">Academic</span><i data-lucide="book-marked" class="w-5 h-5 text-slate-400"></i></div><h3 class="mt-5 text-xl font-extrabold">Academic achievements & results</h3><p class="mt-3 text-sm text-slate-600 leading-6">A dedicated area for verified examination results, achievements and academic announcements.</p><div class="mt-6 text-sm font-bold text-[#1f6b4b]">Read updates →</div></article>
-          <article class="bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition"><div class="flex justify-between items-center"><span class="text-xs font-bold uppercase tracking-wider text-amber-700">Activities</span><i data-lucide="calendar-heart" class="w-5 h-5 text-slate-400"></i></div><h3 class="mt-5 text-xl font-extrabold">Events & student life</h3><p class="mt-3 text-sm text-slate-600 leading-6">Sports, cultural programmes, celebrations, competitions and other school activities.</p><div class="mt-6 text-sm font-bold text-[#1f6b4b]">Explore events →</div></article>
-          <article class="bg-white border border-slate-200 rounded-3xl p-7 hover:shadow-xl transition"><div class="flex justify-between items-center"><span class="text-xs font-bold uppercase tracking-wider text-slate-600">Notices</span><i data-lucide="bell" class="w-5 h-5 text-slate-400"></i></div><h3 class="mt-5 text-xl font-extrabold">Notices for parents</h3><p class="mt-3 text-sm text-slate-600 leading-6">Important school notices and admission announcements will have a central, searchable home.</p><div class="mt-6 text-sm font-bold text-[#1f6b4b]">View notices →</div></article>
+          <article class="bg-white border border-slate-200 rounded-3xl p-7">
+            <div class="flex items-center justify-between"><span class="text-xs font-bold uppercase tracking-wider text-[#1f6b4b]">Notices</span><i data-lucide="bell" class="w-5 h-5 text-slate-400"></i></div>
+            <h3 class="mt-5 text-xl font-extrabold">Official school notices</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-6">A central place for admission notices, schedules and other official announcements.</p>
+            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-400"><i data-lucide="database" class="w-4 h-4"></i> Publishing system coming in Phase 2</div>
+          </article>
+          <article class="bg-white border border-slate-200 rounded-3xl p-7">
+            <div class="flex items-center justify-between"><span class="text-xs font-bold uppercase tracking-wider text-amber-700">Events</span><i data-lucide="calendar-days" class="w-5 h-5 text-slate-400"></i></div>
+            <h3 class="mt-5 text-xl font-extrabold">School calendar & activities</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-6">Events and activities can be published by authorised school staff after the database is connected.</p>
+            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-400"><i data-lucide="clock-3" class="w-4 h-4"></i> Content will be verified before publishing</div>
+          </article>
+          <article class="bg-white border border-slate-200 rounded-3xl p-7">
+            <div class="flex items-center justify-between"><span class="text-xs font-bold uppercase tracking-wider text-slate-600">Gallery</span><i data-lucide="images" class="w-5 h-5 text-slate-400"></i></div>
+            <h3 class="mt-5 text-xl font-extrabold">Campus & student moments</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-6">A managed gallery can be added so the school can share real campus photographs and activities.</p>
+            <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-400"><i data-lucide="image-plus" class="w-4 h-4"></i> Gallery management in Phase 2</div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="admissions" class="py-20 bg-[#102c22] text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
-        <div><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#e6bd58]">Admissions</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Start your admission conversation.</h2><p class="mt-5 text-emerald-50/70 leading-8">Use this Phase 1 enquiry form to present the intended admission journey. In Phase 2, it can be connected to a secure application database and admin workflow.</p><div class="mt-8 grid sm:grid-cols-2 gap-3"><div class="rounded-2xl bg-white/7 border border-white/10 p-4"><i data-lucide="file-text" class="text-[#e6bd58]"></i><div class="font-bold mt-3">Application</div><div class="text-xs text-white/50 mt-1">Student & parent details</div></div><div class="rounded-2xl bg-white/7 border border-white/10 p-4"><i data-lucide="phone-call" class="text-[#e6bd58]"></i><div class="font-bold mt-3">Counselling</div><div class="text-xs text-white/50 mt-1">Follow-up & guidance</div></div></div></div>
-        <form id="enquiry" class="bg-white text-slate-900 rounded-[2rem] p-6 sm:p-8 shadow-2xl">
-          <h3 class="text-xl font-extrabold">Admission enquiry</h3><p class="text-sm text-slate-500 mt-1 mb-6">We’ll use this form for the Phase 1 presentation flow.</p>
-          <div class="space-y-4">
-            <div><label class="text-xs font-bold uppercase tracking-wider text-slate-500">Parent / Guardian</label><input required id="parent" class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Full name"></div>
-            <div><label class="text-xs font-bold uppercase tracking-wider text-slate-500">Phone</label><input required id="phone" type="tel" class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="10-digit contact number"></div>
-            <div class="grid sm:grid-cols-2 gap-4"><div><label class="text-xs font-bold uppercase tracking-wider text-slate-500">Student name</label><input required id="student" class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Student name"></div><div><label class="text-xs font-bold uppercase tracking-wider text-slate-500">Class</label><select id="class" class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 bg-white outline-none focus:border-[#1f6b4b]"><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div></div>
-            <label class="flex gap-3 items-start text-sm text-slate-600"><input id="hostelNeed" type="checkbox" class="mt-1 accent-[#1f6b4b]"> I would like information about hostel/residential options.</label>
-            <button class="w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition">Submit enquiry</button>
-            <p id="formStatus" class="hidden text-center text-sm font-semibold text-[#1f6b4b]"></p>
+    <!-- ADMISSIONS -->
+    <section id="admissions" class="py-20 lg:py-28 bg-[#102f24] text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-5">
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#e8bf63]">Admissions 2026–27</span>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Start with a simple enquiry.</h2>
+            <p class="mt-5 text-emerald-50/70 leading-8">Share the basic details below. In the secure Phase 2 workflow, each enquiry will be stored for authorised staff follow-up rather than relying on browser-only messages.</p>
+            <div class="mt-8 space-y-4">
+              <div class="flex gap-4"><div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 grid place-items-center font-extrabold text-[#e8bf63]">1</div><div><div class="font-bold">Submit enquiry</div><div class="text-sm text-white/50 mt-1">Tell the school who is applying and for which class.</div></div></div>
+              <div class="flex gap-4"><div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 grid place-items-center font-extrabold text-[#e8bf63]">2</div><div><div class="font-bold">School follow-up</div><div class="text-sm text-white/50 mt-1">The admissions team can review the enquiry and contact the family.</div></div></div>
+              <div class="flex gap-4"><div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 grid place-items-center font-extrabold text-[#e8bf63]">3</div><div><div class="font-bold">Next steps</div><div class="text-sm text-white/50 mt-1">Documents, availability and admission requirements can be discussed directly.</div></div></div>
+            </div>
           </div>
-        </form>
+
+          <form id="enquiry" class="lg:col-span-7 bg-white text-slate-900 rounded-[2rem] p-6 sm:p-8 shadow-2xl" novalidate>
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-7">
+              <div><h3 class="text-2xl font-extrabold">Admission enquiry</h3><p class="text-sm text-slate-500 mt-1">For Classes 1–10 · Session 2026–27</p></div>
+              <span class="inline-flex items-center gap-2 text-xs font-bold text-[#1f6b4b] bg-[#edf7f0] px-3 py-2 rounded-full"><i data-lucide="shield-check" class="w-4 h-4"></i> Secure workflow in Phase 2</span>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="sm:col-span-2"><label for="parent" class="text-xs font-bold uppercase tracking-wider text-slate-500">Parent / Guardian</label><input required id="parent" name="parent" autocomplete="name" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Full name"></div>
+              <div><label for="student" class="text-xs font-bold uppercase tracking-wider text-slate-500">Student name</label><input required id="student" name="student" autocomplete="off" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Student's full name"></div>
+              <div><label for="phone" class="text-xs font-bold uppercase tracking-wider text-slate-500">Contact number</label><input required id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="10" pattern="[0-9]{10}" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="10-digit mobile number"></div>
+              <div><label for="class" class="text-xs font-bold uppercase tracking-wider text-slate-500">Applying for</label><select id="class" name="class" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 bg-white outline-none focus:border-[#1f6b4b]"><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
+              <div><label for="location" class="text-xs font-bold uppercase tracking-wider text-slate-500">Village / location</label><input id="location" name="location" autocomplete="address-level2" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Your village or town"></div>
+              <div class="sm:col-span-2"><label class="flex gap-3 items-start text-sm text-slate-600"><input id="hostelNeed" name="hostel" type="checkbox" class="mt-1 accent-[#1f6b4b]"> I would like information about hostel / residential options.</label></div>
+              <div class="sm:col-span-2"><label for="message" class="text-xs font-bold uppercase tracking-wider text-slate-500">Message (optional)</label><textarea id="message" name="message" rows="3" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] resize-none" placeholder="Any question for the school?"></textarea></div>
+            </div>
+            <button type="submit" class="focus-ring mt-5 w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition">Submit admission enquiry</button>
+            <div id="formStatus" class="hidden mt-4 rounded-xl px-4 py-3 text-sm font-semibold" role="status" aria-live="polite"></div>
+            <p class="mt-4 text-xs text-slate-400 leading-5">This public build shows the intended form experience. Database submission and staff access are being added in Phase 2.</p>
+          </form>
+        </div>
       </div>
     </section>
 
+    <!-- PORTAL -->
     <section id="portal" class="py-16 bg-white border-b border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Digital school</span><h2 class="mt-2 text-2xl sm:text-3xl font-extrabold">School Portal & Administration</h2><p class="mt-2 text-slate-600">Secure authentication, admission management and content administration are planned for Phase 2.</p></div>
-        <div class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-100 text-slate-600 text-sm font-semibold"><i data-lucide="lock" class="w-4 h-4"></i> Secure portal coming next</div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2rem] bg-[#f7f9f7] border border-slate-200 p-7 sm:p-9 flex flex-col lg:flex-row lg:items-center justify-between gap-7">
+          <div class="max-w-2xl">
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">School digital portal</span>
+            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold">One secure place for school administration.</h2>
+            <p class="mt-3 text-slate-600 leading-7">The next phase connects admissions, notices, events, gallery and staff administration to a secure database with role-based access.</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-3 px-5 py-4 rounded-2xl bg-white border border-slate-200"><div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="lock-keyhole"></i></div><div><div class="font-bold text-sm">Secure portal</div><div class="text-xs text-slate-500">Coming in Phase 2</div></div></div>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-5">
-        <div class="lg:col-span-2 rounded-[2rem] bg-[#eaf5ee] p-8 sm:p-10"><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Visit / contact</span><h2 class="mt-3 text-3xl font-extrabold">Gisela English Medium High School</h2><div class="mt-7 grid sm:grid-cols-2 gap-5 text-sm"><div><div class="font-bold">Address</div><div class="text-slate-600 mt-1">Silachari, Gomati District, Tripura — PIN 799104</div></div><div><div class="font-bold">UDISE</div><div class="text-slate-600 mt-1">16071200409</div></div><div><div class="font-bold">School board</div><div class="text-slate-600 mt-1">Tripura Board of Secondary Education</div></div><div><div class="font-bold">Online enquiry</div><div class="text-slate-600 mt-1">Use the admission enquiry form above</div></div></div></div>
-        <div class="rounded-[2rem] bg-[#12372a] text-white p-8"><i data-lucide="navigation" class="w-7 h-7 text-[#e6bd58]"></i><h3 class="mt-7 text-xl font-extrabold">Plan your visit</h3><p class="mt-2 text-sm text-white/60 leading-6">A verified map, directions and travel information can be added during the next implementation phase.</p><a href="#admissions" class="mt-7 inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white text-[#12372a] font-bold text-sm">Ask before visiting <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-5">
+        <div class="lg:col-span-8 rounded-[2rem] bg-[#edf7f0] p-8 sm:p-10">
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Contact & visit</span>
+          <h2 class="mt-3 text-3xl font-extrabold">Gisela English Medium High School</h2>
+          <p class="mt-4 text-slate-600 leading-7">Silachari, Gomati District, Tripura — PIN 799104</p>
+          <div class="mt-8 grid sm:grid-cols-2 gap-5 text-sm">
+            <div><div class="font-bold">UDISE Code</div><div class="text-slate-600 mt-1">16071200409</div></div>
+            <div><div class="font-bold">Board</div><div class="text-slate-600 mt-1">Tripura Board of Secondary Education</div></div>
+            <div><div class="font-bold">Classes</div><div class="text-slate-600 mt-1">Class 1 to Class 10</div></div>
+            <div><div class="font-bold">Admissions</div><div class="text-slate-600 mt-1">Use the enquiry form on this page</div></div>
+          </div>
+        </div>
+        <div class="lg:col-span-4 rounded-[2rem] bg-[#102f24] text-white p-8 sm:p-10">
+          <i data-lucide="navigation" class="w-7 h-7 text-[#e8bf63]"></i>
+          <h3 class="mt-7 text-xl font-extrabold">Planning a visit?</h3>
+          <p class="mt-3 text-sm text-white/60 leading-7">For current directions, office timings and admission availability, please confirm details with the school before travelling.</p>
+          <a href="#admissions" class="focus-ring mt-7 inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white text-[#102f24] font-bold text-sm hover:bg-emerald-50 transition">Send an enquiry <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-[#0c1d16] text-white">
+  <!-- Mobile sticky conversion bar -->
+  <div class="sm:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-white/95 backdrop-blur-xl border-t border-slate-200">
+    <a href="#admissions" class="focus-ring flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#1f6b4b] text-white font-extrabold shadow-lg"><i data-lucide="file-pen-line" class="w-4 h-4"></i> Admission Enquiry</a>
+  </div>
+
+  <footer class="bg-[#0b2118] text-white pb-20 sm:pb-0">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-3 gap-10">
-      <div><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-[#1f6b4b] grid place-items-center font-extrabold">GE</div><span class="font-extrabold">Gisela English Medium High School</span></div><p class="mt-4 text-sm text-white/50 leading-6">Silachari, Gomati District, Tripura — PIN 799104.</p></div>
-      <div><h4 class="font-bold">Explore</h4><div class="mt-4 grid grid-cols-2 gap-2 text-sm text-white/55"><a href="#about" class="hover:text-white">About</a><a href="#academics" class="hover:text-white">Academics</a><a href="#campus" class="hover:text-white">Campus</a><a href="#hostel" class="hover:text-white">Hostel</a><a href="#updates" class="hover:text-white">Updates</a><a href="#admissions" class="hover:text-white">Admissions</a></div></div>
-      <div><h4 class="font-bold">Digital roadmap</h4><p class="mt-4 text-sm text-white/50 leading-6">Phase 1: Public website redesign<br>Phase 2: Secure portal & database<br>Phase 3: Admissions & administration</p></div>
+      <div>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-[#1f6b4b] grid place-items-center font-extrabold">GE</div><span class="font-extrabold">Gisela English Medium High School</span></div>
+        <p class="mt-4 text-sm text-white/50 leading-6">Silachari, Gomati District, Tripura — PIN 799104.</p>
+      </div>
+      <div>
+        <h4 class="font-bold">Explore</h4>
+        <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-white/55">
+          <a href="#about" class="hover:text-white">About</a><a href="#academics" class="hover:text-white">Academics</a>
+          <a href="#campus" class="hover:text-white">Campus</a><a href="#hostel" class="hover:text-white">Hostel</a>
+          <a href="#video-tour" class="hover:text-white">Video</a><a href="#updates" class="hover:text-white">Updates</a>
+          <a href="#admissions" class="hover:text-white">Admissions</a><a href="#contact" class="hover:text-white">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold">Digital roadmap</h4>
+        <p class="mt-4 text-sm text-white/50 leading-6">Phase 1: Public website<br>Phase 2: Secure database & staff portal<br>Phase 3: Expanded admissions & administration</p>
+      </div>
     </div>
-    <div class="border-t border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-white/35 flex flex-col sm:flex-row justify-between gap-2"><span>© 2003–2026 Gisela English Medium High School, Silachari, Tripura.</span><span>Built for a better digital school experience.</span></div></div>
+    <div class="border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-white/35 flex flex-col sm:flex-row justify-between gap-2">
+        <span>© 2003–2026 Gisela English Medium High School, Silachari, Tripura.</span>
+        <span>Built for a clearer digital school experience.</span>
+      </div>
+    </div>
   </footer>
 
   <script>
     lucide.createIcons();
-    const menu=document.getElementById('menu'), mobile=document.getElementById('mobile');
-    menu.addEventListener('click',()=>mobile.classList.toggle('hidden'));
-    document.querySelectorAll('#mobile a').forEach(a=>a.addEventListener('click',()=>mobile.classList.add('hidden')));
-    document.getElementById('enquiry').addEventListener('submit',e=>{
+
+    const menu=document.getElementById('menu');
+    const mobile=document.getElementById('mobile');
+    menu.addEventListener('click',()=>{
+      const hidden=mobile.classList.toggle('hidden');
+      menu.setAttribute('aria-expanded',String(!hidden));
+      menu.innerHTML=hidden?'<i data-lucide="menu"></i>':'<i data-lucide="x"></i>';
+      lucide.createIcons();
+    });
+    document.querySelectorAll('#mobile a').forEach(a=>a.addEventListener('click',()=>{
+      mobile.classList.add('hidden');
+      menu.setAttribute('aria-expanded','false');
+      menu.innerHTML='<i data-lucide="menu"></i>';
+      lucide.createIcons();
+    }));
+
+    const form=document.getElementById('enquiry');
+    const status=document.getElementById('formStatus');
+    form.addEventListener('submit',e=>{
       e.preventDefault();
-      const name=document.getElementById('parent').value.trim();
+      if(!form.checkValidity()){
+        form.reportValidity();
+        return;
+      }
+      const parent=document.getElementById('parent').value.trim();
       const student=document.getElementById('student').value.trim();
       const cls=document.getElementById('class').value;
-      const hostel=document.getElementById('hostelNeed').checked;
-      const status=document.getElementById('formStatus');
-      status.textContent=`Thank you, ${name}. The Phase 1 enquiry for ${student} (${cls}) is ready for the secure submission workflow in Phase 2.${hostel?' Hostel information requested.':''}`;
-      status.classList.remove('hidden');
-      e.target.reset();
+      status.className='mt-4 rounded-xl px-4 py-3 text-sm font-semibold bg-[#edf7f0] text-[#1f6b4b]';
+      status.textContent='Thank you, '+parent+'. Your enquiry for '+student+' ('+cls+') is ready for the secure submission workflow. Database submission will be connected in Phase 2.';
+      form.reset();
     });
   </script>
 </body>
