@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://giselaenglishmedium.edu.in/sitemap.xml
