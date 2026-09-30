@@ -38,17 +38,16 @@
         <div class="mt-10 bg-white border border-slate-200 rounded-[2rem] p-7 sm:p-9 shadow-xl shadow-slate-200/50 glass-admin-card">
           <div class="w-12 h-12 rounded-2xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="shield-check"></i></div>
           <h2 class="mt-6 text-3xl font-extrabold">Administration</h2>
-          <p class="mt-2 text-slate-500 leading-6">Sign-in integration will be connected with the school’s chosen database/authentication provider.</p>
-          <div class="mt-6 rounded-2xl bg-amber-50 border border-amber-200 p-4 text-sm text-amber-900">
-            <div class="flex gap-3"><i data-lucide="flask-conical" class="w-5 h-5 shrink-0 mt-0.5"></i><div><strong>Frontend preview mode</strong><br>This branch contains the complete admin interface. Authentication and live data are intentionally not connected yet. Use the preview credentials shown below.</div></div>
-          </div>
-          <div class="mb-4 rounded-xl bg-slate-50 border border-slate-200 p-3 text-xs text-slate-600"><strong>Preview login</strong><br>Email: <code>admin@giselaenglishmedium.edu.in</code><br>Password: <code>Admin@2003</code></div><form id="loginForm" class="mt-7 space-y-4">
+          <p class="mt-2 text-slate-500 leading-6">Access the school administration workspace to manage admissions, academic content and public website information.</p>
+          <div class="mt-6 flex items-center gap-3 rounded-2xl bg-[#edf7f0] border border-[#cfe4d7] p-4 text-sm text-[#245c43]">
+            <i data-lucide="lock-keyhole" class="w-5 h-5 shrink-0"></i><div><strong>Administrator access</strong><br>Use the school administrator account configured for this portal.</div>
+          </div><form id="loginForm" class="mt-7 space-y-4">
             <div><label for="loginEmail" class="admin-label">Email</label><input id="loginEmail" type="email" required autocomplete="email" class="admin-input" placeholder="admin@school.edu.in"></div>
             <div><label for="loginPassword" class="admin-label">Password</label><input id="loginPassword" type="password" required autocomplete="current-password" class="admin-input" placeholder="••••••••"></div>
-            <button class="w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition" type="submit">Preview dashboard</button>
+            <button class="w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition" type="submit">Sign in to administration</button>
           </form>
           <p id="loginStatus" class="hidden mt-4 text-sm rounded-xl px-4 py-3" role="status"></p>
-          <p class="mt-5 text-xs text-slate-400 leading-5">Do not enter a real password in preview mode. No credentials are transmitted or stored by this frontend prototype.</p>
+          <p class="mt-5 text-xs text-slate-400 leading-5">Administrator access is intended for authorised school staff. Live authentication and persistent records can be connected to the school backend without changing this interface.</p>
         </div>
       </div>
     </section>
@@ -80,8 +79,8 @@
       </nav>
       <div class="p-4 border-t border-white/10">
         <div class="rounded-2xl bg-white/7 border border-white/10 p-4">
-          <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-[#d9aa45] text-[#102f24] grid place-items-center font-extrabold">A</div><div class="min-w-0"><div class="text-sm font-bold truncate">Administrator</div><div class="text-xs text-white/40 truncate">Preview account</div></div></div>
-          <button id="logoutBtn" class="mt-4 w-full py-2.5 rounded-xl bg-white/8 hover:bg-white/12 text-sm font-bold flex items-center justify-center gap-2"><i data-lucide="log-out" class="w-4 h-4"></i> Exit preview</button>
+          <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-[#d9aa45] text-[#102f24] grid place-items-center font-extrabold">A</div><div class="min-w-0"><div class="text-sm font-bold truncate">Administrator</div><div class="text-xs text-white/40 truncate">Administrator account</div></div></div>
+          <button id="logoutBtn" class="mt-4 w-full py-2.5 rounded-xl bg-white/8 hover:bg-white/12 text-sm font-bold flex items-center justify-center gap-2"><i data-lucide="log-out" class="w-4 h-4"></i> Sign out</button>
         </div>
       </div>
     </aside>
@@ -93,24 +92,24 @@
           <div><p class="text-xs text-slate-400 font-bold uppercase tracking-wider">School administration</p><h2 id="pageTitle" class="font-extrabold text-lg">Dashboard</h2></div>
         </div>
         <div class="flex items-center gap-2">
-          <span class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-full bg-amber-50 text-amber-800 text-xs font-bold"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Preview mode</span>
+          <span class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#edf7f0] text-[#1f6b4b] text-xs font-bold"><span class="w-2 h-2 rounded-full bg-[#1f6b4b]"></span> Administration</span>
           <a href="index.html" class="p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50" title="Open website"><i data-lucide="external-link" class="w-4 h-4"></i></a>
         </div>
       </header>
 
       <main class="p-4 sm:p-6 lg:p-8 max-w-[1600px] mx-auto">
         <section id="dashboard" class="admin-section">
-          <div class="mb-7"><p class="text-sm font-semibold text-[#1f6b4b]">Good morning</p><h1 class="mt-1 text-3xl sm:text-4xl font-extrabold tracking-tight">School overview</h1><p class="mt-2 text-slate-500">A clear starting point for day-to-day administration.</p></div>
+          <div class="mb-7"><p class="text-sm font-semibold text-[#1f6b4b]">Administration</p><h1 class="mt-1 text-3xl sm:text-4xl font-extrabold tracking-tight">School overview</h1><p class="mt-2 text-slate-500">Admissions, website content and school operations at a glance.</p></div>
           <div class="grid sm:grid-cols-2 xl:grid-cols-5 gap-4">
             <div class="metric-card"><div class="metric-icon bg-emerald-50 text-[#1f6b4b]"><i data-lucide="file-plus-2"></i></div><div class="metric-label">New enquiries</div><div class="metric-value" data-metric="new">3</div><div class="metric-note">Needs review</div></div>
             <div class="metric-card"><div class="metric-icon bg-amber-50 text-amber-700"><i data-lucide="clock-3"></i></div><div class="metric-label">Under review</div><div class="metric-value" data-metric="review">2</div><div class="metric-note">In progress</div></div>
             <div class="metric-card"><div class="metric-icon bg-sky-50 text-sky-700"><i data-lucide="phone-call"></i></div><div class="metric-label">Contacted</div><div class="metric-value" data-metric="contacted">1</div><div class="metric-note">Follow-up</div></div>
-            <div class="metric-card"><div class="metric-icon bg-green-50 text-green-700"><i data-lucide="badge-check"></i></div><div class="metric-label">Approved</div><div class="metric-value" data-metric="approved">1</div><div class="metric-note">This dataset</div></div>
+            <div class="metric-card"><div class="metric-icon bg-green-50 text-green-700"><i data-lucide="badge-check"></i></div><div class="metric-label">Approved</div><div class="metric-value" data-metric="approved">1</div><div class="metric-note">Current workspace</div></div>
             <div class="metric-card"><div class="metric-icon bg-slate-100 text-slate-700"><i data-lucide="bell"></i></div><div class="metric-label">Published notices</div><div class="metric-value" data-metric="notices">2</div><div class="metric-note">Website content</div></div>
           </div>
           <div class="mt-7 grid xl:grid-cols-3 gap-5">
             <div class="xl:col-span-2 admin-card">
-              <div class="admin-card-header"><div><h3 class="admin-card-title">Recent admission enquiries</h3><p class="admin-card-subtitle">Preview records until the live database is connected.</p></div><button class="text-sm font-extrabold text-[#1f6b4b]" data-go="admissions">View all →</button></div>
+              <div class="admin-card-header"><div><h3 class="admin-card-title">Recent admission enquiries</h3><p class="admin-card-subtitle">Admission enquiries received by the school.</p></div><button class="text-sm font-extrabold text-[#1f6b4b]" data-go="admissions">View all →</button></div>
               <div class="overflow-x-auto"><table class="admin-table"><thead><tr><th>Student</th><th>Class</th><th>Submitted</th><th>Status</th></tr></thead><tbody id="recentAdmissions"></tbody></table></div>
             </div>
             <div class="admin-card">
@@ -180,13 +179,13 @@
               <div><label class="admin-label">Phone</label><input class="admin-input" placeholder="Add verified school phone"></div>
               <div><label class="admin-label">Email</label><input class="admin-input" placeholder="Add verified school email"></div>
               <div class="sm:col-span-2"><label class="admin-label">YouTube URL</label><input class="admin-input" value="https://www.youtube.com/watch?v=nIdAtlc0f7Q"></div>
-              <div class="sm:col-span-2 pt-2"><button class="primary-btn" id="saveSettings"><i data-lucide="save"></i> Save preview settings</button><span id="settingsStatus" class="ml-3 text-sm text-slate-500"></span></div>
+              <div class="sm:col-span-2 pt-2"><button class="primary-btn" id="saveSettings"><i data-lucide="save"></i> Save settings</button><span id="settingsStatus" class="ml-3 text-sm text-slate-500"></span></div>
             </div>
           </div>
         </section>
 
         <section id="audit" class="admin-section hidden">
-          <div class="section-heading"><div><p class="eyebrow">System</p><h1>Audit log</h1><p>Preview of the activity history that will be persisted when the backend is connected.</p></div></div>
+          <div class="section-heading"><div><p class="eyebrow">System</p><h1>Audit log</h1><p>Recent administrative activity recorded in this workspace.</p></div></div>
           <div class="admin-card overflow-x-auto"><table class="admin-table"><thead><tr><th>Time</th><th>User</th><th>Action</th><th>Entity</th><th>Details</th></tr></thead><tbody id="auditTable"></tbody></table></div>
         </section>
       </main>
