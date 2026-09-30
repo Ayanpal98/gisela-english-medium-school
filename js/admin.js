@@ -150,7 +150,7 @@ function newContent(type){
     if(type==="culture")state.data.culture.unshift({id,title:f.get("a"),description:f.get("b"),category:f.get("category")||"Student Life",date:f.get("date")||"Date to be added",image:f.get("image")||"",published});
     if(type==="achievement"||type==="culture"||type==="ad")persistPublicContent();
     state.data.audit.unshift({time:"29 Sep 2026 · now",user:"Administrator",action:"CREATE",entity:type,details:id});
-    closeModal();setSection(type==="notice"?"notices":type==="event"?"events":type);showToast("Saved in preview mode.");
+    closeModal();setSection(type==="notice"?"notices":type==="event"?"events":type==="ad"?"ads":type);showToast("Saved in preview mode.");
   });
   $("modalRoot").querySelectorAll("[data-close-modal]").forEach(b=>b.addEventListener("click",closeModal));
 }
