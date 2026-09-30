@@ -726,11 +726,12 @@
     </style>
     <script>
       (function(){
-        const ads=[
+        const defaultAds=[
           {badge:'Admissions',title:'Admissions information · 2026–27',text:'Parents and guardians can explore admission information and submit an enquiry for Classes 1–10.',cta:'View admissions',href:'#admissions'},
           {badge:'School Portal',title:'Stay connected with the digital school',text:'Open the Parent, Student or Teacher portal to explore the current school workflow preview.',cta:'Open portal',href:'portal.html'},
           {badge:'School Updates',title:'School announcements in one place',text:'Official notices, events, achievements and school culture can be showcased here as the website grows.',cta:'Explore updates',href:'#updates'}
         ];
+        let ads=defaultAds; try{const saved=JSON.parse(localStorage.getItem('giselaAds')||'null');if(Array.isArray(saved)&&saved.length) ads=saved.filter(a=>a.published);}catch(e){} if(!ads.length) ads=defaultAds;
         const slides=document.getElementById('adSlides'),dots=document.getElementById('adDots'); let current=0,timer;
         if(!slides)return;
         slides.innerHTML=ads.map((a,i)=>'<article class="ad-slide '+(i===0?'active':'')+'" aria-hidden="'+(i===0?'false':'true')+'"><div class="ad-accent"></div><div><span class="ad-badge">'+a.badge+'</span><h3>'+a.title+'</h3><p>'+a.text+'</p><a class="ad-cta focus-ring" href="'+a.href+'">'+a.cta+' →</a></div></article>').join('');
