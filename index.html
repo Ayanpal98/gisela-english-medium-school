@@ -179,12 +179,14 @@
     <!-- ANIMATED SCHOOL ADS -->
     <section id="school-ads" class="py-8 bg-[#f7f8f6]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-[2rem] bg-[#102f24] text-white shadow-xl" id="adCarousel" aria-label="School announcements and advertisements">
-          <div id="adSlides" class="relative min-h-[210px]"></div>
-          <div class="absolute left-5 bottom-5 flex items-center gap-2" id="adDots" aria-label="Advertisement navigation"></div>
-          <div class="absolute right-5 bottom-5 flex gap-2">
-            <button id="adPrev" class="focus-ring w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 grid place-items-center" aria-label="Previous advertisement"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
-            <button id="adNext" class="focus-ring w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 grid place-items-center" aria-label="Next advertisement"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+        <div id="adCarousel" class="relative overflow-hidden rounded-[2rem] bg-[#102f24] text-white shadow-xl" aria-label="School announcements and advertisements">
+          <div id="adSlides" class="relative min-h-[260px] sm:min-h-[230px]"></div>
+          <div class="absolute inset-x-0 bottom-0 z-20 flex items-center justify-between p-4 sm:p-5">
+            <div id="adDots" class="flex items-center gap-2" aria-label="Advertisement navigation"></div>
+            <div class="flex gap-2">
+              <button id="adPrev" class="focus-ring w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 grid place-items-center" aria-label="Previous advertisement"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+              <button id="adNext" class="focus-ring w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 grid place-items-center" aria-label="Next advertisement"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+            </div>
           </div>
         </div>
       </div>
