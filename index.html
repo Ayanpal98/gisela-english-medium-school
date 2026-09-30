@@ -176,6 +176,20 @@
       </div>
     </section>
 
+    <!-- ANIMATED SCHOOL ADS -->
+    <section id="school-ads" class="py-8 bg-[#f7f8f6]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-[2rem] bg-[#102f24] text-white shadow-xl" id="adCarousel" aria-label="School announcements and advertisements">
+          <div id="adSlides" class="relative min-h-[210px]"></div>
+          <div class="absolute left-5 bottom-5 flex items-center gap-2" id="adDots" aria-label="Advertisement navigation"></div>
+          <div class="absolute right-5 bottom-5 flex gap-2">
+            <button id="adPrev" class="focus-ring w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 grid place-items-center" aria-label="Previous advertisement"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+            <button id="adNext" class="focus-ring w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 grid place-items-center" aria-label="Next advertisement"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- QUICK ACCESS -->
     <section class="relative -mt-7 z-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -698,6 +712,40 @@
       form.reset();
     });
   </script>
+    <style>
+      .ad-slide{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:translateX(24px);transition:opacity .55s ease,transform .55s ease;padding:2rem 6rem 3.5rem 2rem}
+      .ad-slide.active{opacity:1;transform:none}
+      .ad-accent{width:4px;align-self:stretch;border-radius:999px;background:#d9aa45;margin-right:1.25rem}
+      .ad-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);border-radius:999px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#f0c96c}
+      .ad-slide h3{font-size:clamp(1.45rem,3vw,2.35rem);font-weight:800;margin:.75rem 0 .4rem}
+      .ad-slide p{color:rgba(255,255,255,.68);line-height:1.65;max-width:700px;font-size:.92rem}
+      .ad-cta{display:inline-flex;margin-top:1rem;padding:.65rem 1rem;border-radius:.8rem;background:#d9aa45;color:#102f24;font-weight:800;font-size:.8rem}
+      .ad-dot{width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,.3);border:0;padding:0}.ad-dot.active{width:22px;background:#d9aa45}
+      @media(max-width:639px){.ad-slide{padding:1.5rem 1.25rem 3.8rem}.ad-accent{display:none}.ad-slide p{font-size:.82rem}.ad-slide h3{font-size:1.35rem}}
+      @media(prefers-reduced-motion:reduce){.ad-slide{transition:none}}
+    </style>
+    <script>
+      (function(){
+        const defaultAds=[
+          {badge:'Admissions',title:'Admissions information · 2026–27',text:'Parents and guardians can explore admission information and submit an enquiry for Classes 1–10.',cta:'View admissions',href:'#admissions'},
+          {badge:'School Portal',title:'Stay connected with the digital school',text:'Open the Parent, Student or Teacher portal to explore the current school workflow preview.',cta:'Open portal',href:'portal.html'},
+          {badge:'School Updates',title:'School announcements in one place',text:'Official notices, events, achievements and school culture can be showcased here as the website grows.',cta:'Explore updates',href:'#updates'}
+        ];
+        let ads=defaultAds; try{const saved=JSON.parse(localStorage.getItem('giselaAds')||'null');if(Array.isArray(saved)&&saved.length) ads=saved.filter(a=>a.published);}catch(e){} if(!ads.length) ads=defaultAds;
+        const slides=document.getElementById('adSlides'),dots=document.getElementById('adDots'); let current=0,timer;
+        if(!slides)return;
+        slides.innerHTML=ads.map((a,i)=>'<article class="ad-slide '+(i===0?'active':'')+'" aria-hidden="'+(i===0?'false':'true')+'"><div class="ad-accent"></div><div><span class="ad-badge">'+a.badge+'</span><h3>'+a.title+'</h3><p>'+a.text+'</p><a class="ad-cta focus-ring" href="'+a.href+'">'+a.cta+' →</a></div></article>').join('');
+        dots.innerHTML=ads.map((_,i)=>'<button class="ad-dot '+(i===0?'active':'')+'" data-ad="'+i+'" aria-label="Show advertisement '+(i+1)+'"></button>').join('');
+        const render=n=>{current=(n+ads.length)%ads.length;document.querySelectorAll('.ad-slide').forEach((s,i)=>{s.classList.toggle('active',i===current);s.setAttribute('aria-hidden',i===current?'false':'true')});document.querySelectorAll('.ad-dot').forEach((d,i)=>d.classList.toggle('active',i===current));};
+        const restart=()=>{clearInterval(timer);timer=setInterval(()=>render(current+1),5500)};
+        document.getElementById('adPrev').addEventListener('click',()=>{render(current-1);restart()});
+        document.getElementById('adNext').addEventListener('click',()=>{render(current+1);restart()});
+        dots.querySelectorAll('[data-ad]').forEach(d=>d.addEventListener('click',()=>{render(Number(d.dataset.ad));restart()}));
+        document.getElementById('adCarousel').addEventListener('mouseenter',()=>clearInterval(timer));
+        document.getElementById('adCarousel').addEventListener('mouseleave',restart);
+        restart();
+      })();
+    </script>
     <!-- PHASE 7 — UI ENHANCEMENT LAYER -->
     <style>
       html{scroll-behavior:smooth}
