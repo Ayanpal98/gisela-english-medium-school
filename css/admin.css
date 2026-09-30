@@ -30,3 +30,22 @@
 
 /* Phase 7 — accessibility and interaction refinement */
 html{scroll-behavior:smooth}::selection{background:#d9aa45;color:#102f24}button,a,input,select,textarea{transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease}button:hover{transform:translateY(-1px)}:focus-visible{outline:3px solid rgba(217,170,69,.65);outline-offset:2px}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+/* Phase 8 — production-style administration polish */
+body{background:radial-gradient(circle at 92% 4%,rgba(217,170,69,.08),transparent 24rem),#f5f7f5}
+#loginView section:last-child{background:linear-gradient(180deg,#f8faf8 0%,#f5f7f5 100%)}
+#loginView .glass-admin-card{box-shadow:0 24px 70px rgba(16,47,36,.10);border-color:rgba(226,232,229,.9)}
+#loginView .glass-admin-card:before{content:"";display:block;position:absolute;inset:0;pointer-events:none;border-radius:2rem;background:linear-gradient(135deg,rgba(255,255,255,.7),transparent 42%);opacity:.7}
+#loginView .glass-admin-card{position:relative;overflow:hidden}
+#loginView .glass-admin-card>*{position:relative;z-index:1}
+.admin-card,.metric-card,.content-card,.gallery-card,.faculty-card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.admin-card:hover,.metric-card:hover,.content-card:hover,.gallery-card:hover,.faculty-card:hover{border-color:#d3dfd8;box-shadow:0 16px 38px rgba(16,47,36,.07)}
+.metric-card{position:relative;overflow:hidden}
+.metric-card:after{content:"";position:absolute;width:110px;height:110px;border-radius:999px;background:rgba(31,107,75,.035);right:-45px;top:-45px}
+.primary-btn{box-shadow:0 7px 16px rgba(31,107,75,.15)}
+.secondary-btn{transition:.2s ease}
+.secondary-btn:hover{transform:translateY(-1px);border-color:#bfd5c9;color:#1f6b4b}
+.nav-item{position:relative}
+.nav-item.active:before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:99px;background:#e8bf63}
+.admin-table tbody tr{transition:background .15s ease}
