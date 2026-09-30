@@ -40,9 +40,9 @@
           <h2 class="mt-6 text-3xl font-extrabold">Administration</h2>
           <p class="mt-2 text-slate-500 leading-6">Sign-in integration will be connected with the school’s chosen database/authentication provider.</p>
           <div class="mt-6 rounded-2xl bg-amber-50 border border-amber-200 p-4 text-sm text-amber-900">
-            <div class="flex gap-3"><i data-lucide="flask-conical" class="w-5 h-5 shrink-0 mt-0.5"></i><div><strong>Frontend preview mode</strong><br>This branch contains the complete admin interface. Authentication and live data are intentionally not connected yet.</div></div>
+            <div class="flex gap-3"><i data-lucide="flask-conical" class="w-5 h-5 shrink-0 mt-0.5"></i><div><strong>Frontend preview mode</strong><br>This branch contains the complete admin interface. Authentication and live data are intentionally not connected yet. Use the preview credentials shown below.</div></div>
           </div>
-          <form id="loginForm" class="mt-7 space-y-4">
+          <div class="mb-4 rounded-xl bg-slate-50 border border-slate-200 p-3 text-xs text-slate-600"><strong>Preview login</strong><br>Email: <code>admin@giselaenglishmedium.edu.in</code><br>Password: <code>Admin@2003</code></div><form id="loginForm" class="mt-7 space-y-4">
             <div><label for="loginEmail" class="admin-label">Email</label><input id="loginEmail" type="email" required autocomplete="email" class="admin-input" placeholder="admin@school.edu.in"></div>
             <div><label for="loginPassword" class="admin-label">Password</label><input id="loginPassword" type="password" required autocomplete="current-password" class="admin-input" placeholder="••••••••"></div>
             <button class="w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition" type="submit">Preview dashboard</button>
