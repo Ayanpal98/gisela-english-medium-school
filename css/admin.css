@@ -27,3 +27,10 @@
 @media(max-width:1024px){.content-grid,.gallery-grid,.faculty-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-heading{align-items:flex-start}}
 @media(max-width:640px){.content-grid,.gallery-grid,.faculty-grid{grid-template-columns:1fr}.section-heading{flex-direction:column;align-items:stretch}.section-heading h1{font-size:28px}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.metric-card{min-height:145px}.admin-card-header{flex-direction:column}.toast{left:16px;right:16px;bottom:16px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Phase 7 — admin visual refinement */
+html{scroll-behavior:smooth}
+::selection{background:#d9aa45;color:#102f24}
+button,a,input,select,textarea{transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease}
+button:hover{transform:translateY(-1px)}
+:focus-visible{outline:3px solid rgba(217,170,69,.65);outline-offset:2px}
