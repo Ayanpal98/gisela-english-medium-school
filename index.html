@@ -463,7 +463,7 @@
         <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-white/55">
           <a href="#about" class="hover:text-white">About</a><a href="#academics" class="hover:text-white">Academics</a>
           <a href="#campus" class="hover:text-white">Campus</a><a href="#hostel" class="hover:text-white">Hostel</a>
-          <a href="#video-tour" class="hover:text-white">Video</a><a href="#achievements" class="hover:text-white">Achievements</a><a href="#principal-message" class="hover:text-white">Principal</a><a href="#updates" class="hover:text-white">Updates</a>
+          <a href="#video-tour" class="hover:text-white">Video</a><a href="#achievements" class="hover:text-white">Achievements</a><a href="#principal-message" class="hover:text-white">Principal</a>
           <a href="#admissions" class="hover:text-white">Admissions</a><a href="#admission-help" class="hover:text-white">Parent Help</a><a href="#contact" class="hover:text-white">Contact</a>
         </div>
       </div>
@@ -610,7 +610,7 @@
             document.getElementById('floatingNext').addEventListener('click',()=>{current=(current+1)%ads.length;restart()});
           }
         }
-        function restart(){clearInterval(timer);render();if(ads.length>1)timer=setInterval(()=>{current=(current+1)%ads.length;render()},7000)}
+        function restart(){clearInterval(timer);render();if(ads.length>1){const seconds=Math.max(4,Number(ads[current].duration)||7);timer=setTimeout(()=>{current=(current+1)%ads.length;restart()},seconds*1000)}}
         restart();
       })();
     </script>
