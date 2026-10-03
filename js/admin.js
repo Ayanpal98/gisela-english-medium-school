@@ -48,12 +48,16 @@ const demoData = {
 
 const savedAchievements=(()=>{try{return JSON.parse(localStorage.getItem("giselaAchievements")||"null")}catch(e){return null}})();
 const savedCulture=(()=>{try{return JSON.parse(localStorage.getItem("giselaCulture")||"null")}catch(e){return null}})();
+const savedNotices=(()=>{try{return JSON.parse(localStorage.getItem("giselaNotices")||"null")}catch(e){return null}})();
+const savedEvents=(()=>{try{return JSON.parse(localStorage.getItem("giselaEvents")||"null")}catch(e){return null}})();
 const state = {section:"dashboard", data:structuredClone(demoData)};
 if(savedAchievements) state.data.achievements=savedAchievements;
 if(savedCulture) state.data.culture=savedCulture;
+if(savedNotices) state.data.notices=savedNotices;
+if(savedEvents) state.data.events=savedEvents;
 const savedAds=(()=>{try{return JSON.parse(localStorage.getItem("giselaAds")||"null")}catch(e){return null}})();
 if(savedAds) state.data.ads=savedAds;
-const persistPublicContent=()=>{localStorage.setItem("giselaAchievements",JSON.stringify(state.data.achievements));localStorage.setItem("giselaCulture",JSON.stringify(state.data.culture));localStorage.setItem("giselaAds",JSON.stringify(state.data.ads));};
+const persistPublicContent=()=>{localStorage.setItem("giselaAchievements",JSON.stringify(state.data.achievements));localStorage.setItem("giselaCulture",JSON.stringify(state.data.culture));localStorage.setItem("giselaAds",JSON.stringify(state.data.ads));localStorage.setItem("giselaNotices",JSON.stringify(state.data.notices));localStorage.setItem("giselaEvents",JSON.stringify(state.data.events));};
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const statusClass = s => ({New:"status-new","Under Review":"status-review",Contacted:"status-contacted",Approved:"status-approved",Rejected:"status-rejected"}[s] || "status-new");
