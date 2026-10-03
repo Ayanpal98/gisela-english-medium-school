@@ -98,8 +98,7 @@
         <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#academics">Academics</a>
         <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#campus">Campus</a>
         <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#student-life">Student Life</a><a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#principal-message">Principal</a>
-        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#achievements">Achievements</a><a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#updates">Updates</a>
-        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#admission-help">Parents</a>
+        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#achievements">Achievements</a>        <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#admission-help">Parents</a>
         <a class="focus-ring rounded-lg hover:text-[#1f6b4b]" href="#contact">Contact</a>
       </nav>
 
@@ -116,8 +115,7 @@
       <a href="#campus" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Campus & Facilities</a>
       <a href="#student-life" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Student Life</a><a href="#principal-message" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Principal’s Message</a><a href="#achievements" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Achievements & Culture</a>
       <a href="#hostel" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Hostel Life</a>
-      <a href="#updates" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">School Updates</a>
-      <a href="#admission-help" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Parent Help & FAQ</a>
+            <a href="#admission-help" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Parent Help & FAQ</a>
       <a href="#contact" class="focus-ring block p-3 rounded-xl hover:bg-[#edf7f0]">Contact</a>
       <a href="#admissions" class="focus-ring block text-center p-3 rounded-xl bg-[#1f6b4b] text-white font-bold">Admission Enquiry</a>
     </div>
@@ -176,21 +174,8 @@
       </div>
     </section>
 
-    <!-- ANIMATED SCHOOL ADS -->
-    <section id="school-ads" class="py-8 bg-[#f7f8f6]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="adCarousel" class="relative overflow-hidden rounded-[2rem] bg-[#102f24] text-white shadow-xl" aria-label="School announcements and advertisements">
-          <div id="adSlides" class="relative min-h-[260px] sm:min-h-[230px]"></div>
-          <div class="absolute inset-x-0 bottom-0 z-20 flex items-center justify-between p-4 sm:p-5">
-            <div id="adDots" class="flex items-center gap-2" aria-label="Advertisement navigation"></div>
-            <div class="flex gap-2">
-              <button id="adPrev" class="focus-ring w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 grid place-items-center" aria-label="Previous advertisement"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
-              <button id="adNext" class="focus-ring w-10 h-10 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 grid place-items-center" aria-label="Next advertisement"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- FLOATING SCHOOL ADS -->
+    <div id="floatingAds" aria-live="polite" aria-label="School advertisements"></div>
 
     <!-- QUICK ACCESS -->
     <section class="relative -mt-7 z-10">
@@ -374,168 +359,6 @@
       </div>
     </section>
 
-    <!-- SCHOOL UPDATES -->
-    <section id="updates" class="py-20 lg:py-28 bg-[#f7f9f7]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-          <div class="max-w-3xl">
-            <span class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">
-              <span class="w-2 h-2 rounded-full bg-[#d9aa45]"></span>
-              School Updates
-            </span>
-            <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">What’s happening at GEMHS.</h2>
-            <p class="mt-4 text-slate-600 leading-7">Important notices, upcoming events and school stories can be shared here for students and families.</p>
-          </div>
-          <div class="glass-card rounded-2xl px-5 py-4 flex items-center gap-3 shrink-0">
-            <div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center">
-              <i data-lucide="megaphone" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <div class="text-xs font-extrabold uppercase tracking-wider text-[#1f6b4b]">Official updates</div>
-              <div class="text-xs text-slate-500 mt-1">Published by the school</div>
-            </div>
-          </div>
-        </div>
-
-        <div id="schoolUpdatesFeed" class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-
-        <div id="schoolUpdatesEmpty" class="hidden mt-8 rounded-[1.7rem] border border-dashed border-slate-300 bg-white p-8 sm:p-10 text-center">
-          <div class="mx-auto w-14 h-14 rounded-2xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center">
-            <i data-lucide="bell-off" class="w-7 h-7"></i>
-          </div>
-          <h3 class="mt-5 text-xl font-extrabold">No new school updates yet</h3>
-          <p class="mt-2 max-w-xl mx-auto text-sm text-slate-500 leading-6">When the school publishes an official notice, event or announcement, it will appear here.</p>
-        </div>
-
-        <div class="mt-8 rounded-[1.7rem] bg-[#102f24] text-white p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-            <div class="flex items-start gap-4">
-              <div class="w-11 h-11 rounded-xl bg-white/10 text-[#e8bf63] grid place-items-center shrink-0">
-                <i data-lucide="info" class="w-5 h-5"></i>
-              </div>
-              <div>
-                <h3 class="font-extrabold">Looking for a specific notice?</h3>
-                <p class="mt-1 text-sm text-white/55 leading-6">For the latest official information, families should also confirm time-sensitive details directly with the school.</p>
-              </div>
-            </div>
-            <a href="#contact" class="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-white text-[#102f24] px-5 py-3 font-extrabold text-sm hover:bg-emerald-50 transition shrink-0">
-              Contact school <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRINCIPAL'S MESSAGE -->
-    <section id="principal-message" class="py-20 lg:py-28 relative overflow-hidden">
-      <div class="absolute -right-24 top-10 w-72 h-72 rounded-full bg-[#d9aa45]/10 blur-3xl pointer-events-none"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-10 items-stretch">
-          <div class="lg:col-span-4">
-            <div class="h-full rounded-[2rem] bg-[#102f24] text-white p-7 sm:p-9 relative overflow-hidden shadow-2xl">
-              <div class="absolute -right-16 -top-16 w-52 h-52 rounded-full bg-[#d9aa45]/10 blur-3xl"></div>
-              <div class="relative h-full flex flex-col justify-between">
-                <div>
-                  <span class="inline-flex items-center gap-2 glass-chip rounded-full px-3 py-1.5 text-[10px] uppercase tracking-[.18em] font-extrabold text-[#e8bf63]"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Principal's Message</span>
-                  <div class="mt-8 w-20 h-20 rounded-[1.6rem] bg-white/10 border border-white/15 grid place-items-center"><i data-lucide="user-round" class="w-9 h-9 text-[#e8bf63]"></i></div>
-                  <h2 class="mt-6 text-3xl sm:text-4xl font-extrabold leading-tight">A message from the Principal</h2>
-                  <p class="mt-4 text-sm text-white/55 leading-7">The school can publish the Principal's current message, photograph and name here through the administration system.</p>
-                </div>
-                <div class="mt-10 pt-5 border-t border-white/10"><div class="font-extrabold">Principal</div><div class="text-xs text-white/45 mt-1">Gisela English Medium High School</div></div>
-              </div>
-            </div>
-          </div>
-          <div class="lg:col-span-8">
-            <div class="glass-panel rounded-[2rem] p-7 sm:p-10 h-full flex flex-col justify-between">
-              <div>
-                <div class="flex items-center gap-3 text-[#1f6b4b]"><div class="w-10 h-10 rounded-xl bg-[#edf7f0] grid place-items-center"><i data-lucide="quote" class="w-5 h-5"></i></div><span class="text-xs font-extrabold uppercase tracking-[.2em]">Leadership & learning</span></div>
-                <blockquote class="mt-7 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-[#102f24]">“Our school community is built around learning, discipline, participation and the belief that every student deserves the opportunity to grow.”</blockquote>
-                <p class="mt-6 text-slate-600 leading-8 max-w-3xl">We welcome students and families into a school environment where academic learning is supported by values, responsibility, participation and meaningful experiences beyond the classroom. Our aim is to help students develop confidence, curiosity and a sense of responsibility as they move through their school years.</p>
-              </div>
-              <div class="mt-8 flex flex-wrap gap-3"><span class="glass-chip rounded-full px-4 py-2 text-xs font-bold text-[#1f6b4b]">Learning</span><span class="glass-chip rounded-full px-4 py-2 text-xs font-bold text-[#1f6b4b]">Discipline</span><span class="glass-chip rounded-full px-4 py-2 text-xs font-bold text-[#1f6b4b]">Participation</span><span class="glass-chip rounded-full px-4 py-2 text-xs font-bold text-[#1f6b4b]">Responsibility</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS & SCHOOL CULTURE -->
-    <section id="achievements" class="py-20 lg:py-28 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-10 items-end">
-          <div class="lg:col-span-7">
-            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Achievements & school culture</span>
-            <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Give every student story a place to shine.</h2>
-          </div>
-          <p class="lg:col-span-5 text-slate-600 leading-7">A dedicated space for verified student achievements, competitions, academic milestones, cultural activities and the everyday experiences that shape the Gisela community.</p>
-        </div>
-        <div id="publicAchievements" class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-        <div id="publicCulture" class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-        <div class="mt-7 rounded-3xl bg-[#102f24] text-white p-7 sm:p-9 overflow-hidden relative">
-          <div class="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-[#d9aa45]/10 blur-3xl"></div>
-          <div class="relative grid lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-7"><div class="text-xs uppercase tracking-[.2em] font-extrabold text-[#e8bf63]">School culture</div><h3 class="mt-2 text-2xl sm:text-3xl font-extrabold">Learning, participation, celebration and belonging.</h3><p class="mt-3 text-white/55 leading-7">From classroom learning to sports, cultural programmes, competitions, projects and community activities, the school can keep a living record of what students experience and accomplish.</p></div>
-            <div class="lg:col-span-5 grid grid-cols-2 gap-3">
-              <div class="glass-chip rounded-2xl p-5"><i data-lucide="trophy" class="text-[#e8bf63]"></i><div class="font-extrabold mt-3">Achievements</div><div class="text-xs text-white/45 mt-1">Student milestones & awards</div></div>
-              <div class="glass-chip rounded-2xl p-5"><i data-lucide="palette" class="text-[#e8bf63]"></i><div class="font-extrabold mt-3">Culture</div><div class="text-xs text-white/45 mt-1">Activities & celebrations</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PHASE 6 — ADMISSION & PARENT HELP -->
-    <section id="admission-help" class="py-20 lg:py-24 bg-white border-y border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
-          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Parent information hub</span>
-          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">Everything to know before you enquire.</h2>
-          <p class="mt-4 text-slate-600 leading-8">A clearer starting point for families exploring admission. Current availability, fees, timings and document requirements should always be confirmed with the school.</p>
-        </div>
-
-        <div class="mt-10 grid lg:grid-cols-3 gap-4">
-          <article class="glass-card rounded-[1.7rem] p-6">
-            <div class="w-11 h-11 rounded-2xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="clipboard-list"></i></div>
-            <h3 class="mt-5 text-lg font-extrabold">1. Send an enquiry</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-6">Share the parent/guardian, student, class and location details so the school can understand your enquiry.</p>
-          </article>
-          <article class="glass-card rounded-[1.7rem] p-6">
-            <div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="messages-square"></i></div>
-            <h3 class="mt-5 text-lg font-extrabold">2. Confirm details</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-6">Ask the school about current admission availability, fees, timings, hostel options and applicable requirements.</p>
-          </article>
-          <article class="glass-card rounded-[1.7rem] p-6">
-            <div class="w-11 h-11 rounded-2xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="school"></i></div>
-            <h3 class="mt-5 text-lg font-extrabold">3. Continue with the school</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-6">Once details are confirmed, the school can guide the family through the next admission steps.</p>
-          </article>
-        </div>
-
-        <div class="mt-8 grid lg:grid-cols-2 gap-5">
-          <div class="rounded-[1.7rem] bg-[#f7f9f7] border border-slate-200 p-6 sm:p-7">
-            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-[#102f24] text-[#e8bf63] grid place-items-center"><i data-lucide="circle-help"></i></div><div><h3 class="font-extrabold">Frequently asked questions</h3><p class="text-xs text-slate-500 mt-1">Quick answers from the public school information.</p></div></div>
-            <div class="mt-5 divide-y divide-slate-200" id="admissionFaq">
-              <details class="py-4 group"><summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-sm"><span>Which classes are offered?</span><i data-lucide="chevron-down" class="w-4 h-4 shrink-0 transition group-open:rotate-180"></i></summary><p class="pt-3 text-sm text-slate-600 leading-6">The school website presents English-medium schooling from Class 1 to Class 10.</p></details>
-              <details class="py-4 group"><summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-sm"><span>Is hostel information available?</span><i data-lucide="chevron-down" class="w-4 h-4 shrink-0 transition group-open:rotate-180"></i></summary><p class="pt-3 text-sm text-slate-600 leading-6">Yes. The website provides hostel information and enquiry support. Current availability, fees and rules should be confirmed with the school.</p></details>
-              <details class="py-4 group"><summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-sm"><span>Can I enquire before visiting?</span><i data-lucide="chevron-down" class="w-4 h-4 shrink-0 transition group-open:rotate-180"></i></summary><p class="pt-3 text-sm text-slate-600 leading-6">Yes. The admission enquiry form is designed as the first step for families before a visit or further discussion.</p></details>
-              <details class="py-4 group"><summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-sm"><span>Where is the school located?</span><i data-lucide="chevron-down" class="w-4 h-4 shrink-0 transition group-open:rotate-180"></i></summary><p class="pt-3 text-sm text-slate-600 leading-6">Silachari, Gomati District, Tripura — PIN 799104.</p></details>
-            </div>
-          </div>
-
-          <div class="rounded-[1.7rem] bg-[#102f24] text-white p-6 sm:p-7">
-            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-white/10 text-[#e8bf63] grid place-items-center"><i data-lucide="notebook-tabs"></i></div><div><h3 class="font-extrabold">Before you submit</h3><p class="text-xs text-white/50 mt-1">A simple family checklist.</p></div></div>
-            <div class="mt-6 space-y-3 text-sm">
-              <div class="flex gap-3"><i data-lucide="check" class="w-4 h-4 text-[#e8bf63] mt-0.5"></i><span class="text-white/75">Keep the student's full name and intended class ready.</span></div>
-              <div class="flex gap-3"><i data-lucide="check" class="w-4 h-4 text-[#e8bf63] mt-0.5"></i><span class="text-white/75">Provide a reachable parent/guardian contact number.</span></div>
-              <div class="flex gap-3"><i data-lucide="check" class="w-4 h-4 text-[#e8bf63] mt-0.5"></i><span class="text-white/75">Mention your village/town if it helps the school understand the enquiry.</span></div>
-              <div class="flex gap-3"><i data-lucide="check" class="w-4 h-4 text-[#e8bf63] mt-0.5"></i><span class="text-white/75">Ask separately about hostel, fees, timings and documents where relevant.</span></div>
-            </div>
-            <a href="#admissions" class="focus-ring mt-7 inline-flex items-center gap-2 rounded-xl bg-white text-[#102f24] px-4 py-3 font-extrabold text-sm hover:bg-emerald-50 transition">Start admission enquiry <i data-lucide="arrow-down" class="w-4 h-4"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ADMISSIONS -->
     <section id="admissions" class="py-20 lg:py-28 bg-[#102f24] text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -640,7 +463,7 @@
         <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-white/55">
           <a href="#about" class="hover:text-white">About</a><a href="#academics" class="hover:text-white">Academics</a>
           <a href="#campus" class="hover:text-white">Campus</a><a href="#hostel" class="hover:text-white">Hostel</a>
-          <a href="#video-tour" class="hover:text-white">Video</a><a href="#achievements" class="hover:text-white">Achievements</a><a href="#principal-message" class="hover:text-white">Principal</a><a href="#updates" class="hover:text-white">Updates</a>
+          <a href="#video-tour" class="hover:text-white">Video</a><a href="#achievements" class="hover:text-white">Achievements</a><a href="#principal-message" class="hover:text-white">Principal</a>
           <a href="#admissions" class="hover:text-white">Admissions</a><a href="#admission-help" class="hover:text-white">Parent Help</a><a href="#contact" class="hover:text-white">Contact</a>
         </div>
       </div>
@@ -679,23 +502,6 @@
       items=items.filter(x=>x.published!==false);
       el.innerHTML=items.slice(0,6).map((x,i)=>'<article class="rounded-3xl bg-[#f7f9f7] border border-slate-200 p-6 hover:-translate-y-1 hover:shadow-lg transition reveal" style="animation-delay:'+((i%3)*.08)+'s"><div class="flex items-center justify-between"><span class="text-[10px] uppercase tracking-[.16em] font-extrabold text-[#1f6b4b]">'+escPublic(x.category||'School Life')+'</span><i data-lucide="sparkles" class="w-4 h-4 text-[#d9aa45]"></i></div><h3 class="mt-4 text-lg font-extrabold">'+escPublic(x.title)+'</h3><p class="mt-2 text-sm text-slate-600 leading-6">'+escPublic(x.description)+'</p><div class="mt-4 text-xs text-slate-400">'+escPublic(x.date||'School culture')+'</div></article>').join(''); lucide.createIcons();
     }
-    function renderSchoolUpdates(){
-      const feed=document.getElementById('schoolUpdatesFeed');
-      const empty=document.getElementById('schoolUpdatesEmpty');
-      if(!feed||!empty)return;
-      let notices=[],events=[];
-      try{notices=JSON.parse(localStorage.getItem('giselaNotices')||'[]')}catch(e){}
-      try{events=JSON.parse(localStorage.getItem('giselaEvents')||'[]')}catch(e){}
-      const items=[
-        ...notices.filter(x=>x.published!==false).map(x=>({type:'Notice',icon:'bell',tone:'green',title:x.title,date:x.date,meta:x.priority||'Official notice',description:x.description||''})),
-        ...events.filter(x=>x.published!==false).map(x=>({type:'Event',icon:'calendar-days',tone:'gold',title:x.title,date:x.date,meta:[x.time,x.location].filter(Boolean).join(' · ')||'School event',description:x.description||''}))
-      ].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,6);
-      if(!items.length){feed.innerHTML='';empty.classList.remove('hidden');lucide.createIcons();return;}
-      empty.classList.add('hidden');
-      feed.innerHTML=items.map(x=>'<article class="group glass-card rounded-[1.7rem] p-6 reveal"><div class="flex items-center justify-between gap-3"><span class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[.16em] font-extrabold '+(x.tone==='gold'?'text-amber-700':'text-[#1f6b4b]')+'"><span class="w-8 h-8 rounded-xl '+(x.tone==='gold'?'bg-amber-50 text-amber-700':'bg-[#edf7f0] text-[#1f6b4b]')+' grid place-items-center"><i data-lucide="'+x.icon+'" class="w-4 h-4"></i></span>'+escPublic(x.type)+'</span><span class="text-[10px] font-bold text-slate-400">'+escPublic(x.date||'')+'</span></div><h3 class="mt-5 text-xl font-extrabold">'+escPublic(x.title)+'</h3><div class="mt-2 text-xs font-bold text-slate-500">'+escPublic(x.meta)+'</div><p class="mt-3 text-sm text-slate-600 leading-6">'+escPublic(x.description)+'</p></article>').join('');
-      lucide.createIcons();
-    }
-    renderSchoolUpdates();
     renderPublicCulture();
 
     function escPublic(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
@@ -753,36 +559,58 @@
     });
   </script>
     <style>
-      .ad-slide{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transform:translateX(24px);transition:opacity .55s ease,transform .55s ease;padding:2rem 6rem 3.5rem 2rem}
-      .ad-slide.active{opacity:1;transform:none}
-      .ad-accent{width:4px;align-self:stretch;border-radius:999px;background:#d9aa45;margin-right:1.25rem}
-      .ad-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);border-radius:999px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#f0c96c}
-      .ad-slide h3{font-size:clamp(1.45rem,3vw,2.35rem);font-weight:800;margin:.75rem 0 .4rem}
-      .ad-slide p{color:rgba(255,255,255,.68);line-height:1.65;max-width:700px;font-size:.92rem}
-      .ad-cta{display:inline-flex;margin-top:1rem;padding:.65rem 1rem;border-radius:.8rem;background:#d9aa45;color:#102f24;font-weight:800;font-size:.8rem}
-      .ad-dot{width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,.3);border:0;padding:0}.ad-dot.active{width:22px;background:#d9aa45}
-      @media(max-width:639px){.ad-slide{padding:1.5rem 1.25rem 3.8rem}.ad-accent{display:none}.ad-slide p{font-size:.82rem}.ad-slide h3{font-size:1.35rem}}
-      @media(prefers-reduced-motion:reduce){.ad-slide{transition:none}}
+      #floatingAds{position:fixed;right:1.25rem;bottom:1.25rem;z-index:70;width:min(390px,calc(100vw - 2rem));pointer-events:none}
+      .floating-ad{pointer-events:auto;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.58);background:rgba(255,255,255,.88);backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%);border-radius:1.5rem;box-shadow:0 22px 65px rgba(16,47,36,.22);padding:1.1rem 1.1rem 1.05rem;animation:adFloatIn .45s ease both}
+      .floating-ad::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:#d9aa45}
+      .floating-ad-kicker{font-size:.65rem;font-weight:900;text-transform:uppercase;letter-spacing:.14em;color:#1f6b4b}
+      .floating-ad h3{font-size:1.05rem;line-height:1.3;font-weight:800;margin:.45rem 2rem .35rem 0;color:#102f24}
+      .floating-ad p{font-size:.78rem;line-height:1.55;color:#64746d;margin:0}
+      .floating-ad-actions{display:flex;align-items:center;gap:.55rem;margin-top:.85rem}
+      .floating-ad-cta{display:inline-flex;align-items:center;justify-content:center;padding:.55rem .8rem;border-radius:.75rem;background:#1f6b4b;color:#fff;font-size:.72rem;font-weight:800;box-shadow:0 8px 18px rgba(31,107,75,.16)}
+      .floating-ad-close{position:absolute;right:.7rem;top:.7rem;width:2rem;height:2rem;border-radius:.65rem;border:1px solid #e2e8e5;background:rgba(255,255,255,.75);color:#64746d;display:grid;place-items:center}
+      .floating-ad-close:hover{background:#edf7f0;color:#102f24}
+      .floating-ad-count{font-size:.65rem;color:#94a3b8;font-weight:700}
+      .floating-ad-nav{display:flex;gap:.3rem;margin-left:auto}
+      .floating-ad-nav button{width:1.7rem;height:1.7rem;border-radius:.55rem;border:1px solid #e2e8e5;background:#fff;color:#64746d;display:grid;place-items:center}
+      @keyframes adFloatIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+      @media(max-width:640px){#floatingAds{right:.75rem;bottom:.75rem;width:calc(100vw - 1.5rem)}.floating-ad{border-radius:1.25rem;padding:1rem}.floating-ad h3{font-size:1rem}}
+      @media(prefers-reduced-motion:reduce){.floating-ad{animation:none}}
     </style>
     <script>
       (function(){
-        const defaultAds=[
-          {badge:'Admissions',title:'Admissions information · 2026–27',text:'Parents and guardians can explore admission information and submit an enquiry for Classes 1–10.',cta:'View admissions',href:'#admissions'},
-          {badge:'School Portal',title:'Stay connected with the digital school',text:'Open the Parent, Student or Teacher portal to explore the current school workflow preview.',cta:'Open portal',href:'portal.html'},
-          {badge:'School Updates',title:'School announcements in one place',text:'Official notices, events, achievements and school culture can be showcased here as the website grows.',cta:'Explore updates',href:'#updates'}
+        const defaults=[
+          {id:'AD-001',badge:'Admissions',title:'Admissions information · 2026–27',description:'Parents and guardians can explore admission information and submit an enquiry for Classes 1–10.',cta:'View admissions',href:'#admissions',published:true},
+          {id:'AD-002',badge:'School Portal',title:'Stay connected with the digital school',description:'Open the Parent, Student or Teacher portal to explore the current school workflow.',cta:'Open portal',href:'portal.html',published:true}
         ];
-        let ads=defaultAds; try{const saved=JSON.parse(localStorage.getItem('giselaAds')||'null');if(Array.isArray(saved)&&saved.length) ads=saved.filter(a=>a.published);}catch(e){} if(!ads.length) ads=defaultAds;
-        const slides=document.getElementById('adSlides'),dots=document.getElementById('adDots'); let current=0,timer;
-        if(!slides)return;
-        slides.innerHTML=ads.map((a,i)=>'<article class="ad-slide '+(i===0?'active':'')+'" aria-hidden="'+(i===0?'false':'true')+'"><div class="ad-accent"></div><div><span class="ad-badge">'+a.badge+'</span><h3>'+a.title+'</h3><p>'+a.text+'</p><a class="ad-cta focus-ring" href="'+a.href+'">'+a.cta+' →</a></div></article>').join('');
-        dots.innerHTML=ads.map((_,i)=>'<button class="ad-dot '+(i===0?'active':'')+'" data-ad="'+i+'" aria-label="Show advertisement '+(i+1)+'"></button>').join('');
-        const render=n=>{current=(n+ads.length)%ads.length;document.querySelectorAll('.ad-slide').forEach((s,i)=>{s.classList.toggle('active',i===current);s.setAttribute('aria-hidden',i===current?'false':'true')});document.querySelectorAll('.ad-dot').forEach((d,i)=>d.classList.toggle('active',i===current));};
-        const restart=()=>{clearInterval(timer);timer=setInterval(()=>render(current+1),5500)};
-        document.getElementById('adPrev').addEventListener('click',()=>{render(current-1);restart()});
-        document.getElementById('adNext').addEventListener('click',()=>{render(current+1);restart()});
-        dots.querySelectorAll('[data-ad]').forEach(d=>d.addEventListener('click',()=>{render(Number(d.dataset.ad));restart()}));
-        document.getElementById('adCarousel').addEventListener('mouseenter',()=>clearInterval(timer));
-        document.getElementById('adCarousel').addEventListener('mouseleave',restart);
+        let ads=defaults;
+        try{
+          const saved=JSON.parse(localStorage.getItem('giselaAds')||'null');
+          if(Array.isArray(saved)) ads=saved.filter(a=>a && a.published);
+        }catch(e){}
+        if(!ads.length)return;
+        const root=document.getElementById('floatingAds'); if(!root)return;
+        let current=0,timer;
+        const esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+        function render(){
+          const a=ads[current];
+          root.innerHTML='<article class="floating-ad" role="status">'+
+            '<button class="floating-ad-close focus-ring" id="closeFloatingAd" aria-label="Close advertisement"><i data-lucide="x" class="w-4 h-4"></i></button>'+
+            '<div class="floating-ad-kicker">'+esc(a.badge||a.category||'School advertisement')+'</div>'+
+            '<h3>'+esc(a.title||'School announcement')+'</h3>'+
+            '<p>'+esc(a.description||a.text||'')+'</p>'+
+            '<div class="floating-ad-actions">'+
+              '<a class="floating-ad-cta focus-ring" href="'+esc(a.href||'#admissions')+'">'+esc(a.cta||'Learn more')+' <span aria-hidden="true">→</span></a>'+
+              '<span class="floating-ad-count">'+(current+1)+' / '+ads.length+'</span>'+
+              (ads.length>1?'<span class="floating-ad-nav"><button class="focus-ring" id="floatingPrev" aria-label="Previous advertisement"><i data-lucide="chevron-left" class="w-3.5 h-3.5"></i></button><button class="focus-ring" id="floatingNext" aria-label="Next advertisement"><i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></button></span>':'')+
+            '</div></article>';
+          lucide.createIcons();
+          document.getElementById('closeFloatingAd').addEventListener('click',()=>{clearInterval(timer);root.innerHTML='';});
+          if(ads.length>1){
+            document.getElementById('floatingPrev').addEventListener('click',()=>{current=(current-1+ads.length)%ads.length;restart()});
+            document.getElementById('floatingNext').addEventListener('click',()=>{current=(current+1)%ads.length;restart()});
+          }
+        }
+        function restart(){clearInterval(timer);render();if(ads.length>1){const seconds=Math.max(4,Number(ads[current].duration)||7);timer=setTimeout(()=>{current=(current+1)%ads.length;restart()},seconds*1000)}}
         restart();
       })();
     </script>
