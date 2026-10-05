@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420" width="750" height="420">
+  <defs>
+    <linearGradient id="mexBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c231a"/>
+      <stop offset="50%" stop-color="#123d2e"/>
+      <stop offset="100%" stop-color="#164635"/>
+    </linearGradient>
+    <linearGradient id="mgoldText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fceda4"/>
+      <stop offset="50%" stop-color="#d9aa45"/>
+      <stop offset="100%" stop-color="#f3cb69"/>
+    </linearGradient>
+    <pattern id="mexGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <rect width="750" height="420" fill="url(#mexBg)"/>
+  <rect width="750" height="420" fill="url(#mexGrid)"/>
+
+  <!-- Science Motifs in background -->
+  <g transform="translate(610, 160)" opacity="0.45">
+    <ellipse cx="0" cy="0" rx="90" ry="34" fill="none" stroke="#4ade80" stroke-width="1.5" transform="rotate(30)"/>
+    <ellipse cx="0" cy="0" rx="90" ry="34" fill="none" stroke="#38bdf8" stroke-width="1.5" transform="rotate(-30)"/>
+    <circle cx="0" cy="0" r="16" fill="#4ade80"/>
+  </g>
+
+  <!-- Mobile Poster Layout -->
+  <g transform="translate(45, 60)">
+    <rect x="0" y="0" width="300" height="26" rx="13" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(217, 170, 69, 0.4)" stroke-width="1"/>
+    <circle cx="14" cy="13" r="3.5" fill="#d9aa45"/>
+    <text x="26" y="17" font-family="'DM Sans', sans-serif" font-size="10" font-weight="700" fill="#f5d77f" letter-spacing="1.2">GEMHS SILACHARI</text>
+
+    <text x="0" y="70" font-family="'Manrope', sans-serif" font-size="34" font-weight="800" fill="#ffffff" letter-spacing="-0.5">Annual Science &amp;</text>
+    <text x="0" y="112" font-family="'Manrope', sans-serif" font-size="34" font-weight="800" fill="url(#mgoldText)" letter-spacing="-0.5">Cultural Exhibition</text>
+
+    <text x="0" y="152" font-family="'DM Sans', sans-serif" font-size="14.5" font-weight="500" fill="rgba(255,255,255,0.85)">
+      "Innovating for Tomorrow — Young Minds"
+    </text>
+
+    <g transform="translate(0, 185)">
+      <rect x="0" y="0" width="160" height="34" rx="8" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
+      <text x="80" y="21" font-family="'DM Sans', sans-serif" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">📅 Nov 14–16, 2026</text>
+
+      <rect x="172" y="0" width="160" height="34" rx="8" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)"/>
+      <text x="252" y="21" font-family="'DM Sans', sans-serif" font-size="11.5" font-weight="700" fill="#ffffff" text-anchor="middle">📍 School Campus</text>
+    </g>
+
+    <g transform="translate(0, 230)">
+      <rect x="0" y="0" width="220" height="32" rx="8" fill="rgba(217,170,69,0.18)" stroke="#d9aa45" stroke-width="1"/>
+      <text x="110" y="20" font-family="'DM Sans', sans-serif" font-size="11.5" font-weight="800" fill="#fceda4" text-anchor="middle">★ Open to Parents &amp; Visitors</text>
+    </g>
+  </g>
+
+  <rect x="0" y="416" width="750" height="4" fill="url(#mgoldText)"/>
+</svg>

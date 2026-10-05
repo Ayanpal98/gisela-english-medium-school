@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420" width="750" height="420">
+  <defs>
+    <linearGradient id="machBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081c15"/>
+      <stop offset="50%" stop-color="#0f3427"/>
+      <stop offset="100%" stop-color="#184b38"/>
+    </linearGradient>
+    <linearGradient id="mtrophyGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2b2"/>
+      <stop offset="50%" stop-color="#e8bf63"/>
+      <stop offset="100%" stop-color="#b37e19"/>
+    </linearGradient>
+    <radialGradient id="machRadial" cx="75%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#d9aa45" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0f3427" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="machGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <rect width="750" height="420" fill="url(#machBg)"/>
+  <rect width="750" height="420" fill="url(#machGrid)"/>
+  <rect width="750" height="420" fill="url(#machRadial)"/>
+
+  <!-- Mobile Trophy on Right -->
+  <g transform="translate(600, 190)">
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#d9aa45" stroke-width="1" stroke-dasharray="6 5" opacity="0.3"/>
+    <path d="M -32 -40 L 32 -40 Q 28 10 0 18 Q -28 10 -32 -40 Z" fill="url(#mtrophyGold)"/>
+    <path d="M -32 -32 C -55 -28 -50 -6 -28 -10" fill="none" stroke="url(#mtrophyGold)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 32 -32 C 55 -28 50 -6 28 -10" fill="none" stroke="url(#mtrophyGold)" stroke-width="5" stroke-linecap="round"/>
+    <rect x="-8" y="18" width="16" height="18" fill="#f5d77f"/>
+    <rect x="-26" y="36" width="52" height="14" rx="3" fill="url(#mtrophyGold)"/>
+    <polygon points="0,-18 3,-8 13,-8 5,-2 8,8 0,2 -8,8 -5,-2 -13,-8 -3,-8" fill="#102f24"/>
+  </g>
+</svg>

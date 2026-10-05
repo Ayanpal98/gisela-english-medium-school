@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/banner-carousel.css">
   <style>
     :root{--forest:#102f24;--green:#1f6b4b;--mint:#edf7f0;--gold:#d9aa45;--ink:#12221b;--muted:#66736d}
     *{box-sizing:border-box}
@@ -122,6 +123,52 @@
   </header>
 
   <main id="home">
+    <!-- LARGE PROMOTIONAL & ADVERTISEMENT BANNER CAROUSEL -->
+    <section class="banner-section-wrapper" aria-label="Featured Announcements, Advertisements and Fast Facts">
+      <div id="bannerCarouselRoot"></div>
+
+      <!-- QUICK SCHOOL FACTS / STATISTICS STRIP -->
+      <aside class="quick-stats-strip" aria-label="School Fast Facts and Quick Statistics">
+        <div class="quick-stats-grid">
+          <div class="stat-item">
+            <div class="stat-icon-box stat-icon-forest" aria-hidden="true"><i data-lucide="calendar" class="w-5 h-5"></i></div>
+            <div class="stat-info">
+              <div class="stat-number">Estd. 2003</div>
+              <div class="stat-label">20+ Years in Silachari</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon-box stat-icon-gold" aria-hidden="true"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+            <div class="stat-info">
+              <div class="stat-number">Classes 1–10</div>
+              <div class="stat-label">English-Medium School</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon-box stat-icon-blue" aria-hidden="true"><i data-lucide="landmark" class="w-5 h-5"></i></div>
+            <div class="stat-info">
+              <div class="stat-number">Tripura Board</div>
+              <div class="stat-label">Secondary Affiliation</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon-box stat-icon-amber" aria-hidden="true"><i data-lucide="home" class="w-5 h-5"></i></div>
+            <div class="stat-info">
+              <div class="stat-number">Day &amp; Hostel</div>
+              <div class="stat-label">Enquiry Support</div>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon-box stat-icon-emerald" aria-hidden="true"><i data-lucide="badge-check" class="w-5 h-5"></i></div>
+            <div class="stat-info">
+              <div class="stat-number">UDISE Verified</div>
+              <div class="stat-label">16071200409</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
     <!-- HERO -->
     <section class="relative overflow-hidden bg-[#102f24] text-white">
       <div class="absolute inset-0 hero-grid opacity-60"></div>
@@ -647,6 +694,6 @@
         document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{const label=(a.textContent||'').trim();if(label&&label.length<45&&toast){toast.textContent='Opening '+label;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1300)}}));
       })();
     </script>
-
+    <script src="js/banner-carousel.js"></script>
   </body>
 </html>

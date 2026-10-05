@@ -72,6 +72,7 @@
         <button class="nav-item" data-section="gallery"><i data-lucide="images"></i><span>Gallery</span></button>
         <button class="nav-item" data-section="achievements"><i data-lucide="trophy"></i><span>Achievements</span></button>
         <button class="nav-item" data-section="culture"><i data-lucide="sparkles"></i><span>School Culture</span></button>
+        <button class="nav-item" data-section="banners"><i data-lucide="layout-template"></i><span>Homepage Banners</span></button>
         <button class="nav-item" data-section="ads"><i data-lucide="megaphone"></i><span>Advertisements</span></button><button class="nav-item" data-section="faculty"><i data-lucide="users"></i><span>Faculty</span></button>
         <div class="pt-6 pb-2 px-3 text-[10px] font-extrabold uppercase tracking-[.18em] text-white/35">System</div>
         <button class="nav-item" data-section="settings"><i data-lucide="settings-2"></i><span>Settings</span></button>
@@ -160,6 +161,12 @@
         <section id="culture" class="admin-section hidden">
           <div class="section-heading"><div><p class="eyebrow">School identity</p><h1>School culture</h1><p>Capture activities, celebrations, clubs, sports, projects and community experiences visitors should see.</p></div><button class="primary-btn" data-open-modal="culture"><i data-lucide="plus"></i> Add culture story</button></div>
           <div class="content-grid" id="cultureGrid"></div>
+        </section>
+
+        <section id="banners" class="admin-section hidden">
+          <div class="section-heading"><div><p class="eyebrow">Website showcase</p><h1>Homepage Banner Carousel</h1><p>Manage large promotional, announcement and sponsored banners displayed below the navbar.</p></div><button class="primary-btn" data-open-modal="banner"><i data-lucide="plus"></i> New banner</button></div>
+          <div class="mb-5 rounded-2xl bg-emerald-50 border border-emerald-200 p-4 text-sm text-emerald-900 flex gap-3"><i data-lucide="sparkles" class="w-5 h-5 shrink-0"></i><div><strong>Large Cinematic Slider.</strong> Banners appear prominently directly below the main navigation. Supports both official school banners and third-party sponsored advertisements with mandatory "Sponsored" labels.</div></div>
+          <div class="content-grid" id="bannersGrid"></div>
         </section>
 
         <section id="ads" class="admin-section hidden">

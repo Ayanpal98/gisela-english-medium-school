@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 420" width="1500" height="420">
+  <defs>
+    <linearGradient id="achBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081c15"/>
+      <stop offset="50%" stop-color="#0f3427"/>
+      <stop offset="100%" stop-color="#184b38"/>
+    </linearGradient>
+    <linearGradient id="trophyGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff2b2"/>
+      <stop offset="50%" stop-color="#e8bf63"/>
+      <stop offset="100%" stop-color="#b37e19"/>
+    </linearGradient>
+    <radialGradient id="achRadial" cx="80%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#d9aa45" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#0f3427" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="achGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <rect width="1500" height="420" fill="url(#achBg)"/>
+  <rect width="1500" height="420" fill="url(#achGrid)"/>
+  <rect width="1500" height="420" fill="url(#achRadial)"/>
+
+  <!-- Celebratory Floating Star & Geometric Confetti Elements -->
+  <g opacity="0.3">
+    <polygon points="1200,60 1205,75 1220,80 1205,85 1200,100 1195,85 1180,80 1195,75" fill="#f5d77f"/>
+    <polygon points="1350,110 1353,120 1365,123 1353,126 1350,136 1347,126 1335,123 1347,120" fill="#f5d77f"/>
+    <polygon points="1050,140 1054,152 1068,155 1054,158 1050,170 1046,158 1032,155 1046,152" fill="#4ade80"/>
+    <polygon points="1400,280 1404,292 1418,295 1404,298 1400,310 1396,298 1382,295 1396,292" fill="#f5d77f"/>
+    <polygon points="980,80 983,90 993,92 983,94 980,104 977,94 967,92 977,90" fill="#4ade80"/>
+  </g>
+
+  <!-- Illustrated Trophy & Laurels on the Right -->
+  <g transform="translate(1220, 200)">
+    <!-- Aura Rings -->
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#d9aa45" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.4"/>
+    <circle cx="0" cy="0" r="175" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+
+    <!-- Trophy SVG Shape -->
+    <!-- Cup Body -->
+    <path d="M -45 -55 L 45 -55 Q 40 15 0 25 Q -40 15 -45 -55 Z" fill="url(#trophyGold)"/>
+    <!-- Handles -->
+    <path d="M -45 -45 C -75 -40 -70 -10 -40 -15" fill="none" stroke="url(#trophyGold)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 45 -45 C 75 -40 70 -10 40 -15" fill="none" stroke="url(#trophyGold)" stroke-width="7" stroke-linecap="round"/>
+    <!-- Stem & Base -->
+    <rect x="-10" y="25" width="20" height="25" fill="#f5d77f"/>
+    <rect x="-35" y="50" width="70" height="18" rx="4" fill="url(#trophyGold)"/>
+    <rect x="-42" y="68" width="84" height="12" rx="3" fill="#0d251d" stroke="#d9aa45" stroke-width="1.5"/>
+
+    <!-- Laurel Wreath Leaves (Left and Right) -->
+    <g fill="#d9aa45" opacity="0.8">
+      <ellipse cx="-80" cy="20" rx="14" ry="7" transform="rotate(-30 -80 20)"/>
+      <ellipse cx="-85" cy="-20" rx="14" ry="7" transform="rotate(-15 -85 -20)"/>
+      <ellipse cx="-75" cy="-60" rx="14" ry="7" transform="rotate(10 -75 -60)"/>
+      <ellipse cx="80" cy="20" rx="14" ry="7" transform="rotate(30 80 20)"/>
+      <ellipse cx="85" cy="-20" rx="14" ry="7" transform="rotate(15 85 -20)"/>
+      <ellipse cx="75" cy="-60" rx="14" ry="7" transform="rotate(-10 75 -60)"/>
+    </g>
+
+    <!-- Star on Trophy -->
+    <polygon points="0,-25 4,-12 18,-12 7,-3 11,11 0,2 -11,11 -7,-3 -18,-12 -4,-12" fill="#102f24"/>
+  </g>
+</svg>

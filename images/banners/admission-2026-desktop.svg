@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 420" width="1500" height="420">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a2018"/>
+      <stop offset="50%" stop-color="#102f24"/>
+      <stop offset="100%" stop-color="#164635"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d77f"/>
+      <stop offset="50%" stop-color="#d9aa45"/>
+      <stop offset="100%" stop-color="#b88426"/>
+    </linearGradient>
+    <linearGradient id="mintGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+    <radialGradient id="glowG" cx="80%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#2ca16f" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#102f24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow" cx="20%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#d9aa45" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#102f24" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1500" height="420" fill="url(#bgGrad)"/>
+  <rect width="1500" height="420" fill="url(#gridPattern)"/>
+  <rect width="1500" height="420" fill="url(#glowG)"/>
+  <rect width="1500" height="420" fill="url(#goldGlow)"/>
+
+  <!-- Geometric Abstract Architectural Shapes -->
+  <g opacity="0.35">
+    <path d="M 1100 -50 L 1550 400 L 1300 450 L 950 0 Z" fill="url(#mintGrad)"/>
+    <circle cx="1280" cy="180" r="160" fill="none" stroke="#d9aa45" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.4"/>
+    <circle cx="1280" cy="180" r="220" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+    <rect x="1180" y="80" width="200" height="200" rx="40" fill="none" stroke="#2ca16f" stroke-width="1.5" transform="rotate(45 1280 180)" opacity="0.3"/>
+  </g>
+
+  <!-- Decorative Illustrated Crest Element (Right Side) -->
+  <g transform="translate(1180, 110)">
+    <!-- Shield / Emblem Backing -->
+    <rect x="0" y="0" width="140" height="150" rx="30" fill="#0d251d" stroke="#d9aa45" stroke-width="2" opacity="0.85"/>
+    <circle cx="70" cy="65" r="42" fill="#164635" stroke="#f5d77f" stroke-width="1.5"/>
+    <!-- Book & Quill icon stylized -->
+    <path d="M 50 68 Q 70 58 70 78 Q 70 58 90 68 L 90 52 Q 70 42 70 60 Q 70 42 50 52 Z" fill="#f5d77f"/>
+    <!-- Graduation Cap / Torch -->
+    <path d="M 70 34 L 88 42 L 70 50 L 52 42 Z" fill="#ffffff" opacity="0.95"/>
+    <!-- Ribbon -->
+    <rect x="25" y="120" width="90" height="18" rx="9" fill="url(#goldGrad)"/>
+    <text x="70" y="132" font-family="'Manrope', sans-serif" font-size="9" font-weight="800" fill="#102f24" text-anchor="middle" letter-spacing="1.5">ESTD 2003</text>
+  </g>
+
+  <!-- Atmospheric Wave Line -->
+  <path d="M 0 380 Q 400 320 800 370 T 1500 350 L 1500 420 L 0 420 Z" fill="#091b14" opacity="0.6"/>
+</svg>
