@@ -251,7 +251,7 @@
       // Campus Section
       'campus.kicker': 'Campus & facilities',
       'campus.title': 'The spaces that support school life.',
-      'campus.desc': 'Facilities shown below are kept intentionally factual. Detailed photos, timings and facility specifications can be managed from the school admin area in the next phase.',
+     
       'campus.library_title': 'Library',
       'campus.library_desc': 'A dedicated space for reading and self-learning.',
       'campus.lab_title': 'Computer Lab',
@@ -277,7 +277,7 @@
       // Gallery Section
       'gallery.kicker': 'Moments & Memories',
       'gallery.title': 'School Photo Gallery',
-      'gallery.desc': 'Glimpses of academic milestones, annual exhibitions, sports tournaments, and student life at Gisela English Medium High School.',
+     
       'gallery.watch_video': 'Watch Video Tour',
       'gallery.photo1_tag': 'Academic Event',
       'gallery.photo1_title': 'Science & Project Fair',
