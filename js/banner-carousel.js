@@ -79,7 +79,7 @@
     }
   ];
 
-  const ROTATION_INTERVAL = 6000; // 6 seconds auto-slide
+  const ROTATION_INTERVAL = 5000; // 5 seconds auto-slide as requested
   const ESC_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
   const esc = (str) => String(str ?? '').replace(/[&<>"']/g, (m) => ESC_MAP[m]);
 

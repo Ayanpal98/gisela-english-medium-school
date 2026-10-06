@@ -1,0 +1,1044 @@
+/* ==========================================================================
+   GISELA ENGLISH MEDIUM HIGH SCHOOL - INSTITUTIONAL THEME STYLESHEET
+   Accurate Proportions, Layout Hierarchy & Full Responsiveness
+   ========================================================================== */
+
+:root {
+  /* Institutional Blue & Accent Palette */
+  --inst-blue-dark: #071f38;
+  --inst-blue-primary: #0c3866;
+  --inst-blue-nav: #082647;
+  --inst-blue-nav-hover: #0f467c;
+  --inst-blue-nav-active: #051930;
+  --inst-blue-light: #eef5fc;
+  --inst-gold: #d9aa45;
+  --inst-gold-light: #f4cf79;
+  --inst-gold-dark: #b5862b;
+  --inst-slate-dark: #0f172a;
+  --inst-slate-body: #334155;
+  --inst-slate-muted: #64748b;
+  --inst-border-subtle: rgba(255, 255, 255, 0.14);
+  --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-cursive: 'Caveat', cursive, 'Playfair Display', serif;
+}
+
+/* High Contrast Accessibility Mode */
+body.high-contrast {
+  --inst-blue-dark: #000000;
+  --inst-blue-primary: #001a33;
+  --inst-blue-nav: #000000;
+  --inst-blue-nav-hover: #1a1a1a;
+  --inst-blue-nav-active: #000000;
+  --inst-gold: #ffff00;
+  --inst-gold-light: #ffff80;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.high-contrast .school-header,
+body.high-contrast .navbar,
+body.high-contrast .top-bar {
+  border-bottom: 2px solid #ffff00 !important;
+}
+
+/* Standard Container */
+.container {
+  width: min(86%, 1600px);
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   1. TOP UTILITY BAR (~40–44px)
+   ========================================================================== */
+.top-bar {
+  height: 42px;
+  background: var(--inst-blue-dark);
+  color: #ffffff;
+  border-bottom: 1px solid var(--inst-border-subtle);
+  display: flex;
+  align-items: center;
+  font-size: 0.775rem;
+  font-family: var(--font-body);
+  position: relative;
+  z-index: 55;
+}
+
+.top-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 100%;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.ministry-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 0.35rem;
+  background: rgba(217, 170, 69, 0.2);
+  color: var(--inst-gold-light);
+  flex-shrink: 0;
+}
+
+.ministry-text {
+  font-weight: 600;
+  color: #d7e4f5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.01em;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* Accessibility Buttons */
+.accessibility-ctrls {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  padding: 1px;
+}
+
+.a11y-btn {
+  background: transparent;
+  border: none;
+  color: #d7e4f5;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  cursor: pointer;
+  border-radius: 0.35rem;
+  transition: all 0.18s ease;
+  line-height: 1;
+}
+
+.a11y-btn:hover,
+.a11y-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  outline: none;
+}
+
+.topbar-helpline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #d7e4f5;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: color 0.18s ease;
+}
+
+.topbar-helpline-link:hover {
+  color: #ffffff;
+}
+
+.topbar-login-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  background: rgba(217, 170, 69, 0.15);
+  border: 1px solid rgba(217, 170, 69, 0.4);
+  color: #fff;
+  border-radius: 0.45rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.73rem;
+  transition: all 0.2s ease;
+}
+
+.topbar-login-link:hover {
+  background: var(--inst-gold);
+  color: var(--inst-blue-dark);
+}
+
+/* ==========================================================================
+   2. MAIN SCHOOL HEADER (~180–190px)
+   ========================================================================== */
+.school-header {
+  min-height: 185px;
+  background: linear-gradient(135deg, #071f38 0%, #0c3866 52%, #092748 100%);
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--inst-border-subtle);
+  overflow: hidden;
+}
+
+.school-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  width: min(86%, 1600px);
+  margin-inline: auto;
+}
+
+/* School Logo */
+.school-logo-link {
+  display: inline-flex;
+  flex-shrink: 0;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: transform 0.25s ease;
+}
+
+.school-logo-link:hover {
+  transform: scale(1.03);
+}
+
+.school-logo {
+  width: 135px;
+  height: 135px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: #09223d;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* School Details Text Area */
+.school-header-text {
+  flex: 1;
+  min-width: 0;
+  padding-right: 1rem;
+}
+
+.school-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.school-details {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: #dce9f8;
+  margin-top: 0.45rem;
+  line-height: 1.35;
+}
+
+.school-sub-details {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--inst-gold-light);
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Large Search Box (~300px × 58px) */
+.header-search-wrap {
+  flex-shrink: 0;
+}
+
+.search-box {
+  width: 300px;
+  height: 58px;
+  background: #ffffff;
+  border-radius: 0.85rem;
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.45rem 0.35rem 0.85rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.search-box:focus-within {
+  border-color: var(--inst-gold);
+  box-shadow: 0 12px 32px rgba(217, 170, 69, 0.3);
+}
+
+.search-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  color: #64748b;
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-size: 0.875rem;
+  color: #0f172a;
+  font-weight: 500;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+  font-size: 0.825rem;
+}
+
+.search-btn {
+  height: 100%;
+  padding: 0 1rem;
+  background: var(--inst-blue-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.65rem;
+  font-weight: 700;
+  font-size: 0.825rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.search-btn:hover {
+  background: #092c53;
+  transform: translateY(-1px);
+}
+
+.search-btn-icon {
+  display: none;
+}
+
+/* ==========================================================================
+   3. NAVIGATION BAR (~58–64px)
+   ========================================================================== */
+.navbar {
+  height: 62px;
+  background: var(--inst-blue-nav);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2.5px solid var(--inst-gold);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0.15rem;
+}
+
+.nav-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 0 0.85rem;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 600;
+  color: #e2edf8;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-item:hover > .nav-link,
+.nav-item:focus-within > .nav-link {
+  background: var(--inst-blue-nav-hover);
+  color: #ffffff;
+}
+
+/* Active Menu Item */
+.nav-item.is-active > .nav-link {
+  background: var(--inst-blue-nav-active);
+  color: var(--inst-gold-light);
+  box-shadow: inset 0 -3px 0 var(--inst-gold);
+}
+
+.nav-arrow {
+  width: 0.9rem;
+  height: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  transition: transform 0.22s ease, color 0.2s ease;
+}
+
+.nav-item:hover .nav-arrow,
+.nav-item:focus-within .nav-arrow {
+  transform: rotate(180deg);
+  color: var(--inst-gold);
+}
+
+/* Dropdown Menu Panel */
+.dropdown-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-top: 0.35rem;
+  z-index: 70;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+}
+
+.nav-item:hover > .dropdown-panel,
+.nav-item:focus-within > .dropdown-panel,
+.nav-item.is-open > .dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-panel-card {
+  width: 18.5rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid rgba(7, 31, 56, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.dropdown-panel-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: #0f172a;
+  transition: all 0.18s ease;
+}
+
+.dropdown-panel-link:hover,
+.dropdown-panel-link:focus-visible {
+  background: #f0f6fc;
+  transform: translateX(3px);
+}
+
+.dropdown-panel-icon {
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 0.55rem;
+  background: #eef5fc;
+  color: var(--inst-blue-primary);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  transition: all 0.18s ease;
+}
+
+.dropdown-panel-link:hover .dropdown-panel-icon {
+  background: var(--inst-blue-primary);
+  color: #ffffff;
+}
+
+.dropdown-panel-title {
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: #0f172a;
+}
+
+.dropdown-panel-desc {
+  font-size: 0.735rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+  line-height: 1.35;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.15rem;
+  background: var(--inst-gold);
+  color: #071f38;
+  font-weight: 800;
+  font-size: 0.85rem;
+  border-radius: 0.65rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(217, 170, 69, 0.35);
+  transition: all 0.2s ease;
+}
+
+.nav-cta-btn:hover {
+  background: var(--inst-gold-light);
+  transform: translateY(-1px);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   4. HERO / BANNER SLIDER (~500–520px Desktop)
+   ========================================================================== */
+.hero {
+  height: clamp(420px, 27.5vw, 520px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #081a2c;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-slider-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Banner Carousel Track & Slides */
+#bannerCarouselRoot {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-track-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-slides-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 550ms cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.hero-slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #081a2c;
+}
+
+.hero-slide-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.hero-slide-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Scrim / Overlay for Text Legibility */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 31, 56, 0.94) 0%,
+    rgba(7, 31, 56, 0.8) 42%,
+    rgba(7, 31, 56, 0.4) 68%,
+    rgba(7, 31, 56, 0.05) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-content-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  padding: 2rem 5rem;
+  pointer-events: none;
+}
+
+.hero-content-inner {
+  max-width: 650px;
+  pointer-events: auto;
+}
+
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(217, 170, 69, 0.2);
+  border: 1px solid rgba(217, 170, 69, 0.45);
+  color: var(--inst-gold-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.85rem;
+}
+
+.hero-slide-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0;
+}
+
+.hero-slide-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--inst-gold-light);
+  margin-top: 0.45rem;
+}
+
+.hero-slide-desc {
+  font-size: 0.925rem;
+  color: #d1e2f6;
+  line-height: 1.5;
+  margin-top: 0.65rem;
+  max-width: 540px;
+}
+
+.hero-slide-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.35rem;
+  background: #ffffff;
+  color: #071f38;
+  font-weight: 800;
+  font-size: 0.875rem;
+  border-radius: 0.65rem;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.hero-slide-cta:hover {
+  background: var(--inst-gold-light);
+  transform: translateY(-1px);
+}
+
+/* Slider Controls */
+.hero-slider-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(7, 31, 56, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.hero-slider-nav-btn:hover,
+.hero-slider-nav-btn:focus-visible {
+  background: var(--inst-blue-primary);
+  border-color: var(--inst-gold);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.hero-slider-prev {
+  left: 1.25rem;
+}
+
+.hero-slider-next {
+  right: 1.25rem;
+}
+
+/* Play / Pause Button in Top-Right */
+.hero-slider-pause-play {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 9999px;
+  background: rgba(7, 31, 56, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.hero-slider-pause-play:hover {
+  background: var(--inst-blue-primary);
+  border-color: var(--inst-gold);
+}
+
+/* Minimal Indicator Dots */
+.hero-slider-dots {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+  background: rgba(7, 31, 56, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.hero-dot.is-active {
+  width: 24px;
+  background: var(--inst-gold);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS (Tablets & Mobile <768px)
+   ========================================================================== */
+
+/* Tablets (769px - 1180px) */
+@media (max-width: 1180px) {
+  .nav-menu {
+    gap: 0;
+  }
+  .nav-link {
+    font-size: 14.5px;
+    padding: 0 0.55rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .school-header {
+    min-height: 155px;
+    padding: 1rem 0;
+  }
+
+  .school-logo {
+    width: 105px;
+    height: 105px;
+  }
+
+  .school-title {
+    font-size: 22px;
+  }
+
+  .school-details {
+    font-size: 15px;
+  }
+
+  .search-box {
+    width: 240px;
+    height: 50px;
+  }
+
+  .hero {
+    height: clamp(320px, 35vw, 380px);
+  }
+
+  .hero-content-wrap {
+    padding: 1.5rem 3.5rem;
+  }
+}
+
+/* Mobile Devices below 768px */
+@media (max-width: 768px) {
+  .top-bar {
+    min-height: 36px;
+    height: auto;
+    padding: 6px 0;
+  }
+
+  .top-bar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+  }
+
+  .school-header {
+    min-height: auto;
+    padding: 16px 20px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .school-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .school-title {
+    font-size: 20px;
+  }
+
+  .school-details {
+    font-size: 14px;
+  }
+
+  .school-sub-details {
+    font-size: 12px;
+  }
+
+  .header-search-wrap {
+    width: 100%;
+  }
+
+  .search-box {
+    width: 100%;
+    height: 48px;
+  }
+
+  .search-btn-text {
+    display: none;
+  }
+
+  .search-btn-icon {
+    display: inline-block;
+  }
+
+  .navbar {
+    min-height: 55px;
+    height: auto;
+  }
+
+  .nav-menu,
+  .nav-cta-btn {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  .hero {
+    height: 240px;
+  }
+
+  .hero-scrim {
+    background: linear-gradient(
+      0deg,
+      rgba(7, 31, 56, 0.96) 0%,
+      rgba(7, 31, 56, 0.75) 55%,
+      rgba(7, 31, 56, 0.2) 100%
+    );
+  }
+
+  .hero-content-wrap {
+    padding: 1rem 1.25rem;
+    align-items: flex-end;
+  }
+
+  .hero-slide-desc {
+    display: none;
+  }
+
+  .hero-slide-cta {
+    margin-top: 0.65rem;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.775rem;
+  }
+
+  .hero-slider-nav-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-slider-prev {
+    left: 0.5rem;
+  }
+
+  .hero-slider-next {
+    right: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   6. MOBILE ACCORDION DRAWER
+   ========================================================================== */
+.mobile-nav-drawer {
+  background: #ffffff;
+  border-top: 1px solid rgba(7, 31, 56, 0.1);
+  padding: 1rem;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mobile-nav-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0f172a;
+  cursor: pointer;
+  list-style: none;
+}
+
+.mobile-nav-summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav-links {
+  background: #f8fafc;
+  border-radius: 0.65rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-sub-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+}
+
+.mobile-sub-link:hover {
+  background: #ffffff;
+  color: var(--inst-blue-primary);
+}
+
+/* Hero Slider Carousel Full Bleed Integration */
+.hero .banner-carousel-container {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  background: #081a2c !important;
+}
+
+.hero .banner-track-viewport {
+  aspect-ratio: auto !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: none !important;
+}
+
