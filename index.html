@@ -239,6 +239,33 @@
           </div>
         </div>
 
+        <!-- GALLERY DROPDOWN -->
+        <div class="nav-dropdown-item group relative">
+          <button type="button" class="nav-dropdown-trigger focus-ring" aria-expanded="false" aria-haspopup="true">
+            <span>Gallery</span>
+            <i data-lucide="chevron-down" class="nav-dropdown-arrow"></i>
+          </button>
+          <div class="nav-dropdown-menu">
+            <div class="dropdown-card">
+              <div class="dropdown-header">Media &amp; Moments</div>
+              <a href="#gallery-photos" class="dropdown-link">
+                <div class="dropdown-icon"><i data-lucide="images" class="w-4 h-4"></i></div>
+                <div class="dropdown-item-body">
+                  <div class="dropdown-item-title">Photos</div>
+                  <div class="dropdown-item-desc">Events, sports &amp; campus life</div>
+                </div>
+              </a>
+              <a href="#video-tour" class="dropdown-link">
+                <div class="dropdown-icon"><i data-lucide="video" class="w-4 h-4"></i></div>
+                <div class="dropdown-item-body">
+                  <div class="dropdown-item-title">Videos</div>
+                  <div class="dropdown-item-desc">Campus walkthrough &amp; highlights</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <!-- ADMISSIONS DROPDOWN -->
         <div class="nav-dropdown-item group relative">
           <button type="button" class="nav-dropdown-trigger focus-ring" aria-expanded="false" aria-haspopup="true">
@@ -375,6 +402,21 @@
           <a href="#student-life" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Activities &amp; Participation</a>
           <a href="#achievements" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Student Achievements</a>
           <a href="#bannerCarouselRoot" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Events &amp; Exhibitions</a>
+        </div>
+      </details>
+
+      <!-- GALLERY ACCORDION -->
+      <details class="mobile-nav-group">
+        <summary class="mobile-nav-summary focus-ring">
+          <span class="mobile-summary-left">
+            <span class="mobile-summary-icon"><i data-lucide="images" class="w-4 h-4"></i></span>
+            <span>Gallery</span>
+          </span>
+          <i data-lucide="chevron-down" class="mobile-chevron"></i>
+        </summary>
+        <div class="mobile-dropdown-content">
+          <a href="#gallery-photos" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Photos</a>
+          <a href="#video-tour" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Videos</a>
         </div>
       </details>
 
@@ -758,6 +800,160 @@
       </div>
     </section>
 
+    <!-- PHOTO GALLERY -->
+    <section id="gallery-photos" class="py-20 lg:py-24 bg-[#f8faf9] border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Moments &amp; Memories</span>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900">School Photo Gallery</h2>
+            <p class="mt-3 text-slate-600 max-w-2xl leading-7">Glimpses of academic milestones, annual exhibitions, sports tournaments, and student life at Gisela English Medium High School.</p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <a href="#video-tour" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-[#edf7f0] hover:text-[#1f6b4b] hover:border-[#b8d5c7] transition">
+              <i data-lucide="video" class="w-4 h-4 text-[#1f6b4b]"></i>
+              <span>Watch Video Tour</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Photo Cards Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Photo Card 1: Science & Innovation -->
+          <div class="group rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 bg-gradient-to-br from-[#102f24] to-[#1f6b4b] p-6 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#d9aa45_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="relative flex justify-between items-start">
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md">Academic Event</span>
+                <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="microscope" class="w-4 h-4 text-[#e8bf63]"></i></span>
+              </div>
+              <div class="relative">
+                <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Exhibition 2026</div>
+                <h3 class="text-xl font-extrabold text-white mt-1">Science &amp; Project Fair</h3>
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 leading-relaxed">Students presenting innovative science models, environmental projects, and interactive live demonstrations.</p>
+              <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+                <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Annual Fest</span>
+                <span class="text-[#1f6b4b] font-bold">Class 6–10</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo Card 2: Sports & Athletics -->
+          <div class="group rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 bg-gradient-to-br from-[#12372a] to-[#2d5a27] p-6 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="relative flex justify-between items-start">
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-white backdrop-blur-md">Sports Day</span>
+                <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="trophy" class="w-4 h-4 text-[#e8bf63]"></i></span>
+              </div>
+              <div class="relative">
+                <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Athletics &amp; Games</div>
+                <h3 class="text-xl font-extrabold text-white mt-1">Annual Sports Meet</h3>
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 leading-relaxed">Track events, relay races, football tournaments, and athletic achievements celebrated across school houses.</p>
+              <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+                <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Sports Week</span>
+                <span class="text-[#1f6b4b] font-bold">All Classes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo Card 3: Cultural Programmes -->
+          <div class="group rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 bg-gradient-to-br from-[#102f24] to-[#3b4d28] p-6 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#d9aa45_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="relative flex justify-between items-start">
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md">Cultural</span>
+                <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="palette" class="w-4 h-4 text-[#e8bf63]"></i></span>
+              </div>
+              <div class="relative">
+                <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Celebrations</div>
+                <h3 class="text-xl font-extrabold text-white mt-1">Cultural Day &amp; Arts</h3>
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 leading-relaxed">Traditional dance, music, drama recitals, and regional heritage programmes performed by students.</p>
+              <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+                <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Cultural Meet</span>
+                <span class="text-[#1f6b4b] font-bold">All Batches</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo Card 4: Classroom & Interactive Learning -->
+          <div class="group rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 bg-gradient-to-br from-[#1b4332] to-[#102f24] p-6 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#52b788_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="relative flex justify-between items-start">
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-white backdrop-blur-md">Academics</span>
+                <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="book-open" class="w-4 h-4 text-[#e8bf63]"></i></span>
+              </div>
+              <div class="relative">
+                <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Classroom Moments</div>
+                <h3 class="text-xl font-extrabold text-white mt-1">Foundational Learning</h3>
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 leading-relaxed">Interactive classroom sessions, group activities, library reading hours, and foundational language development.</p>
+              <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+                <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Everyday Life</span>
+                <span class="text-[#1f6b4b] font-bold">Class 1–5</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo Card 5: Computer Lab & Digital Learning -->
+          <div class="group rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 bg-gradient-to-br from-[#081c15] to-[#1b4332] p-6 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#e8bf63_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="relative flex justify-between items-start">
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md">Technology</span>
+                <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="monitor" class="w-4 h-4 text-[#e8bf63]"></i></span>
+              </div>
+              <div class="relative">
+                <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Digital Skills</div>
+                <h3 class="text-xl font-extrabold text-white mt-1">Computer Lab Sessions</h3>
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 leading-relaxed">Practical computer education, digital literacy, and educational software practice in the ICT room.</p>
+              <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+                <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Lab Practical</span>
+                <span class="text-[#1f6b4b] font-bold">Class 4–10</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo Card 6: National Celebrations & Assembly -->
+          <div class="group rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+            <div class="relative h-56 bg-gradient-to-br from-[#102f24] to-[#244b3c] p-6 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#d9aa45_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="relative flex justify-between items-start">
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md">Celebration</span>
+                <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="flag" class="w-4 h-4 text-[#e8bf63]"></i></span>
+              </div>
+              <div class="relative">
+                <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Patriotic Events</div>
+                <h3 class="text-xl font-extrabold text-white mt-1">Independence &amp; Republic Day</h3>
+              </div>
+            </div>
+            <div class="p-5">
+              <p class="text-xs text-slate-600 leading-relaxed">Flag hoisting ceremonies, parade drills, patriotic recitations, and community assembly celebrations.</p>
+              <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
+                <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> National Days</span>
+                <span class="text-[#1f6b4b] font-bold">School Wide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- VIDEO -->
     <section id="video-tour" class="py-20 lg:py-28 bg-white border-y border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -919,8 +1115,9 @@
         <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-white/55">
           <a href="#about" class="hover:text-white">About</a><a href="#academics" class="hover:text-white">Academics</a>
           <a href="#campus" class="hover:text-white">Campus</a><a href="#hostel" class="hover:text-white">Hostel</a>
-          <a href="#video-tour" class="hover:text-white">Video</a><a href="#achievements" class="hover:text-white">Achievements</a><a href="#principal-message" class="hover:text-white">Principal</a>
-          <a href="#admissions" class="hover:text-white">Admissions</a><a href="#admission-help" class="hover:text-white">Parent Help</a><a href="#contact" class="hover:text-white">Contact</a>
+          <a href="#gallery-photos" class="hover:text-white">Photos</a><a href="#video-tour" class="hover:text-white">Videos</a>
+          <a href="#achievements" class="hover:text-white">Achievements</a><a href="#principal-message" class="hover:text-white">Principal</a>
+          <a href="#admissions" class="hover:text-white">Admissions</a><a href="#admission-help" class="hover:text-white">Parent Help</a>
         </div>
       </div>
       <div>
@@ -989,7 +1186,7 @@
     const chatbotSuggestions=document.getElementById('chatbotSuggestions');
     const chatbotTopics=[['Admissions','What is the admission process?'],['Classes','Which classes does the school offer?'],['Hostel','Is hostel information available?'],['Portal','How do I open the school portal?'],['Contact','Where is the school located?']];
     function chatbotAdd(text,who='bot'){const row=document.createElement('div');row.className=who==='user'?'flex justify-end':'flex justify-start';const bubble=document.createElement('div');bubble.className=who==='user'?'max-w-[85%] rounded-2xl rounded-br-md bg-[#1f6b4b] text-white px-4 py-3 text-sm leading-6 shadow-sm':'max-w-[88%] rounded-2xl rounded-bl-md bg-white border border-slate-200 text-slate-700 px-4 py-3 text-sm leading-6 shadow-sm';bubble.textContent=text;row.appendChild(bubble);chatbotMessages.appendChild(row);chatbotMessages.scrollTop=chatbotMessages.scrollHeight;}
-    function chatbotAnswer(q){const text=q.toLowerCase();if(/admission|apply|enrol|enroll|application/.test(text))return 'You can start an admission enquiry from the Admissions section. The enquiry form is for Classes 1–10 and the current website build is prepared for a future secure submission workflow.';if(/class|grade|standard|study|school offer/.test(text))return 'Gisela English Medium High School provides English-medium schooling from Class 1 to Class 10.';if(/hostel|residential|boarding/.test(text))return 'The website includes hostel information and enquiry support. For current availability, fees and rules, please confirm directly with the school.';if(/portal|parent|student|teacher|attendance|result|assignment/.test(text))return 'The School Portal is available for Parent, Student and Teacher workflows, including attendance, academics, assignments and results in the current preview build.';if(/where|location|address|silachari|contact|visit/.test(text))return 'The school is located in Silachari, Gomati District, Tripura — PIN 799104. Please confirm current office timings before visiting.';if(/principal|message|leadership/.test(text))return 'You can read the Principal’s Message section on this website. The displayed message is a public website message and the Principal’s name can be added by the school.';if(/achievement|award|sports|culture|activity/.test(text))return 'The Achievements & School Culture section is designed for verified student achievements, competitions, sports, cultural activities and school events.';return 'I can help with admissions, classes, hostel information, the school portal, achievements, or the school location. Try one of those topics.';}
+    function chatbotAnswer(q){const text=q.toLowerCase();if(/admission|apply|enrol|enroll|application/.test(text))return 'You can start an admission enquiry from the Admissions section. The enquiry form is for Classes 1–10 and the current website build is prepared for a future secure submission workflow.';if(/class|grade|standard|study|school offer/.test(text))return 'Gisela English Medium High School provides English-medium schooling from Class 1 to Class 10.';if(/hostel|residential|boarding/.test(text))return 'The website includes hostel information and enquiry support. For current availability, fees and rules, please confirm directly with the school.';if(/portal|parent|student|teacher|attendance|result|assignment/.test(text))return 'The School Portal is available for Parent, Student and Teacher workflows, including attendance, academics, assignments and results in the current preview build.';if(/where|location|address|silachari|contact|visit/.test(text))return 'The school is located in Silachari, Gomati District, Tripura — PIN 799104. Please confirm current office timings before visiting.';if(/principal|message|leadership/.test(text))return 'You can read the Principal’s Message section on this website. The displayed message is a public website message and the Principal’s name can be added by the school.';if(/achievement|award|sports|culture|activity/.test(text))return 'The Achievements & School Culture section is designed for verified student achievements, competitions, sports, cultural activities and school events.';if(/gallery|photo|picture|video|tour/.test(text))return 'You can explore our School Gallery section featuring Photos (science fairs, sports days, cultural celebrations) and the official School Video Tour.';return 'I can help with admissions, classes, hostel information, gallery & videos, school portal, achievements, or school location. Try one of those topics.';}
     function chatbotOpen(){chatbotPanel.classList.remove('hidden');chatbotToggle.setAttribute('aria-expanded','true');if(!chatbotMessages.children.length){chatbotAdd('Hello! 👋 I’m the GEMHS School Assistant. What would you like to know?');chatbotSuggestions.innerHTML=chatbotTopics.map(([label,q])=>'<button type="button" data-chat-q="'+escPublic(q)+'" class="focus-ring px-3 py-2 rounded-full bg-[#edf7f0] text-[#1f6b4b] text-xs font-bold hover:bg-[#dcefe4]">'+escPublic(label)+'</button>').join('');chatbotSuggestions.querySelectorAll('[data-chat-q]').forEach(btn=>btn.addEventListener('click',()=>{const q=btn.getAttribute('data-chat-q');chatbotAdd(q,'user');chatbotAdd(chatbotAnswer(q));}));}chatbotInput.focus();}
     function chatbotClosePanel(){chatbotPanel.classList.add('hidden');chatbotToggle.setAttribute('aria-expanded','false');}
     chatbotToggle.addEventListener('click',()=>chatbotPanel.classList.contains('hidden')?chatbotOpen():chatbotClosePanel());
