@@ -240,7 +240,7 @@
       // Academics Section
       'academics.kicker': 'Academics',
       'academics.title': 'A simple academic journey, clearly presented.',
-      'academics.desc': 'The website groups the learning journey into practical stages rather than making unsupported claims about results, rankings or faculty numbers.',
+
       'academics.stage1_title': 'Foundational Years',
       'academics.stage1_desc': 'Build core understanding, communication and positive learning habits through the early classes.',
       'academics.stage2_title': 'Core Learning',
