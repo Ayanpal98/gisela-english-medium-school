@@ -23,7 +23,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/banner-carousel.css">
   <link rel="stylesheet" href="css/navbar-dropdowns.css">
   <style>
@@ -31,6 +31,7 @@
     *{box-sizing:border-box}
     body{font-family:'DM Sans',sans-serif;color:var(--ink);background:#f7f9f7}
     h1,h2,h3,h4{font-family:'Manrope',sans-serif}
+    .font-cursive{font-family:'Caveat',cursive,'Playfair Display',serif}
     .hero-grid{background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:36px 36px}
     .glass{background:rgba(255,255,255,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
     .soft-shadow{box-shadow:0 24px 70px rgba(16,47,36,.12)}
@@ -707,48 +708,120 @@
     <!-- PRINCIPAL'S DESK -->
     <section id="principal-message" class="py-16 lg:py-24 bg-[#f8faf9] border-y border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-10 items-center">
-          <div class="lg:col-span-4 flex flex-col items-center sm:items-start text-center sm:text-left">
-            <div class="relative">
-              <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-[#102f24] text-white p-2.5 shadow-xl flex flex-col items-center justify-center border-4 border-white">
-                <div class="w-full h-full rounded-2xl bg-emerald-950/40 border border-white/15 flex flex-col items-center justify-center p-4">
-                  <i data-lucide="user-check" class="w-12 h-12 text-[#e8bf63] mb-2"></i>
-                  <span class="text-xs font-bold uppercase tracking-wider text-emerald-100/75" data-i18n="principal.badge">Principal's Desk</span>
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          <!-- LEFT SIDE: Principal Mock Photo Card & Details -->
+          <div class="lg:col-span-5 flex flex-col items-center">
+            <div class="w-full max-w-sm rounded-[2.2rem] bg-white p-3.5 border border-slate-200/90 shadow-xl relative overflow-hidden group">
+              <!-- Photo Container -->
+              <div class="relative rounded-[1.8rem] overflow-hidden aspect-[3/3.8] bg-slate-100 shadow-inner">
+                <img src="images/principal-mock.jpg" alt="Principal, Gisela English Medium High School" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" loading="lazy">
+                
+                <!-- Floating Leadership Ribbon -->
+                <div class="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#102f24]/85 text-emerald-50 text-[11px] font-bold backdrop-blur-md border border-white/20 shadow-md">
+                  <span class="w-2 h-2 rounded-full bg-[#d9aa45] animate-pulse"></span>
+                  <span data-i18n="principal.leadership_pill">Head of Institution</span>
+                </div>
+                
+                <!-- Established watermark -->
+                <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-xl bg-black/60 text-[#e8bf63] text-[10px] font-extrabold backdrop-blur-md border border-white/10">
+                  Estd. 2003
                 </div>
               </div>
-              <div class="absolute -bottom-3 -right-2 bg-[#d9aa45] text-[#102f24] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md" data-i18n="principal.leadership_pill">
-                Leadership
+
+              <!-- Principal Info Box at bottom of Photo -->
+              <div class="mt-4 p-4 rounded-2xl bg-[#edf7f0]/80 border border-[#cbe4d5]/70 text-center">
+                <h3 class="text-lg sm:text-xl font-extrabold text-[#102f24] leading-snug" data-i18n="principal.name">Dr. Subhash Chandra Debbarma</h3>
+                <div class="text-xs font-bold text-[#1f6b4b] uppercase tracking-wider mt-1" data-i18n="principal.designation">Principal &amp; Headmaster</div>
+                <div class="text-[11px] text-slate-500 mt-1 flex items-center justify-center gap-1.5 font-medium">
+                  <i data-lucide="award" class="w-3.5 h-3.5 text-[#d9aa45]"></i>
+                  <span data-i18n="principal.experience">M.A., B.Ed., Ph.D. · 20+ Years in Education</span>
+                </div>
+                <div class="mt-2.5 pt-2.5 border-t border-emerald-900/10 flex items-center justify-center gap-2 text-[11px] text-slate-600 font-semibold">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#1f6b4b]"></i>
+                  <span data-i18n="principal.school_loc">GEMHS · Silachari, Gomati, Tripura</span>
+                </div>
               </div>
             </div>
-            <h3 class="mt-6 text-xl font-extrabold text-slate-900" data-i18n="principal.role">Head of Institution</h3>
-            <p class="text-xs font-bold uppercase tracking-wider text-[#1f6b4b] mt-1" data-i18n="principal.school">Gisela English Medium High School</p>
-            <p class="text-xs text-slate-500 mt-0.5" data-i18n="principal.location">Silachari, Gomati · Tripura</p>
           </div>
-          <div class="lg:col-span-8 bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-md relative overflow-hidden">
-            <div class="absolute right-4 top-4 text-emerald-900/5 select-none pointer-events-none">
-              <i data-lucide="quote" class="w-24 h-24"></i>
+
+          <!-- RIGHT SIDE: Cursive Quote, Student Message, About Him & Wishes -->
+          <div class="lg:col-span-7 space-y-5">
+            <!-- Header Kicker -->
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-0.5 bg-[#d9aa45]"></span>
+              <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="principal.kicker">Principal's Desk</span>
             </div>
-            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="principal.kicker">Welcome from the Principal</span>
-            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight" data-i18n="principal.quote">"Nurturing young minds with discipline, compassion, and academic purpose."</h2>
-            <div class="mt-5 space-y-3.5 text-sm sm:text-base text-slate-600 leading-relaxed">
-              <p data-i18n="principal.p1">Welcome to Gisela English Medium High School. Since our founding in 2003, our mission has been to provide high-quality English-medium education accessible to the students of Silachari and surrounding regions in Gomati District.</p>
-              <p data-i18n="principal.p2">We believe true education extends beyond textbooks. It instills moral integrity, self-confidence, inquisitive thinking, and mutual respect. Our dedicated educators guide each student across Classes 1 through 10 to discover their strengths and prepare for secondary board excellence.</p>
-            </div>
-            <div class="mt-7 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center">
-                  <i data-lucide="award" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-slate-900" data-i18n="principal.board_badge">Affiliated with Tripura Board</div>
-                  <div class="text-[11px] text-slate-500" data-i18n="principal.board_sub">Secondary Assessment &amp; English Medium</div>
-                </div>
+
+            <!-- CURSIVE QUOTE BOX -->
+            <div class="relative rounded-3xl bg-gradient-to-br from-[#102f24] to-[#163e30] text-white p-6 sm:p-7 shadow-lg border border-emerald-800/40 overflow-hidden">
+              <div class="absolute right-3 top-2 text-white/5 select-none pointer-events-none">
+                <i data-lucide="quote" class="w-20 h-20"></i>
               </div>
-              <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-[#1f6b4b] hover:text-[#185b40] transition">
-                <span data-i18n="principal.contact_btn">Meet or contact school administration</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </a>
+              <div class="relative">
+                <div class="flex items-center gap-2 text-[#e8bf63] text-xs font-bold uppercase tracking-wider mb-2">
+                  <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  <span data-i18n="principal.quote_label">Principal's Vision &amp; Motto</span>
+                </div>
+                <blockquote class="font-cursive text-2xl sm:text-3xl text-emerald-50 leading-snug tracking-wide" data-i18n="principal.quote">
+                  "Education is not the learning of facts, but the training of the mind to think, care, and lead with character."
+                </blockquote>
+              </div>
             </div>
+
+            <!-- MESSAGES CONTAINER -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-md space-y-5">
+              <!-- Message for Students -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2 text-[#1f6b4b] font-extrabold text-sm sm:text-base">
+                  <span class="w-7 h-7 rounded-lg bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="graduation-cap" class="w-4 h-4"></i></span>
+                  <span data-i18n="principal.msg_students_title">Message for Our Dear Students</span>
+                </div>
+                <p class="text-sm sm:text-[15px] text-slate-600 leading-relaxed pl-9" data-i18n="principal.msg_students">
+                  Every morning you walk through our school gates, you bring limitless curiosity and potential. Do not fear making mistakes; embrace learning with passion, ask fearless questions, respect your peers, and build habits that will shape your future. At Gisela, you are empowered to shine in academics, sports, and life.
+                </p>
+              </div>
+
+              <!-- About Him -->
+              <div class="space-y-2 pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2 text-[#102f24] font-extrabold text-sm sm:text-base">
+                  <span class="w-7 h-7 rounded-lg bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="compass" class="w-4 h-4"></i></span>
+                  <span data-i18n="principal.about_him_title">About the Leadership &amp; Philosophy</span>
+                </div>
+                <p class="text-sm sm:text-[15px] text-slate-600 leading-relaxed pl-9" data-i18n="principal.about_him">
+                  For over two decades, my life's mission has been to ensure that high-caliber English-medium education reaches every student in Silachari and surrounding rural areas of Gomati District. We combine traditional discipline with modern pedagogical standards to prepare confident, capable young citizens.
+                </p>
+              </div>
+
+              <!-- Wishes for the Session -->
+              <div class="space-y-2 pt-4 border-t border-slate-100">
+                <div class="flex items-center gap-2 text-[#1f6b4b] font-extrabold text-sm sm:text-base">
+                  <span class="w-7 h-7 rounded-lg bg-emerald-50 text-[#1f6b4b] grid place-items-center"><i data-lucide="heart" class="w-4 h-4"></i></span>
+                  <span data-i18n="principal.wishes_title">Warm Wishes for Session 2026–27</span>
+                </div>
+                <p class="text-sm sm:text-[15px] text-slate-600 leading-relaxed pl-9" data-i18n="principal.wishes">
+                  To all our students, teachers, and esteemed parents: may this academic year be blessed with stellar achievements, joyful discoveries, vibrant sportsmanship, and holistic personal growth. We look forward to walking this rewarding journey together.
+                </p>
+              </div>
+
+              <!-- Footer Strip -->
+              <div class="mt-6 pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center">
+                    <i data-lucide="award" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-slate-900" data-i18n="principal.board_badge">Affiliated with Tripura Board</div>
+                    <div class="text-[11px] text-slate-500" data-i18n="principal.board_sub">Secondary Assessment &amp; English Medium</div>
+                  </div>
+                </div>
+                <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1f6b4b] text-white text-xs font-bold hover:bg-[#185b40] transition shadow-sm">
+                  <span data-i18n="principal.contact_btn">Meet or contact school administration</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
