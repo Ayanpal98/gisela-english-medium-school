@@ -223,15 +223,28 @@ body.high-contrast .top-bar {
 }
 
 .school-logo {
-  width: 135px;
-  height: 135px;
+  width: 140px;
+  height: 140px;
   flex-shrink: 0;
   border-radius: 9999px;
-  background: #09223d;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.school-logo img,
+.school-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.school-logo-link:hover .school-logo-img {
+  transform: scale(1.04);
+  filter: drop-shadow(0 12px 28px rgba(217, 170, 69, 0.35));
 }
 
 /* School Details Text Area */

@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#102f24"/><path d="M32 10 53 20v5H11v-5L32 10Z" fill="#d9aa45"/><path d="M17 28h30v19H17z" fill="#fff"/><path d="M22 33h5v10h-5zm15 0h5v10h-5z" fill="#102f24"/><path d="M13 49h38v5H13z" fill="#d9aa45"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Outer Gold Rim -->
+  <circle cx="50" cy="50" r="48" fill="#d9aa45" />
+  <circle cx="50" cy="50" r="44" fill="#071f38" />
+  <!-- Dashed Inner Gold Ring -->
+  <circle cx="50" cy="50" r="39" fill="none" stroke="#d9aa45" stroke-width="1.2" stroke-dasharray="2.5 2" />
+  <!-- Center Shield -->
+  <path d="M50 24 L72 34 V52 C72 66 62 78 50 82 C38 78 28 66 28 52 V34 Z" fill="#071f38" stroke="#d9aa45" stroke-width="1.8" />
+  <!-- Flame -->
+  <path d="M50 31 C52 35 54 38 52.5 42 C51 44 49 44 47.5 42 C46 38 48 35 50 31 Z" fill="#f59e0b" />
+  <circle cx="50" cy="38" r="1.5" fill="#fef08a" />
+  <!-- Open Book -->
+  <path d="M37 47 C43 45 47 48 50 50 C53 48 57 45 63 47 V61 C57 59 53 62 50 64 C47 62 43 59 37 61 Z" fill="#ffffff" stroke="#d9aa45" stroke-width="1.2" />
+  <line x1="50" y1="50" x2="50" y2="64" stroke="#071f38" stroke-width="1.2" />
+</svg>
