@@ -77,11 +77,84 @@
   </script>
 </head>
 <body>
-  <!-- Simple, credible notice bar: no fabricated promotions or sponsored claims. -->
-  <div class="bg-[#102f24] text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm">
-      <div class="flex items-center gap-2"><i data-lucide="bell" class="w-4 h-4 text-[#d9aa45]"></i><span>Admission enquiries for the 2026–27 session</span></div>
-      <a class="focus-ring font-bold text-[#f0c96c] hover:text-white transition" href="#admissions">View admission information <span aria-hidden="true">→</span></a>
+  <!-- TOP BAR: Contact info, mock Gmail, helpline & interactive trilingual language selector -->
+  <div class="bg-[#0c241b] text-white border-b border-emerald-950/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs">
+      <!-- Left side: Mock Gmail and Helpline -->
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-5">
+        <a href="mailto:giselaenglishmediumschool@gmail.com" class="focus-ring flex items-center gap-1.5 text-emerald-100/90 hover:text-white transition group py-0.5" title="School Email">
+          <span class="w-5 h-5 rounded-md bg-white/10 grid place-items-center text-[#e8bf63] group-hover:bg-[#1f6b4b] transition"><i data-lucide="mail" class="w-3 h-3"></i></span>
+          <span class="font-medium tracking-tight">giselaenglishmediumschool@gmail.com</span>
+        </a>
+        <a href="tel:+919876543210" class="focus-ring flex items-center gap-1.5 text-emerald-100/90 hover:text-white transition group py-0.5" title="Helpline Number">
+          <span class="w-5 h-5 rounded-md bg-white/10 grid place-items-center text-[#e8bf63] group-hover:bg-[#1f6b4b] transition"><i data-lucide="phone-call" class="w-3 h-3"></i></span>
+          <span class="text-white/70" data-i18n="topbar.helpline">Helpline:</span>
+          <span class="font-bold text-[#f0c96c]">+91 98765 43210</span>
+        </a>
+        <span class="hidden md:inline-flex items-center gap-1.5 text-emerald-200/75 py-0.5">
+          <i data-lucide="map-pin" class="w-3 h-3 text-[#d9aa45]"></i>
+          <span data-i18n="topbar.location">Silachari, Gomati, Tripura</span>
+        </span>
+      </div>
+
+      <!-- Right side: Language Selector with Counter-Clockwise Animated Emblem -->
+      <div class="relative lang-dropdown-wrap">
+        <button id="langSelectorBtn" type="button" class="focus-ring flex items-center gap-2 px-2.5 py-1 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-white transition text-xs font-semibold" aria-expanded="false" aria-haspopup="true" aria-label="Select Language">
+          <!-- Emblem Image Container with Counter-Clockwise Rotating Ring -->
+          <div class="lang-emblem-wrap">
+            <img id="langEmblemImg" src="images/language-emblem.png" alt="Trilingual Emblem (Bengali, Hindi, English)" class="lang-emblem-img" data-active-lang="en">
+          </div>
+          <span id="currentLangLabel" class="font-bold text-emerald-50">English</span>
+          <span id="currentLangLetter" class="px-1.5 py-0.2 rounded bg-[#d9aa45] text-[#102f24] font-black text-[10px] leading-tight shadow-sm">A</span>
+          <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-white/70 lang-chevron transition-transform duration-200"></i>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="langDropdownMenu" class="lang-menu hidden absolute right-0 top-full mt-2 w-56 rounded-2xl bg-white text-slate-900 border border-slate-200 shadow-2xl p-2 z-[65] backdrop-blur-xl">
+          <div class="px-2.5 py-1.5 text-[10px] font-extrabold uppercase tracking-wider text-[#1f6b4b] border-b border-slate-100 flex items-center justify-between">
+            <span data-i18n="topbar.choose_lang">Select Language</span>
+            <span class="text-[9px] text-slate-400 font-bold">৩টি ভাষা / 3 Languages</span>
+          </div>
+
+          <div class="mt-1 space-y-1">
+            <!-- English -->
+            <button type="button" data-lang="en" class="lang-opt-btn is-active w-full flex items-center justify-between p-2 rounded-xl hover:bg-[#edf7f0] transition text-left group">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-amber-50 border border-amber-200/80 text-[#102f24] font-extrabold grid place-items-center text-sm font-serif">A</span>
+                <div>
+                  <div class="font-bold text-xs text-slate-800 group-hover:text-[#1f6b4b]">English</div>
+                  <div class="text-[10px] text-slate-400">Primary / Global</div>
+                </div>
+              </div>
+              <span class="lang-check en-check w-4 h-4 rounded-full bg-[#1f6b4b] text-white grid place-items-center text-[10px]"><i data-lucide="check" class="w-3 h-3"></i></span>
+            </button>
+
+            <!-- Bengali -->
+            <button type="button" data-lang="bn" class="lang-opt-btn w-full flex items-center justify-between p-2 rounded-xl hover:bg-[#edf7f0] transition text-left group">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-200/80 text-[#1f6b4b] font-extrabold grid place-items-center text-sm font-serif">অ</span>
+                <div>
+                  <div class="font-bold text-xs text-slate-800 group-hover:text-[#1f6b4b]">বাংলা (Bengali)</div>
+                  <div class="text-[10px] text-slate-400">ত্রিপুরা রাজ্য ভাষা / Regional</div>
+                </div>
+              </div>
+              <span class="lang-check bn-check hidden w-4 h-4 rounded-full bg-[#1f6b4b] text-white grid place-items-center text-[10px]"><i data-lucide="check" class="w-3 h-3"></i></span>
+            </button>
+
+            <!-- Hindi -->
+            <button type="button" data-lang="hi" class="lang-opt-btn w-full flex items-center justify-between p-2 rounded-xl hover:bg-[#edf7f0] transition text-left group">
+              <div class="flex items-center gap-2.5">
+                <span class="w-7 h-7 rounded-lg bg-orange-50 border border-orange-200/80 text-amber-800 font-extrabold grid place-items-center text-sm font-serif">अ</span>
+                <div>
+                  <div class="font-bold text-xs text-slate-800 group-hover:text-[#1f6b4b]">हिन्दी (Hindi)</div>
+                  <div class="text-[10px] text-slate-400">राष्ट्रभाषा / National</div>
+                </div>
+              </div>
+              <span class="lang-check hi-check hidden w-4 h-4 rounded-full bg-[#1f6b4b] text-white grid place-items-center text-[10px]"><i data-lucide="check" class="w-3 h-3"></i></span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -90,8 +163,8 @@
       <a href="#home" class="focus-ring flex items-center gap-3 rounded-xl">
         <div class="w-11 h-11 rounded-2xl bg-[#102f24] text-white grid place-items-center font-extrabold shadow-lg">GE</div>
         <div>
-          <div class="font-extrabold text-sm sm:text-base leading-tight">Gisela English Medium</div>
-          <div class="text-[9px] sm:text-[10px] font-bold tracking-[.16em] uppercase text-[#1f6b4b]">High School • Silachari</div>
+          <div class="font-extrabold text-sm sm:text-base leading-tight" data-i18n="header.school_name">Gisela English Medium</div>
+          <div class="text-[9px] sm:text-[10px] font-bold tracking-[.16em] uppercase text-[#1f6b4b]" data-i18n="header.school_sub">High School • Silachari</div>
         </div>
       </a>
 
@@ -99,38 +172,38 @@
         <!-- ABOUT DROPDOWN -->
         <div class="nav-dropdown-item group relative">
           <button type="button" class="nav-dropdown-trigger focus-ring" aria-expanded="false" aria-haspopup="true">
-            <span>About</span>
+            <span data-i18n="header.nav_about">About</span>
             <i data-lucide="chevron-down" class="nav-dropdown-arrow"></i>
           </button>
           <div class="nav-dropdown-menu">
             <div class="dropdown-card">
-              <div class="dropdown-header">About School</div>
+              <div class="dropdown-header" data-i18n="dropdown.about_header">About School</div>
               <a href="#about" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="school" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">About Us</div>
-                  <div class="dropdown-item-desc">School history &amp; foundation in Silachari</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.about_us_title">About Us</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.about_us_desc">School history &amp; foundation in Silachari</div>
                 </div>
               </a>
               <a href="#principal-message" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="message-square-quote" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Principal's Desk</div>
-                  <div class="dropdown-item-desc">Message from school leadership</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.principal_title">Principal's Desk</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.principal_desc">Message from school leadership</div>
                 </div>
               </a>
               <a href="#mission-values" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="compass" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Our Mission &amp; Values</div>
-                  <div class="dropdown-item-desc">Discipline, respect &amp; holistic growth</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.mission_title">Our Mission &amp; Values</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.mission_desc">Discipline, respect &amp; holistic growth</div>
                 </div>
               </a>
               <a href="#history" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="calendar" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Milestones &amp; History</div>
-                  <div class="dropdown-item-desc">20+ years of education since 2003</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.history_title">Milestones &amp; History</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.history_desc">20+ years of education since 2003</div>
                 </div>
               </a>
             </div>
@@ -140,31 +213,31 @@
         <!-- ACADEMICS DROPDOWN -->
         <div class="nav-dropdown-item group relative">
           <button type="button" class="nav-dropdown-trigger focus-ring" aria-expanded="false" aria-haspopup="true">
-            <span>Academics</span>
+            <span data-i18n="header.nav_academics">Academics</span>
             <i data-lucide="chevron-down" class="nav-dropdown-arrow"></i>
           </button>
           <div class="nav-dropdown-menu">
             <div class="dropdown-card">
-              <div class="dropdown-header">Academics &amp; Study</div>
+              <div class="dropdown-header" data-i18n="dropdown.academics_header">Academics &amp; Study</div>
               <a href="#academics" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="book-open" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Academic Curriculum</div>
-                  <div class="dropdown-item-desc">English-medium secondary framework</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.curriculum_title">Academic Curriculum</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.curriculum_desc">English-medium secondary framework</div>
                 </div>
               </a>
               <a href="#classes" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="layers" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Classes 1 to 10</div>
-                  <div class="dropdown-item-desc">Foundational to high school grades</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.classes_title">Classes 1 to 10</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.classes_desc">Foundational to high school grades</div>
                 </div>
               </a>
               <a href="#academics" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="graduation-cap" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Methodology &amp; Evaluation</div>
-                  <div class="dropdown-item-desc">Continuous assessment and concept clarity</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.methodology_title">Methodology &amp; Evaluation</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.methodology_desc">Continuous assessment and concept clarity</div>
                 </div>
               </a>
             </div>
@@ -174,31 +247,31 @@
         <!-- CAMPUS DROPDOWN -->
         <div class="nav-dropdown-item group relative">
           <button type="button" class="nav-dropdown-trigger focus-ring" aria-expanded="false" aria-haspopup="true">
-            <span>Campus</span>
+            <span data-i18n="header.nav_campus">Campus</span>
             <i data-lucide="chevron-down" class="nav-dropdown-arrow"></i>
           </button>
           <div class="nav-dropdown-menu">
             <div class="dropdown-card">
-              <div class="dropdown-header">Facilities &amp; Living</div>
+              <div class="dropdown-header" data-i18n="dropdown.campus_header">Facilities &amp; Living</div>
               <a href="#campus" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="map-pin" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Campus &amp; Facilities</div>
-                  <div class="dropdown-item-desc">Classrooms, library &amp; computer lab</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.facilities_title">Campus &amp; Facilities</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.facilities_desc">Classrooms, library &amp; computer lab</div>
                 </div>
               </a>
               <a href="#hostel" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="home" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Hostel Life</div>
-                  <div class="dropdown-item-desc">Safe residential accommodation</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.hostel_title">Hostel Life</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.hostel_desc">Safe residential accommodation</div>
                 </div>
               </a>
               <a href="#video-tour" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="video" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">School Video Tour</div>
-                  <div class="dropdown-item-desc">Watch our virtual campus walkthrough</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.video_title">School Video Tour</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.video_desc">Watch our virtual campus walkthrough</div>
                 </div>
               </a>
             </div>
@@ -208,31 +281,31 @@
         <!-- STUDENT LIFE DROPDOWN -->
         <div class="nav-dropdown-item group relative">
           <button type="button" class="nav-dropdown-trigger focus-ring" aria-expanded="false" aria-haspopup="true">
-            <span>Student Life</span>
+            <span data-i18n="header.nav_student_life">Student Life</span>
             <i data-lucide="chevron-down" class="nav-dropdown-arrow"></i>
           </button>
           <div class="nav-dropdown-menu">
             <div class="dropdown-card">
-              <div class="dropdown-header">Beyond Classroom</div>
+              <div class="dropdown-header" data-i18n="dropdown.student_header">Beyond Classroom</div>
               <a href="#student-life" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="sparkles" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Activities &amp; Participation</div>
-                  <div class="dropdown-item-desc">Sports, creativity, teamwork &amp; arts</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.activities_title">Activities &amp; Participation</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.activities_desc">Sports, creativity, teamwork &amp; arts</div>
                 </div>
               </a>
               <a href="#achievements" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="trophy" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Student Achievements</div>
-                  <div class="dropdown-item-desc">Academic &amp; co-curricular honours</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.achievements_title">Student Achievements</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.achievements_desc">Academic &amp; co-curricular honours</div>
                 </div>
               </a>
               <a href="#bannerCarouselRoot" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="calendar-days" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Events &amp; Exhibitions</div>
-                  <div class="dropdown-item-desc">Annual exhibition &amp; announcements</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.events_title">Events &amp; Exhibitions</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.events_desc">Annual exhibition &amp; announcements</div>
                 </div>
               </a>
             </div>
@@ -242,24 +315,24 @@
         <!-- GALLERY DROPDOWN -->
         <div class="nav-dropdown-item group relative">
           <button type="button" class="nav-dropdown-trigger focus-ring" aria-expanded="false" aria-haspopup="true">
-            <span>Gallery</span>
+            <span data-i18n="header.nav_gallery">Gallery</span>
             <i data-lucide="chevron-down" class="nav-dropdown-arrow"></i>
           </button>
           <div class="nav-dropdown-menu">
             <div class="dropdown-card">
-              <div class="dropdown-header">Media &amp; Moments</div>
+              <div class="dropdown-header" data-i18n="dropdown.gallery_header">Media &amp; Moments</div>
               <a href="#gallery-photos" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="images" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Photos</div>
-                  <div class="dropdown-item-desc">Events, sports &amp; campus life</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.photos_title">Photos</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.photos_desc">Events, sports &amp; campus life</div>
                 </div>
               </a>
               <a href="#video-tour" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="video" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Videos</div>
-                  <div class="dropdown-item-desc">Campus walkthrough &amp; highlights</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.videos_title">Videos</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.videos_desc">Campus walkthrough &amp; highlights</div>
                 </div>
               </a>
             </div>
@@ -269,31 +342,31 @@
         <!-- ADMISSIONS DROPDOWN -->
         <div class="nav-dropdown-item group relative">
           <button type="button" class="nav-dropdown-trigger focus-ring" aria-expanded="false" aria-haspopup="true">
-            <span>Admissions</span>
+            <span data-i18n="header.nav_admissions">Admissions</span>
             <i data-lucide="chevron-down" class="nav-dropdown-arrow"></i>
           </button>
           <div class="nav-dropdown-menu">
             <div class="dropdown-card">
-              <div class="dropdown-header">Admissions 2026–27</div>
+              <div class="dropdown-header" data-i18n="dropdown.admissions_header">Admissions 2026–27</div>
               <a href="#admissions" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="file-text" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Admission Process</div>
-                  <div class="dropdown-item-desc">Classes 1–10 eligibility &amp; steps</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.process_title">Admission Process</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.process_desc">Classes 1–10 eligibility &amp; steps</div>
                 </div>
               </a>
               <a href="#enquiry" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="file-pen-line" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Submit Enquiry</div>
-                  <div class="dropdown-item-desc">Online browser admission enquiry</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.enquiry_title">Submit Enquiry</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.enquiry_desc">Online browser admission enquiry</div>
                 </div>
               </a>
               <a href="#admission-help" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="help-circle" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Parent Help &amp; FAQ</div>
-                  <div class="dropdown-item-desc">Common questions &amp; guidelines</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.help_title">Parent Help &amp; FAQ</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.help_desc">Common questions &amp; guidelines</div>
                 </div>
               </a>
             </div>
@@ -303,24 +376,24 @@
         <!-- PORTALS DROPDOWN -->
         <div class="nav-dropdown-item dropdown-align-right group relative">
           <button type="button" class="nav-dropdown-trigger focus-ring" aria-expanded="false" aria-haspopup="true">
-            <span>Portals</span>
+            <span data-i18n="header.nav_portals">Portals</span>
             <i data-lucide="chevron-down" class="nav-dropdown-arrow"></i>
           </button>
           <div class="nav-dropdown-menu">
             <div class="dropdown-card">
-              <div class="dropdown-header">Digital School</div>
+              <div class="dropdown-header" data-i18n="dropdown.portals_header">Digital School</div>
               <a href="portal.html" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="layout-dashboard" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">School Portal</div>
-                  <div class="dropdown-item-desc">Parent, Student &amp; Teacher workspace</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.portal_title">School Portal</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.portal_desc">Parent, Student &amp; Teacher workspace</div>
                 </div>
               </a>
               <a href="admin.html" class="dropdown-link">
                 <div class="dropdown-icon"><i data-lucide="shield-check" class="w-4 h-4"></i></div>
                 <div class="dropdown-item-body">
-                  <div class="dropdown-item-title">Admin Workspace</div>
-                  <div class="dropdown-item-desc">Enquiries, notices &amp; banner control</div>
+                  <div class="dropdown-item-title" data-i18n="dropdown.admin_title">Admin Workspace</div>
+                  <div class="dropdown-item-desc" data-i18n="dropdown.admin_desc">Enquiries, notices &amp; banner control</div>
                 </div>
               </a>
             </div>
@@ -328,12 +401,12 @@
         </div>
 
         <!-- CONTACT (Direct Link) -->
-        <a class="nav-dropdown-trigger focus-ring" href="#contact">Contact</a>
+        <a class="nav-dropdown-trigger focus-ring" href="#contact" data-i18n="header.nav_contact">Contact</a>
       </nav>
 
       <div class="hidden sm:flex items-center gap-2">
-        <a href="portal.html" class="focus-ring px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50 transition">School Portal</a>
-        <a href="#admissions" class="focus-ring px-5 py-2.5 rounded-xl bg-[#1f6b4b] text-white font-bold text-sm shadow hover:-translate-y-0.5 transition">Admission Enquiry</a>
+        <a href="portal.html" class="focus-ring px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50 transition" data-i18n="header.portal_btn">School Portal</a>
+        <a href="#admissions" class="focus-ring px-5 py-2.5 rounded-xl bg-[#1f6b4b] text-white font-bold text-sm shadow hover:-translate-y-0.5 transition" data-i18n="header.enquiry_btn">Admission Enquiry</a>
       </div>
       <button id="menu" class="focus-ring xl:hidden p-2.5 rounded-xl hover:bg-slate-100" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile"><i data-lucide="menu"></i></button>
     </div>
@@ -345,15 +418,15 @@
         <summary class="mobile-nav-summary focus-ring">
           <span class="mobile-summary-left">
             <span class="mobile-summary-icon"><i data-lucide="school" class="w-4 h-4"></i></span>
-            <span>About</span>
+            <span data-i18n="header.nav_about">About</span>
           </span>
           <i data-lucide="chevron-down" class="mobile-chevron"></i>
         </summary>
         <div class="mobile-dropdown-content">
-          <a href="#about" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> About Us</a>
-          <a href="#principal-message" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Principal's Desk</a>
-          <a href="#mission-values" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Our Mission &amp; Values</a>
-          <a href="#history" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Milestones &amp; History</a>
+          <a href="#about" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.about_us_title">About Us</span></a>
+          <a href="#principal-message" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.principal_title">Principal's Desk</span></a>
+          <a href="#mission-values" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.mission_title">Our Mission &amp; Values</span></a>
+          <a href="#history" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.history_title">Milestones &amp; History</span></a>
         </div>
       </details>
 
@@ -362,14 +435,14 @@
         <summary class="mobile-nav-summary focus-ring">
           <span class="mobile-summary-left">
             <span class="mobile-summary-icon"><i data-lucide="book-open" class="w-4 h-4"></i></span>
-            <span>Academics</span>
+            <span data-i18n="header.nav_academics">Academics</span>
           </span>
           <i data-lucide="chevron-down" class="mobile-chevron"></i>
         </summary>
         <div class="mobile-dropdown-content">
-          <a href="#academics" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Academic Curriculum</a>
-          <a href="#classes" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Classes 1 to 10</a>
-          <a href="#academics" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Methodology &amp; Evaluation</a>
+          <a href="#academics" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.curriculum_title">Academic Curriculum</span></a>
+          <a href="#classes" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.classes_title">Classes 1 to 10</span></a>
+          <a href="#academics" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.methodology_title">Methodology &amp; Evaluation</span></a>
         </div>
       </details>
 
@@ -378,14 +451,14 @@
         <summary class="mobile-nav-summary focus-ring">
           <span class="mobile-summary-left">
             <span class="mobile-summary-icon"><i data-lucide="map-pin" class="w-4 h-4"></i></span>
-            <span>Campus</span>
+            <span data-i18n="header.nav_campus">Campus</span>
           </span>
           <i data-lucide="chevron-down" class="mobile-chevron"></i>
         </summary>
         <div class="mobile-dropdown-content">
-          <a href="#campus" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Campus &amp; Facilities</a>
-          <a href="#hostel" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Hostel Life</a>
-          <a href="#video-tour" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> School Video Tour</a>
+          <a href="#campus" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.facilities_title">Campus &amp; Facilities</span></a>
+          <a href="#hostel" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.hostel_title">Hostel Life</span></a>
+          <a href="#video-tour" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.video_title">School Video Tour</span></a>
         </div>
       </details>
 
@@ -394,14 +467,14 @@
         <summary class="mobile-nav-summary focus-ring">
           <span class="mobile-summary-left">
             <span class="mobile-summary-icon"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
-            <span>Student Life</span>
+            <span data-i18n="header.nav_student_life">Student Life</span>
           </span>
           <i data-lucide="chevron-down" class="mobile-chevron"></i>
         </summary>
         <div class="mobile-dropdown-content">
-          <a href="#student-life" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Activities &amp; Participation</a>
-          <a href="#achievements" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Student Achievements</a>
-          <a href="#bannerCarouselRoot" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Events &amp; Exhibitions</a>
+          <a href="#student-life" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.activities_title">Activities &amp; Participation</span></a>
+          <a href="#achievements" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.achievements_title">Student Achievements</span></a>
+          <a href="#bannerCarouselRoot" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.events_title">Events &amp; Exhibitions</span></a>
         </div>
       </details>
 
@@ -410,13 +483,13 @@
         <summary class="mobile-nav-summary focus-ring">
           <span class="mobile-summary-left">
             <span class="mobile-summary-icon"><i data-lucide="images" class="w-4 h-4"></i></span>
-            <span>Gallery</span>
+            <span data-i18n="header.nav_gallery">Gallery</span>
           </span>
           <i data-lucide="chevron-down" class="mobile-chevron"></i>
         </summary>
         <div class="mobile-dropdown-content">
-          <a href="#gallery-photos" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Photos</a>
-          <a href="#video-tour" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Videos</a>
+          <a href="#gallery-photos" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.photos_title">Photos</span></a>
+          <a href="#video-tour" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.videos_title">Videos</span></a>
         </div>
       </details>
 
@@ -425,14 +498,14 @@
         <summary class="mobile-nav-summary focus-ring">
           <span class="mobile-summary-left">
             <span class="mobile-summary-icon"><i data-lucide="file-text" class="w-4 h-4"></i></span>
-            <span>Admissions</span>
+            <span data-i18n="header.nav_admissions">Admissions</span>
           </span>
           <i data-lucide="chevron-down" class="mobile-chevron"></i>
         </summary>
         <div class="mobile-dropdown-content">
-          <a href="#admissions" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Admission Process</a>
-          <a href="#enquiry" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Submit Enquiry</a>
-          <a href="#admission-help" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Parent Help &amp; FAQ</a>
+          <a href="#admissions" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.process_title">Admission Process</span></a>
+          <a href="#enquiry" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.enquiry_title">Submit Enquiry</span></a>
+          <a href="#admission-help" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.help_title">Parent Help &amp; FAQ</span></a>
         </div>
       </details>
 
@@ -441,23 +514,23 @@
         <summary class="mobile-nav-summary focus-ring">
           <span class="mobile-summary-left">
             <span class="mobile-summary-icon"><i data-lucide="layout-dashboard" class="w-4 h-4"></i></span>
-            <span>Portals</span>
+            <span data-i18n="header.nav_portals">Portals</span>
           </span>
           <i data-lucide="chevron-down" class="mobile-chevron"></i>
         </summary>
         <div class="mobile-dropdown-content">
-          <a href="portal.html" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> School Portal</a>
-          <a href="admin.html" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> Admin Workspace</a>
+          <a href="portal.html" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.portal_title">School Portal</span></a>
+          <a href="admin.html" class="mobile-sub-link"><span class="mobile-sub-bullet"></span> <span data-i18n="dropdown.admin_title">Admin Workspace</span></a>
         </div>
       </details>
 
       <a href="#contact" class="focus-ring block p-3 rounded-xl font-bold text-slate-800 hover:bg-[#edf7f0] hover:text-[#1f6b4b] transition flex items-center gap-2.5">
         <span class="w-7 h-7 rounded-lg bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="phone" class="w-4 h-4"></i></span>
-        <span>Contact</span>
+        <span data-i18n="header.nav_contact">Contact</span>
       </a>
 
       <div class="pt-2">
-        <a href="#admissions" class="focus-ring block text-center p-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold shadow-md">Admission Enquiry 2026–27</a>
+        <a href="#admissions" class="focus-ring block text-center p-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold shadow-md" data-i18n="header.enquiry_btn">Admission Enquiry 2026–27</a>
       </div>
     </div>
   </header>
@@ -473,36 +546,36 @@
           <div class="stat-item">
             <div class="stat-icon-box stat-icon-forest" aria-hidden="true"><i data-lucide="calendar" class="w-5 h-5"></i></div>
             <div class="stat-info">
-              <div class="stat-number">Estd. 2003</div>
-              <div class="stat-label">20+ Years in Silachari</div>
+              <div class="stat-number" data-i18n="stats.item1_num">Estd. 2003</div>
+              <div class="stat-label" data-i18n="stats.item1_sub">20+ Years in Silachari</div>
             </div>
           </div>
           <div class="stat-item">
             <div class="stat-icon-box stat-icon-gold" aria-hidden="true"><i data-lucide="book-open" class="w-5 h-5"></i></div>
             <div class="stat-info">
-              <div class="stat-number">Classes 1–10</div>
-              <div class="stat-label">English-Medium School</div>
+              <div class="stat-number" data-i18n="stats.item2_num">Classes 1–10</div>
+              <div class="stat-label" data-i18n="stats.item2_sub">English-Medium School</div>
             </div>
           </div>
           <div class="stat-item">
             <div class="stat-icon-box stat-icon-blue" aria-hidden="true"><i data-lucide="landmark" class="w-5 h-5"></i></div>
             <div class="stat-info">
-              <div class="stat-number">Tripura Board</div>
-              <div class="stat-label">Secondary Affiliation</div>
+              <div class="stat-number" data-i18n="stats.item3_num">Tripura Board</div>
+              <div class="stat-label" data-i18n="stats.item3_sub">Secondary Affiliation</div>
             </div>
           </div>
           <div class="stat-item">
             <div class="stat-icon-box stat-icon-amber" aria-hidden="true"><i data-lucide="home" class="w-5 h-5"></i></div>
             <div class="stat-info">
-              <div class="stat-number">Day &amp; Hostel</div>
-              <div class="stat-label">Enquiry Support</div>
+              <div class="stat-number" data-i18n="stats.item4_num">Day &amp; Hostel</div>
+              <div class="stat-label" data-i18n="stats.item4_sub">Enquiry Support</div>
             </div>
           </div>
           <div class="stat-item">
             <div class="stat-icon-box stat-icon-emerald" aria-hidden="true"><i data-lucide="badge-check" class="w-5 h-5"></i></div>
             <div class="stat-info">
-              <div class="stat-number">UDISE Verified</div>
-              <div class="stat-label">16071200409</div>
+              <div class="stat-number" data-i18n="stats.item5_num">UDISE Verified</div>
+              <div class="stat-label" data-i18n="stats.item5_sub">16071200409</div>
             </div>
           </div>
         </div>
@@ -519,18 +592,18 @@
           <div class="lg:col-span-7 reveal">
             <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/8 border border-white/15 text-emerald-50 text-xs sm:text-sm font-semibold">
               <span class="w-2 h-2 rounded-full bg-[#d9aa45]"></span>
-              Established 2003 · Silachari, Gomati, Tripura
+              <span data-i18n="hero.badge_estd">Established 2003 · Silachari, Gomati, Tripura</span>
             </div>
-            <h1 class="mt-6 text-4xl sm:text-5xl lg:text-[4.4rem] font-extrabold tracking-tight leading-[1.03]">A place to <span class="text-[#e8bf63]">learn, grow</span> and move forward.</h1>
-            <p class="mt-6 max-w-2xl text-base sm:text-lg text-emerald-50/75 leading-8">Gisela English Medium High School provides English-medium schooling from Class 1 to Class 10 in Silachari, with a focus on learning, discipline, participation and student development.</p>
+            <h1 class="mt-6 text-4xl sm:text-5xl lg:text-[4.4rem] font-extrabold tracking-tight leading-[1.03]" data-i18n="hero.main_h1">A place to <span class="text-[#e8bf63]">learn, grow</span> and move forward.</h1>
+            <p class="mt-6 max-w-2xl text-base sm:text-lg text-emerald-50/75 leading-8" data-i18n="hero.main_desc">Gisela English Medium High School provides English-medium schooling from Class 1 to Class 10 in Silachari, with a focus on learning, discipline, participation and student development.</p>
             <div class="mt-8 flex flex-col sm:flex-row gap-3">
-              <a href="#admissions" class="focus-ring inline-flex justify-center items-center gap-2 bg-white text-[#102f24] px-6 py-3.5 rounded-xl font-extrabold shadow-xl hover:bg-emerald-50 transition"><i data-lucide="file-pen-line" class="w-4 h-4"></i> Admission Enquiry</a>
-              <a href="#about" class="focus-ring inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl border border-white/20 bg-white/5 font-bold hover:bg-white/10 transition"><i data-lucide="arrow-down" class="w-4 h-4"></i> Explore the School</a>
+              <a href="#admissions" class="focus-ring inline-flex justify-center items-center gap-2 bg-white text-[#102f24] px-6 py-3.5 rounded-xl font-extrabold shadow-xl hover:bg-emerald-50 transition"><i data-lucide="file-pen-line" class="w-4 h-4"></i> <span data-i18n="hero.btn_enquiry">Admission Enquiry</span></a>
+              <a href="#about" class="focus-ring inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl border border-white/20 bg-white/5 font-bold hover:bg-white/10 transition"><i data-lucide="arrow-down" class="w-4 h-4"></i> <span data-i18n="hero.btn_explore">Explore the School</span></a>
             </div>
             <div class="mt-10 pt-7 border-t border-white/10 grid grid-cols-3 max-w-xl">
-              <div><div class="text-2xl sm:text-3xl font-extrabold">2003</div><div class="text-xs text-emerald-100/55 mt-1">Established</div></div>
-              <div><div class="text-2xl sm:text-3xl font-extrabold">1–10</div><div class="text-xs text-emerald-100/55 mt-1">Classes</div></div>
-              <div><div class="text-2xl sm:text-3xl font-extrabold">Gomati</div><div class="text-xs text-emerald-100/55 mt-1">District</div></div>
+              <div><div class="text-2xl sm:text-3xl font-extrabold" data-i18n="hero.stat_estd_num">2003</div><div class="text-xs text-emerald-100/55 mt-1" data-i18n="hero.stat_estd_label">Established</div></div>
+              <div><div class="text-2xl sm:text-3xl font-extrabold" data-i18n="hero.stat_classes_num">1–10</div><div class="text-xs text-emerald-100/55 mt-1" data-i18n="hero.stat_classes_label">Classes</div></div>
+              <div><div class="text-2xl sm:text-3xl font-extrabold" data-i18n="hero.stat_district_num">Gomati</div><div class="text-xs text-emerald-100/55 mt-1" data-i18n="hero.stat_district_label">District</div></div>
             </div>
           </div>
 
@@ -542,16 +615,16 @@
                   <div class="absolute right-0 top-0 w-44 h-44 rounded-full bg-[#d9aa45]/10 blur-2xl"></div>
                   <div class="relative flex items-start justify-between">
                     <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/15 grid place-items-center"><i data-lucide="graduation-cap" class="w-7 h-7 text-[#e8bf63]"></i></div>
-                    <span class="text-[10px] uppercase tracking-[.2em] font-extrabold text-emerald-100/55">School profile</span>
+                    <span class="text-[10px] uppercase tracking-[.2em] font-extrabold text-emerald-100/55" data-i18n="hero.badge">School profile</span>
                   </div>
                   <div class="relative">
-                    <div class="text-xs font-bold tracking-[.18em] text-[#e8bf63]">GEMHS · SILACHARI</div>
-                    <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Learn with purpose.</h2>
-                    <p class="mt-4 text-sm leading-7 text-emerald-50/65">A digital front door for parents, students and the school community.</p>
+                    <div class="text-xs font-bold tracking-[.18em] text-[#e8bf63]" data-i18n="hero.tag">GEMHS · SILACHARI</div>
+                    <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold" data-i18n="hero.title">Learn with purpose.</h2>
+                    <p class="mt-4 text-sm leading-7 text-emerald-50/65" data-i18n="hero.desc">A digital front door for parents, students and the school community.</p>
                   </div>
                   <div class="relative grid grid-cols-2 gap-3">
-                    <div class="glass-chip rounded-2xl p-4"><i data-lucide="book-open" class="w-5 h-5 text-[#e8bf63]"></i><div class="font-bold mt-2">Academics</div><div class="text-xs text-white/45 mt-1">Classes 1–10</div></div>
-                    <div class="glass-chip rounded-2xl p-4"><i data-lucide="home" class="w-5 h-5 text-[#e8bf63]"></i><div class="font-bold mt-2">Hostel</div><div class="text-xs text-white/45 mt-1">Enquiry support</div></div>
+                    <div class="glass-chip rounded-2xl p-4"><i data-lucide="book-open" class="w-5 h-5 text-[#e8bf63]"></i><div class="font-bold mt-2" data-i18n="hero.chip_academics">Academics</div><div class="text-xs text-white/45 mt-1" data-i18n="hero.chip_academics_sub">Classes 1–10</div></div>
+                    <div class="glass-chip rounded-2xl p-4"><i data-lucide="home" class="w-5 h-5 text-[#e8bf63]"></i><div class="font-bold mt-2" data-i18n="hero.chip_hostel">Hostel</div><div class="text-xs text-white/45 mt-1" data-i18n="hero.chip_hostel_sub">Enquiry support</div></div>
                   </div>
                 </div>
               </div>
@@ -569,20 +642,20 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           <a href="#admissions" class="group glass-card rounded-2xl p-5 shine">
-            <div class="flex items-center justify-between"><span class="text-xs font-extrabold uppercase tracking-wider text-[#1f6b4b]">Admissions</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#1f6b4b]"></i></div>
-            <div class="mt-2 font-extrabold">Start an enquiry</div><div class="text-xs text-slate-500 mt-1">Classes 1–10 · 2026–27</div>
+            <div class="flex items-center justify-between"><span class="text-xs font-extrabold uppercase tracking-wider text-[#1f6b4b]" data-i18n="quick.admissions_kicker">Admissions</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#1f6b4b]"></i></div>
+            <div class="mt-2 font-extrabold" data-i18n="quick.admissions_title">Start an enquiry</div><div class="text-xs text-slate-500 mt-1" data-i18n="quick.admissions_sub">Classes 1–10 · 2026–27</div>
           </a>
           <a href="#academics" class="group glass-card rounded-2xl p-5 shine">
-            <div class="flex items-center justify-between"><span class="text-xs font-extrabold uppercase tracking-wider text-[#1f6b4b]">Academics</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#1f6b4b]"></i></div>
-            <div class="mt-2 font-extrabold">Explore learning</div><div class="text-xs text-slate-500 mt-1">Academic journey & classes</div>
+            <div class="flex items-center justify-between"><span class="text-xs font-extrabold uppercase tracking-wider text-[#1f6b4b]" data-i18n="quick.academics_kicker">Academics</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#1f6b4b]"></i></div>
+            <div class="mt-2 font-extrabold" data-i18n="quick.academics_title">Explore learning</div><div class="text-xs text-slate-500 mt-1" data-i18n="quick.academics_sub">Academic journey &amp; classes</div>
           </a>
           <a href="#student-life" class="group glass-card rounded-2xl p-5 shine">
-            <div class="flex items-center justify-between"><span class="text-xs font-extrabold uppercase tracking-wider text-[#1f6b4b]">Student Life</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#1f6b4b]"></i></div>
-            <div class="mt-2 font-extrabold">Beyond the classroom</div><div class="text-xs text-slate-500 mt-1">Activities & participation</div>
+            <div class="flex items-center justify-between"><span class="text-xs font-extrabold uppercase tracking-wider text-[#1f6b4b]" data-i18n="quick.student_kicker">Student Life</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#1f6b4b]"></i></div>
+            <div class="mt-2 font-extrabold" data-i18n="quick.student_title">Beyond the classroom</div><div class="text-xs text-slate-500 mt-1" data-i18n="quick.student_sub">Activities &amp; participation</div>
           </a>
           <a href="portal.html" class="group glass-dark rounded-2xl text-white p-5 shine">
-            <div class="flex items-center justify-between"><span class="text-xs font-extrabold uppercase tracking-wider text-[#e8bf63]">Digital School</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-[#e8bf63]"></i></div>
-            <div class="mt-2 font-extrabold">Open School Portal</div><div class="text-xs text-white/55 mt-1">Parent · Student · Teacher</div>
+            <div class="flex items-center justify-between"><span class="text-xs font-extrabold uppercase tracking-wider text-[#e8bf63]" data-i18n="quick.portal_kicker">Digital School</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-[#e8bf63]"></i></div>
+            <div class="mt-2 font-extrabold" data-i18n="quick.portal_title">Open School Portal</div><div class="text-xs text-white/55 mt-1" data-i18n="quick.portal_sub">Parent · Student · Teacher</div>
           </a>
         </div>
       </div>
@@ -591,10 +664,10 @@
     <!-- TRUST STRIP -->
     <section class="bg-white border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="map-pin" class="w-5 h-5"></i></div><div><div class="font-bold text-sm">Silachari, Gomati</div><div class="text-xs text-slate-500">Tripura · PIN 799104</div></div></div>
-        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="school" class="w-5 h-5"></i></div><div><div class="font-bold text-sm">Classes 1–10</div><div class="text-xs text-slate-500">English-medium schooling</div></div></div>
-        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="landmark" class="w-5 h-5"></i></div><div><div class="font-bold text-sm">Tripura Board</div><div class="text-xs text-slate-500">Secondary-level affiliation</div></div></div>
-        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="badge-check" class="w-5 h-5"></i></div><div><div class="font-bold text-sm">UDISE</div><div class="text-xs text-slate-500">16071200409</div></div></div>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="map-pin" class="w-5 h-5"></i></div><div><div class="font-bold text-sm" data-i18n="trust.location_title">Silachari, Gomati</div><div class="text-xs text-slate-500" data-i18n="trust.location_sub">Tripura · PIN 799104</div></div></div>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="school" class="w-5 h-5"></i></div><div><div class="font-bold text-sm" data-i18n="trust.classes_title">Classes 1–10</div><div class="text-xs text-slate-500" data-i18n="trust.classes_sub">English-medium schooling</div></div></div>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="landmark" class="w-5 h-5"></i></div><div><div class="font-bold text-sm" data-i18n="trust.board_title">Tripura Board</div><div class="text-xs text-slate-500" data-i18n="trust.board_sub">Secondary-level affiliation</div></div></div>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="badge-check" class="w-5 h-5"></i></div><div><div class="font-bold text-sm" data-i18n="trust.udise_title">UDISE Code</div><div class="text-xs text-slate-500" data-i18n="trust.udise_sub">16071200409</div></div></div>
       </div>
     </section>
 
@@ -602,30 +675,30 @@
     <section id="about" class="py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-5">
-          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">About the school</span>
-          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">Education with a local foundation.</h2>
-          <p class="mt-5 text-slate-600 leading-8">Gisela English Medium High School is based in Silachari, Gomati District, Tripura. The school’s public-facing website is designed to make essential information easier for families to find before they visit or enquire.</p>
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="about.kicker">About the school</span>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight" data-i18n="about.title">Education with a local foundation.</h2>
+          <p class="mt-5 text-slate-600 leading-8" data-i18n="about.desc">Gisela English Medium High School is based in Silachari, Gomati District, Tripura. The school’s public-facing website is designed to make essential information easier for families to find before they visit or enquire.</p>
           <div id="history" class="mt-7 flex items-center gap-4 p-4 rounded-2xl bg-white border border-slate-200 soft-shadow">
-            <div class="w-12 h-12 rounded-2xl bg-[#102f24] text-[#e8bf63] grid place-items-center font-extrabold">23+</div>
-            <div><div class="font-extrabold">Years of school history</div><div class="text-sm text-slate-500">Established in 2003</div></div>
+            <div class="w-12 h-12 rounded-2xl bg-[#102f24] text-[#e8bf63] grid place-items-center font-extrabold" data-i18n="about.history_card_num">23+</div>
+            <div><div class="font-extrabold" data-i18n="about.history_card_title">Years of school history</div><div class="text-sm text-slate-500" data-i18n="about.history_card_sub">Established in 2003</div></div>
           </div>
         </div>
         <div id="mission-values" class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
           <article class="rounded-3xl bg-[#102f24] text-white p-7 min-h-56 flex flex-col justify-between">
             <div class="w-11 h-11 rounded-2xl bg-white/10 grid place-items-center"><i data-lucide="book-open" class="text-[#e8bf63]"></i></div>
-            <div><h3 class="text-xl font-extrabold">Learning</h3><p class="mt-2 text-sm text-white/60 leading-6">An English-medium environment for academic learning across Classes 1–10.</p></div>
+            <div><h3 class="text-xl font-extrabold" data-i18n="about.card_learning_title">Learning</h3><p class="mt-2 text-sm text-white/60 leading-6" data-i18n="about.card_learning_desc">An English-medium environment for academic learning across Classes 1–10.</p></div>
           </article>
           <article class="rounded-3xl bg-[#edf7f0] p-7 min-h-56 flex flex-col justify-between">
             <div class="w-11 h-11 rounded-2xl bg-white text-[#1f6b4b] grid place-items-center"><i data-lucide="heart-handshake"></i></div>
-            <div><h3 class="text-xl font-extrabold">Values</h3><p class="mt-2 text-sm text-slate-600 leading-6">A school experience shaped by discipline, respect, participation and responsibility.</p></div>
+            <div><h3 class="text-xl font-extrabold" data-i18n="about.card_values_title">Values</h3><p class="mt-2 text-sm text-slate-600 leading-6" data-i18n="about.card_values_desc">A school experience shaped by discipline, respect, participation and responsibility.</p></div>
           </article>
           <article class="rounded-3xl bg-white border border-slate-200 p-7 min-h-56 flex flex-col justify-between">
             <div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="lightbulb"></i></div>
-            <div><h3 class="text-xl font-extrabold">Confidence</h3><p class="mt-2 text-sm text-slate-600 leading-6">Room for students to ask questions, participate and develop beyond textbooks.</p></div>
+            <div><h3 class="text-xl font-extrabold" data-i18n="about.card_confidence_title">Confidence</h3><p class="mt-2 text-sm text-slate-600 leading-6" data-i18n="about.card_confidence_desc">Room for students to ask questions, participate and develop beyond textbooks.</p></div>
           </article>
           <article class="rounded-3xl bg-slate-900 text-white p-7 min-h-56 flex flex-col justify-between">
             <div class="w-11 h-11 rounded-2xl bg-white/10 grid place-items-center"><i data-lucide="sprout" class="text-emerald-300"></i></div>
-            <div><h3 class="text-xl font-extrabold">Growth</h3><p class="mt-2 text-sm text-white/60 leading-6">Academic and co-curricular development as part of a balanced school journey.</p></div>
+            <div><h3 class="text-xl font-extrabold" data-i18n="about.card_growth_title">Growth</h3><p class="mt-2 text-sm text-white/60 leading-6" data-i18n="about.card_growth_desc">Academic and co-curricular development as part of a balanced school journey.</p></div>
           </article>
         </div>
       </div>
@@ -640,26 +713,26 @@
               <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-[#102f24] text-white p-2.5 shadow-xl flex flex-col items-center justify-center border-4 border-white">
                 <div class="w-full h-full rounded-2xl bg-emerald-950/40 border border-white/15 flex flex-col items-center justify-center p-4">
                   <i data-lucide="user-check" class="w-12 h-12 text-[#e8bf63] mb-2"></i>
-                  <span class="text-xs font-bold uppercase tracking-wider text-emerald-100/75">Principal's Desk</span>
+                  <span class="text-xs font-bold uppercase tracking-wider text-emerald-100/75" data-i18n="principal.badge">Principal's Desk</span>
                 </div>
               </div>
-              <div class="absolute -bottom-3 -right-2 bg-[#d9aa45] text-[#102f24] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+              <div class="absolute -bottom-3 -right-2 bg-[#d9aa45] text-[#102f24] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md" data-i18n="principal.leadership_pill">
                 Leadership
               </div>
             </div>
-            <h3 class="mt-6 text-xl font-extrabold text-slate-900">Head of Institution</h3>
-            <p class="text-xs font-bold uppercase tracking-wider text-[#1f6b4b] mt-1">Gisela English Medium High School</p>
-            <p class="text-xs text-slate-500 mt-0.5">Silachari, Gomati · Tripura</p>
+            <h3 class="mt-6 text-xl font-extrabold text-slate-900" data-i18n="principal.role">Head of Institution</h3>
+            <p class="text-xs font-bold uppercase tracking-wider text-[#1f6b4b] mt-1" data-i18n="principal.school">Gisela English Medium High School</p>
+            <p class="text-xs text-slate-500 mt-0.5" data-i18n="principal.location">Silachari, Gomati · Tripura</p>
           </div>
           <div class="lg:col-span-8 bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/80 shadow-md relative overflow-hidden">
             <div class="absolute right-4 top-4 text-emerald-900/5 select-none pointer-events-none">
               <i data-lucide="quote" class="w-24 h-24"></i>
             </div>
-            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Welcome from the Principal</span>
-            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">"Nurturing young minds with discipline, compassion, and academic purpose."</h2>
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="principal.kicker">Welcome from the Principal</span>
+            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight" data-i18n="principal.quote">"Nurturing young minds with discipline, compassion, and academic purpose."</h2>
             <div class="mt-5 space-y-3.5 text-sm sm:text-base text-slate-600 leading-relaxed">
-              <p>Welcome to Gisela English Medium High School. Since our founding in 2003, our mission has been to provide high-quality English-medium education accessible to the students of Silachari and surrounding regions in Gomati District.</p>
-              <p>We believe true education extends beyond textbooks. It instills moral integrity, self-confidence, inquisitive thinking, and mutual respect. Our dedicated educators guide each student across Classes 1 through 10 to discover their strengths and prepare for secondary board excellence.</p>
+              <p data-i18n="principal.p1">Welcome to Gisela English Medium High School. Since our founding in 2003, our mission has been to provide high-quality English-medium education accessible to the students of Silachari and surrounding regions in Gomati District.</p>
+              <p data-i18n="principal.p2">We believe true education extends beyond textbooks. It instills moral integrity, self-confidence, inquisitive thinking, and mutual respect. Our dedicated educators guide each student across Classes 1 through 10 to discover their strengths and prepare for secondary board excellence.</p>
             </div>
             <div class="mt-7 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
               <div class="flex items-center gap-3">
@@ -667,12 +740,12 @@
                   <i data-lucide="award" class="w-5 h-5"></i>
                 </div>
                 <div>
-                  <div class="text-xs font-bold text-slate-900">Affiliated with Tripura Board</div>
-                  <div class="text-[11px] text-slate-500">Secondary Assessment &amp; English Medium</div>
+                  <div class="text-xs font-bold text-slate-900" data-i18n="principal.board_badge">Affiliated with Tripura Board</div>
+                  <div class="text-[11px] text-slate-500" data-i18n="principal.board_sub">Secondary Assessment &amp; English Medium</div>
                 </div>
               </div>
               <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-[#1f6b4b] hover:text-[#185b40] transition">
-                <span>Meet or contact school administration</span>
+                <span data-i18n="principal.contact_btn">Meet or contact school administration</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </a>
             </div>
@@ -686,19 +759,19 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-10 items-end">
           <div class="lg:col-span-7">
-            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#e8bf63]">Student life</span>
-            <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Learning continues beyond the classroom.</h2>
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#e8bf63]" data-i18n="student_life.kicker">Student life</span>
+            <h2 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight" data-i18n="student_life.title">Learning continues beyond the classroom.</h2>
           </div>
-          <p class="lg:col-span-5 text-white/60 leading-7">A modern school experience is also about participation, creativity, teamwork and the everyday moments that help students grow.</p>
+          <p class="lg:col-span-5 text-white/60 leading-7" data-i18n="student_life.desc">A modern school experience is also about participation, creativity, teamwork and the everyday moments that help students grow.</p>
         </div>
         <div class="mt-10 grid md:grid-cols-12 gap-4">
           <article class="md:col-span-7 min-h-[320px] rounded-[2rem] bg-white/7 border border-white/10 p-8 flex flex-col justify-between">
             <div class="flex justify-between"><div class="w-12 h-12 rounded-2xl bg-white/10 grid place-items-center"><i data-lucide="trophy" class="text-[#e8bf63]"></i></div><span class="text-xs font-bold text-white/30">01</span></div>
-            <div><h3 class="text-2xl font-extrabold">Activities & participation</h3><p class="mt-3 max-w-xl text-sm text-white/55 leading-7">Create space for sports, cultural activities, competitions, celebrations and student-led experiences.</p></div>
+            <div><h3 class="text-2xl font-extrabold" data-i18n="student_life.activities_title">Activities &amp; participation</h3><p class="mt-3 max-w-xl text-sm text-white/55 leading-7" data-i18n="student_life.activities_desc">Create space for sports, cultural activities, competitions, celebrations and student-led experiences.</p></div>
           </article>
           <div class="md:col-span-5 grid sm:grid-cols-2 gap-4">
-            <article class="rounded-[2rem] bg-[#edf7f0] text-[#102f24] p-6 min-h-36 flex flex-col justify-between"><i data-lucide="palette" class="w-6 h-6 text-[#1f6b4b]"></i><div><h3 class="font-extrabold">Creativity</h3><p class="text-xs text-slate-600 mt-1">Projects, expression & discovery.</p></div></article>
-            <article class="rounded-[2rem] bg-[#d9aa45] text-[#102f24] p-6 min-h-36 flex flex-col justify-between"><i data-lucide="users" class="w-6 h-6"></i><div><h3 class="font-extrabold">Community</h3><p class="text-xs text-[#102f24]/70 mt-1">Belonging, respect & teamwork.</p></div></article>
+            <article class="rounded-[2rem] bg-[#edf7f0] text-[#102f24] p-6 min-h-36 flex flex-col justify-between"><i data-lucide="palette" class="w-6 h-6 text-[#1f6b4b]"></i><div><h3 class="font-extrabold" data-i18n="student_life.creativity_title">Creativity</h3><p class="text-xs text-slate-600 mt-1" data-i18n="student_life.creativity_desc">Projects, expression &amp; discovery.</p></div></article>
+            <article class="rounded-[2rem] bg-[#d9aa45] text-[#102f24] p-6 min-h-36 flex flex-col justify-between"><i data-lucide="users" class="w-6 h-6"></i><div><h3 class="font-extrabold" data-i18n="student_life.community_title">Community</h3><p class="text-xs text-[#102f24]/70 mt-1" data-i18n="student_life.community_desc">Belonging, respect &amp; teamwork.</p></div></article>
             <article class="sm:col-span-2 rounded-[2rem] bg-white/7 border border-white/10 p-6 flex items-center justify-between gap-5"><div><div class="text-xs uppercase tracking-wider font-extrabold text-[#e8bf63]">Gallery ready</div><h3 class="font-extrabold mt-1">Real school moments can live here.</h3><p class="text-xs text-white/45 mt-1">Static-ready now · managed gallery later.</p></div><i data-lucide="images" class="w-8 h-8 text-white/40"></i></article>
           </div>
         </div>
@@ -707,13 +780,13 @@
         <div id="achievements" class="mt-16 pt-12 border-t border-white/10">
           <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#e8bf63]">Honours &amp; Participation</span>
-              <h3 class="mt-2 text-2xl sm:text-3xl font-extrabold">Student Achievements &amp; School Culture</h3>
-              <p class="mt-2 text-sm text-white/60 max-w-xl">Verified academic milestones, sports honours, co-curricular awards, and student achievements.</p>
+              <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#e8bf63]" data-i18n="student_life.achievements_kicker">Honours &amp; Participation</span>
+              <h3 class="mt-2 text-2xl sm:text-3xl font-extrabold" data-i18n="student_life.achievements_title">Student Achievements &amp; School Culture</h3>
+              <p class="mt-2 text-sm text-white/60 max-w-xl" data-i18n="student_life.achievements_desc">Verified academic milestones, sports honours, co-curricular awards, and student achievements.</p>
             </div>
             <a href="admin.html" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition">
               <i data-lucide="sparkles" class="w-4 h-4 text-[#e8bf63]"></i>
-              <span>Manage in Admin</span>
+              <span data-i18n="student_life.admin_btn">Manage in Admin</span>
             </a>
           </div>
 
@@ -730,21 +803,21 @@
     <section id="academics" class="py-20 lg:py-28 bg-white border-y border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-          <div class="max-w-2xl"><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Academics</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">A simple academic journey, clearly presented.</h2></div>
-          <p class="max-w-xl text-slate-600 leading-7">The website groups the learning journey into practical stages rather than making unsupported claims about results, rankings or faculty numbers.</p>
+          <div class="max-w-2xl"><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="academics.kicker">Academics</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold" data-i18n="academics.title">A simple academic journey, clearly presented.</h2></div>
+          <p class="max-w-xl text-slate-600 leading-7" data-i18n="academics.desc">The website groups the learning journey into practical stages rather than making unsupported claims about results, rankings or faculty numbers.</p>
         </div>
         <div id="classes" class="mt-10 grid md:grid-cols-3 gap-5">
           <article class="group p-7 rounded-3xl border border-slate-200 bg-[#f8faf9] hover:bg-white hover:shadow-xl transition">
             <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="blocks"></i></div><span class="text-xs font-bold text-slate-400">01</span></div>
-            <h3 class="mt-6 text-xl font-extrabold">Foundational Years</h3><p class="mt-2 text-sm text-slate-600 leading-6">Build core understanding, communication and positive learning habits through the early classes.</p>
+            <h3 class="mt-6 text-xl font-extrabold" data-i18n="academics.stage1_title">Foundational Years</h3><p class="mt-2 text-sm text-slate-600 leading-6" data-i18n="academics.stage1_desc">Build core understanding, communication and positive learning habits through the early classes.</p>
           </article>
           <article class="group p-7 rounded-3xl border border-slate-200 bg-[#f8faf9] hover:bg-white hover:shadow-xl transition">
             <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="flask-conical"></i></div><span class="text-xs font-bold text-slate-400">02</span></div>
-            <h3 class="mt-6 text-xl font-extrabold">Core Learning</h3><p class="mt-2 text-sm text-slate-600 leading-6">Develop subject knowledge with classroom learning, activities and opportunities for participation.</p>
+            <h3 class="mt-6 text-xl font-extrabold" data-i18n="academics.stage2_title">Core Learning</h3><p class="mt-2 text-sm text-slate-600 leading-6" data-i18n="academics.stage2_desc">Develop subject knowledge with classroom learning, activities and opportunities for participation.</p>
           </article>
           <article class="group p-7 rounded-3xl border border-slate-200 bg-[#f8faf9] hover:bg-white hover:shadow-xl transition">
             <div class="flex items-center justify-between"><div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 grid place-items-center"><i data-lucide="graduation-cap"></i></div><span class="text-xs font-bold text-slate-400">03</span></div>
-            <h3 class="mt-6 text-xl font-extrabold">Secondary Years</h3><p class="mt-2 text-sm text-slate-600 leading-6">Support students as they progress toward secondary-level assessments and their next stage of education.</p>
+            <h3 class="mt-6 text-xl font-extrabold" data-i18n="academics.stage3_title">Secondary Years</h3><p class="mt-2 text-sm text-slate-600 leading-6" data-i18n="academics.stage3_desc">Support students as they progress toward secondary-level assessments and their next stage of education.</p>
           </article>
         </div>
       </div>
@@ -754,25 +827,25 @@
     <section id="campus" class="py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-10 items-end">
-          <div class="lg:col-span-6"><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Campus & facilities</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">The spaces that support school life.</h2></div>
-          <p class="lg:col-span-6 text-slate-600 leading-7">Facilities shown below are kept intentionally factual. Detailed photos, timings and facility specifications can be managed from the school admin area in the next phase.</p>
+          <div class="lg:col-span-6"><span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="campus.kicker">Campus &amp; facilities</span><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold" data-i18n="campus.title">The spaces that support school life.</h2></div>
+          <p class="lg:col-span-6 text-slate-600 leading-7" data-i18n="campus.desc">Facilities shown below are kept intentionally factual. Detailed photos, timings and facility specifications can be managed from the school admin area in the next phase.</p>
         </div>
         <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <article class="rounded-3xl bg-[#102f24] text-white p-6 min-h-64 flex flex-col justify-between">
             <div class="flex justify-between"><i data-lucide="book-open" class="text-[#e8bf63]"></i><span class="text-xs text-white/35">01</span></div>
-            <div><h3 class="font-extrabold text-lg">Library</h3><p class="text-sm text-white/55 mt-2 leading-6">A dedicated space for reading and self-learning.</p></div>
+            <div><h3 class="font-extrabold text-lg" data-i18n="campus.library_title">Library</h3><p class="text-sm text-white/55 mt-2 leading-6" data-i18n="campus.library_desc">A dedicated space for reading and self-learning.</p></div>
           </article>
           <article class="rounded-3xl bg-white border border-slate-200 p-6 min-h-64 flex flex-col justify-between">
             <div class="flex justify-between"><i data-lucide="monitor" class="text-[#1f6b4b]"></i><span class="text-xs text-slate-300">02</span></div>
-            <div><h3 class="font-extrabold text-lg">Computer Lab</h3><p class="text-sm text-slate-500 mt-2 leading-6">A space for foundational digital learning and computer-based activities.</p></div>
+            <div><h3 class="font-extrabold text-lg" data-i18n="campus.lab_title">Computer Lab</h3><p class="text-sm text-slate-500 mt-2 leading-6" data-i18n="campus.lab_desc">A space for foundational digital learning and computer-based activities.</p></div>
           </article>
           <article class="rounded-3xl bg-[#edf7f0] p-6 min-h-64 flex flex-col justify-between">
             <div class="flex justify-between"><i data-lucide="trophy" class="text-[#1f6b4b]"></i><span class="text-xs text-slate-400">03</span></div>
-            <div><h3 class="font-extrabold text-lg">Sports & Playground</h3><p class="text-sm text-slate-600 mt-2 leading-6">Space for outdoor play, physical activity and teamwork.</p></div>
+            <div><h3 class="font-extrabold text-lg" data-i18n="campus.sports_title">Sports &amp; Playground</h3><p class="text-sm text-slate-600 mt-2 leading-6" data-i18n="campus.sports_desc">Space for outdoor play, physical activity and teamwork.</p></div>
           </article>
           <article class="rounded-3xl bg-slate-900 text-white p-6 min-h-64 flex flex-col justify-between">
             <div class="flex justify-between"><i data-lucide="shield-check" class="text-[#e8bf63]"></i><span class="text-xs text-white/35">04</span></div>
-            <div><h3 class="font-extrabold text-lg">School Campus</h3><p class="text-sm text-white/55 mt-2 leading-6">A school environment designed around everyday learning and student life.</p></div>
+            <div><h3 class="font-extrabold text-lg" data-i18n="campus.campus_title">School Campus</h3><p class="text-sm text-white/55 mt-2 leading-6" data-i18n="campus.campus_desc">A school environment designed around everyday learning and student life.</p></div>
           </article>
         </div>
       </div>
@@ -782,20 +855,20 @@
     <section id="hostel" class="py-20 bg-[#edf7f0]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-7">
-          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Hostel information</span>
-          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Residential support for families who need it.</h2>
-          <p class="mt-5 text-slate-600 leading-8">Hostel support is available as part of the school information journey. Parents can enquire about eligibility, availability, residential arrangements, fees and current rules directly through the admission process.</p>
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="hostel.kicker">Hostel information</span>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold" data-i18n="hostel.title">Residential support for families who need it.</h2>
+          <p class="mt-5 text-slate-600 leading-8" data-i18n="hostel.desc">Hostel support is available as part of the school information journey. Parents can enquire about eligibility, availability, residential arrangements, fees and current rules directly through the admission process.</p>
           <div class="mt-8 grid sm:grid-cols-2 gap-3">
-            <div class="rounded-2xl bg-white p-5 border border-white shadow-sm"><i data-lucide="message-circle-question" class="text-[#1f6b4b]"></i><div class="font-bold mt-3">Ask first</div><p class="text-sm text-slate-500 mt-1">Confirm current hostel availability and terms with the school.</p></div>
-            <div class="rounded-2xl bg-white p-5 border border-white shadow-sm"><i data-lucide="clipboard-list" class="text-[#1f6b4b]"></i><div class="font-bold mt-3">Enquire together</div><p class="text-sm text-slate-500 mt-1">Include your hostel requirement with the admission enquiry.</p></div>
+            <div class="rounded-2xl bg-white p-5 border border-white shadow-sm"><i data-lucide="message-circle-question" class="text-[#1f6b4b]"></i><div class="font-bold mt-3" data-i18n="hostel.card1_title">Ask first</div><p class="text-sm text-slate-500 mt-1" data-i18n="hostel.card1_desc">Confirm current hostel availability and terms with the school.</p></div>
+            <div class="rounded-2xl bg-white p-5 border border-white shadow-sm"><i data-lucide="clipboard-list" class="text-[#1f6b4b]"></i><div class="font-bold mt-3" data-i18n="hostel.card2_title">Enquire together</div><p class="text-sm text-slate-500 mt-1" data-i18n="hostel.card2_desc">Include your hostel requirement with the admission enquiry.</p></div>
           </div>
         </div>
         <div class="lg:col-span-5 rounded-[2rem] bg-[#102f24] text-white p-8 sm:p-10 shadow-xl">
           <div class="w-14 h-14 rounded-2xl bg-white/10 grid place-items-center"><i data-lucide="home" class="w-7 h-7 text-[#e8bf63]"></i></div>
-          <div class="mt-12 text-xs uppercase tracking-[.2em] text-white/40 font-bold">Residential enquiry</div>
-          <h3 class="mt-3 text-2xl font-extrabold">Need hostel information?</h3>
-          <p class="mt-3 text-sm leading-7 text-white/60">Tell us that residential accommodation is needed and the school team can handle the follow-up.</p>
-          <a href="#admissions" class="focus-ring mt-7 inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white text-[#102f24] font-bold text-sm hover:bg-emerald-50 transition">Ask about hostel <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <div class="mt-12 text-xs uppercase tracking-[.2em] text-white/40 font-bold" data-i18n="hostel.box_kicker">Residential enquiry</div>
+          <h3 class="mt-3 text-2xl font-extrabold" data-i18n="hostel.box_title">Need hostel information?</h3>
+          <p class="mt-3 text-sm leading-7 text-white/60" data-i18n="hostel.box_desc">Tell us that residential accommodation is needed and the school team can handle the follow-up.</p>
+          <a href="#admissions" class="focus-ring mt-7 inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white text-[#102f24] font-bold text-sm hover:bg-emerald-50 transition"><span data-i18n="hostel.box_btn">Ask about hostel</span> <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
       </div>
     </section>
@@ -805,14 +878,14 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Moments &amp; Memories</span>
-            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900">School Photo Gallery</h2>
-            <p class="mt-3 text-slate-600 max-w-2xl leading-7">Glimpses of academic milestones, annual exhibitions, sports tournaments, and student life at Gisela English Medium High School.</p>
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="gallery.kicker">Moments &amp; Memories</span>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900" data-i18n="gallery.title">School Photo Gallery</h2>
+            <p class="mt-3 text-slate-600 max-w-2xl leading-7" data-i18n="gallery.desc">Glimpses of academic milestones, annual exhibitions, sports tournaments, and student life at Gisela English Medium High School.</p>
           </div>
           <div class="flex items-center gap-3 shrink-0">
             <a href="#video-tour" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-[#edf7f0] hover:text-[#1f6b4b] hover:border-[#b8d5c7] transition">
               <i data-lucide="video" class="w-4 h-4 text-[#1f6b4b]"></i>
-              <span>Watch Video Tour</span>
+              <span data-i18n="gallery.watch_video">Watch Video Tour</span>
             </a>
           </div>
         </div>
@@ -824,16 +897,16 @@
             <div class="relative h-56 bg-gradient-to-br from-[#102f24] to-[#1f6b4b] p-6 flex flex-col justify-between overflow-hidden">
               <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#d9aa45_1px,transparent_1px)] [background-size:16px_16px]"></div>
               <div class="relative flex justify-between items-start">
-                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md">Academic Event</span>
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md" data-i18n="gallery.photo1_tag">Academic Event</span>
                 <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="microscope" class="w-4 h-4 text-[#e8bf63]"></i></span>
               </div>
               <div class="relative">
                 <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Exhibition 2026</div>
-                <h3 class="text-xl font-extrabold text-white mt-1">Science &amp; Project Fair</h3>
+                <h3 class="text-xl font-extrabold text-white mt-1" data-i18n="gallery.photo1_title">Science &amp; Project Fair</h3>
               </div>
             </div>
             <div class="p-5">
-              <p class="text-xs text-slate-600 leading-relaxed">Students presenting innovative science models, environmental projects, and interactive live demonstrations.</p>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="gallery.photo1_desc">Students presenting innovative science models, environmental projects, and interactive live demonstrations.</p>
               <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
                 <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Annual Fest</span>
                 <span class="text-[#1f6b4b] font-bold">Class 6–10</span>
@@ -846,16 +919,16 @@
             <div class="relative h-56 bg-gradient-to-br from-[#12372a] to-[#2d5a27] p-6 flex flex-col justify-between overflow-hidden">
               <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
               <div class="relative flex justify-between items-start">
-                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-white backdrop-blur-md">Sports Day</span>
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-white backdrop-blur-md" data-i18n="gallery.photo2_tag">Sports Day</span>
                 <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="trophy" class="w-4 h-4 text-[#e8bf63]"></i></span>
               </div>
               <div class="relative">
                 <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Athletics &amp; Games</div>
-                <h3 class="text-xl font-extrabold text-white mt-1">Annual Sports Meet</h3>
+                <h3 class="text-xl font-extrabold text-white mt-1" data-i18n="gallery.photo2_title">Annual Sports Meet</h3>
               </div>
             </div>
             <div class="p-5">
-              <p class="text-xs text-slate-600 leading-relaxed">Track events, relay races, football tournaments, and athletic achievements celebrated across school houses.</p>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="gallery.photo2_desc">Track events, relay races, football tournaments, and athletic achievements celebrated across school houses.</p>
               <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
                 <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Sports Week</span>
                 <span class="text-[#1f6b4b] font-bold">All Classes</span>
@@ -868,16 +941,16 @@
             <div class="relative h-56 bg-gradient-to-br from-[#102f24] to-[#3b4d28] p-6 flex flex-col justify-between overflow-hidden">
               <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#d9aa45_1px,transparent_1px)] [background-size:16px_16px]"></div>
               <div class="relative flex justify-between items-start">
-                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md">Cultural</span>
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md" data-i18n="gallery.photo3_tag">Cultural</span>
                 <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="palette" class="w-4 h-4 text-[#e8bf63]"></i></span>
               </div>
               <div class="relative">
                 <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Celebrations</div>
-                <h3 class="text-xl font-extrabold text-white mt-1">Cultural Day &amp; Arts</h3>
+                <h3 class="text-xl font-extrabold text-white mt-1" data-i18n="gallery.photo3_title">Cultural Day &amp; Arts</h3>
               </div>
             </div>
             <div class="p-5">
-              <p class="text-xs text-slate-600 leading-relaxed">Traditional dance, music, drama recitals, and regional heritage programmes performed by students.</p>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="gallery.photo3_desc">Traditional dance, music, drama recitals, and regional heritage programmes performed by students.</p>
               <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
                 <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Cultural Meet</span>
                 <span class="text-[#1f6b4b] font-bold">All Batches</span>
@@ -890,16 +963,16 @@
             <div class="relative h-56 bg-gradient-to-br from-[#1b4332] to-[#102f24] p-6 flex flex-col justify-between overflow-hidden">
               <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#52b788_1px,transparent_1px)] [background-size:16px_16px]"></div>
               <div class="relative flex justify-between items-start">
-                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-white backdrop-blur-md">Academics</span>
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-white backdrop-blur-md" data-i18n="gallery.photo4_tag">Academics</span>
                 <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="book-open" class="w-4 h-4 text-[#e8bf63]"></i></span>
               </div>
               <div class="relative">
                 <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Classroom Moments</div>
-                <h3 class="text-xl font-extrabold text-white mt-1">Foundational Learning</h3>
+                <h3 class="text-xl font-extrabold text-white mt-1" data-i18n="gallery.photo4_title">Foundational Learning</h3>
               </div>
             </div>
             <div class="p-5">
-              <p class="text-xs text-slate-600 leading-relaxed">Interactive classroom sessions, group activities, library reading hours, and foundational language development.</p>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="gallery.photo4_desc">Interactive classroom sessions, group activities, library reading hours, and foundational language development.</p>
               <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
                 <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Everyday Life</span>
                 <span class="text-[#1f6b4b] font-bold">Class 1–5</span>
@@ -912,16 +985,16 @@
             <div class="relative h-56 bg-gradient-to-br from-[#081c15] to-[#1b4332] p-6 flex flex-col justify-between overflow-hidden">
               <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#e8bf63_1px,transparent_1px)] [background-size:16px_16px]"></div>
               <div class="relative flex justify-between items-start">
-                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md">Technology</span>
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md" data-i18n="gallery.photo5_tag">Technology</span>
                 <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="monitor" class="w-4 h-4 text-[#e8bf63]"></i></span>
               </div>
               <div class="relative">
                 <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Digital Skills</div>
-                <h3 class="text-xl font-extrabold text-white mt-1">Computer Lab Sessions</h3>
+                <h3 class="text-xl font-extrabold text-white mt-1" data-i18n="gallery.photo5_title">Computer Lab Sessions</h3>
               </div>
             </div>
             <div class="p-5">
-              <p class="text-xs text-slate-600 leading-relaxed">Practical computer education, digital literacy, and educational software practice in the ICT room.</p>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="gallery.photo5_desc">Practical computer education, digital literacy, and educational software practice in the ICT room.</p>
               <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
                 <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> Lab Practical</span>
                 <span class="text-[#1f6b4b] font-bold">Class 4–10</span>
@@ -934,16 +1007,16 @@
             <div class="relative h-56 bg-gradient-to-br from-[#102f24] to-[#244b3c] p-6 flex flex-col justify-between overflow-hidden">
               <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#d9aa45_1px,transparent_1px)] [background-size:16px_16px]"></div>
               <div class="relative flex justify-between items-start">
-                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md">Celebration</span>
+                <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-[#e8bf63] backdrop-blur-md" data-i18n="gallery.photo6_tag">Celebration</span>
                 <span class="w-9 h-9 rounded-xl bg-white/10 text-white grid place-items-center group-hover:scale-110 transition"><i data-lucide="flag" class="w-4 h-4 text-[#e8bf63]"></i></span>
               </div>
               <div class="relative">
                 <div class="text-xs font-bold text-[#e8bf63] tracking-wider uppercase">Patriotic Events</div>
-                <h3 class="text-xl font-extrabold text-white mt-1">Independence &amp; Republic Day</h3>
+                <h3 class="text-xl font-extrabold text-white mt-1" data-i18n="gallery.photo6_title">Independence &amp; Republic Day</h3>
               </div>
             </div>
             <div class="p-5">
-              <p class="text-xs text-slate-600 leading-relaxed">Flag hoisting ceremonies, parade drills, patriotic recitations, and community assembly celebrations.</p>
+              <p class="text-xs text-slate-600 leading-relaxed" data-i18n="gallery.photo6_desc">Flag hoisting ceremonies, parade drills, patriotic recitations, and community assembly celebrations.</p>
               <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-semibold">
                 <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#1f6b4b]"></i> National Days</span>
                 <span class="text-[#1f6b4b] font-bold">School Wide</span>
@@ -959,10 +1032,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-10 items-center">
           <div class="lg:col-span-5">
-            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">School video</span>
-            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">See the school through its video tour.</h2>
-            <p class="mt-5 text-slate-600 leading-8">A video section gives families a quick visual introduction while keeping the rest of the website focused on useful school information.</p>
-            <a href="https://www.youtube.com/watch?v=nIdAtlc0f7Q" target="_blank" rel="noopener noreferrer" class="focus-ring mt-7 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#102f24] text-white font-bold text-sm hover:bg-[#1f6b4b] transition"><i data-lucide="youtube" class="w-4 h-4"></i> Open video on YouTube</a>
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="video.kicker">School video</span>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold" data-i18n="video.title">See the school through its video tour.</h2>
+            <p class="mt-5 text-slate-600 leading-8" data-i18n="video.desc">A video section gives families a quick visual introduction while keeping the rest of the website focused on useful school information.</p>
+            <a href="https://www.youtube.com/watch?v=nIdAtlc0f7Q" target="_blank" rel="noopener noreferrer" class="focus-ring mt-7 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#102f24] text-white font-bold text-sm hover:bg-[#1f6b4b] transition"><i data-lucide="youtube" class="w-4 h-4"></i> <span data-i18n="video.youtube_btn">Open video on YouTube</span></a>
           </div>
           <div class="lg:col-span-7 rounded-[2rem] overflow-hidden bg-slate-950 shadow-xl aspect-video">
             <iframe class="w-full h-full" src="https://www.youtube.com/embed/nIdAtlc0f7Q" title="Gisela English Medium High School video tour" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -976,33 +1049,33 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-12 items-start">
           <div class="lg:col-span-5">
-            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#e8bf63]">Admissions 2026–27</span>
-            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Start with a simple enquiry.</h2>
-            <p class="mt-5 text-emerald-50/70 leading-8">Share the basic details below. In the secure Phase 2 workflow, each enquiry will be stored for authorised staff follow-up rather than relying on browser-only messages.</p>
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#e8bf63]" data-i18n="admissions.kicker">Admissions 2026–27</span>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold" data-i18n="admissions.title">Start with a simple enquiry.</h2>
+            <p class="mt-5 text-emerald-50/70 leading-8" data-i18n="admissions.desc">Share the basic details below. In the secure Phase 2 workflow, each enquiry will be stored for authorised staff follow-up rather than relying on browser-only messages.</p>
             <div class="mt-8 space-y-4">
-              <div class="flex gap-4"><div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 grid place-items-center font-extrabold text-[#e8bf63]">1</div><div><div class="font-bold">Submit enquiry</div><div class="text-sm text-white/50 mt-1">Tell the school who is applying and for which class.</div></div></div>
-              <div class="flex gap-4"><div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 grid place-items-center font-extrabold text-[#e8bf63]">2</div><div><div class="font-bold">School follow-up</div><div class="text-sm text-white/50 mt-1">The admissions team can review the enquiry and contact the family.</div></div></div>
-              <div class="flex gap-4"><div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 grid place-items-center font-extrabold text-[#e8bf63]">3</div><div><div class="font-bold">Next steps</div><div class="text-sm text-white/50 mt-1">Documents, availability and admission requirements can be discussed directly.</div></div></div>
+              <div class="flex gap-4"><div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 grid place-items-center font-extrabold text-[#e8bf63]">1</div><div><div class="font-bold" data-i18n="admissions.step1_title">Submit enquiry</div><div class="text-sm text-white/50 mt-1" data-i18n="admissions.step1_desc">Tell the school who is applying and for which class.</div></div></div>
+              <div class="flex gap-4"><div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 grid place-items-center font-extrabold text-[#e8bf63]">2</div><div><div class="font-bold" data-i18n="admissions.step2_title">School follow-up</div><div class="text-sm text-white/50 mt-1" data-i18n="admissions.step2_desc">The admissions team can review the enquiry and contact the family.</div></div></div>
+              <div class="flex gap-4"><div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 grid place-items-center font-extrabold text-[#e8bf63]">3</div><div><div class="font-bold" data-i18n="admissions.step3_title">Next steps</div><div class="text-sm text-white/50 mt-1" data-i18n="admissions.step3_desc">Documents, availability and admission requirements can be discussed directly.</div></div></div>
             </div>
           </div>
 
           <form id="enquiry" class="lg:col-span-7 bg-white text-slate-900 rounded-[2rem] p-6 sm:p-8 shadow-2xl" novalidate>
             <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-7">
-              <div><h3 class="text-2xl font-extrabold">Admission enquiry</h3><p class="text-sm text-slate-500 mt-1">For Classes 1–10 · Session 2026–27</p></div>
+              <div><h3 class="text-2xl font-extrabold" data-i18n="enquiry.form_title">Admission enquiry</h3><p class="text-sm text-slate-500 mt-1" data-i18n="enquiry.form_sub">For Classes 1–10 · Session 2026–27</p></div>
               <span class="inline-flex items-center gap-2 text-xs font-bold text-[#1f6b4b] bg-[#edf7f0] px-3 py-2 rounded-full"><i data-lucide="shield-check" class="w-4 h-4"></i> Secure workflow in Phase 2</span>
             </div>
             <div class="grid sm:grid-cols-2 gap-4">
-              <div class="sm:col-span-2"><label for="parent" class="text-xs font-bold uppercase tracking-wider text-slate-500">Parent / Guardian</label><input required id="parent" name="parent" autocomplete="name" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Full name"></div>
-              <div><label for="student" class="text-xs font-bold uppercase tracking-wider text-slate-500">Student name</label><input required id="student" name="student" autocomplete="off" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Student's full name"></div>
-              <div><label for="phone" class="text-xs font-bold uppercase tracking-wider text-slate-500">Contact number</label><input required id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="10" pattern="[0-9]{10}" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="10-digit mobile number"></div>
-              <div><label for="class" class="text-xs font-bold uppercase tracking-wider text-slate-500">Applying for</label><select id="class" name="class" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 bg-white outline-none focus:border-[#1f6b4b]"><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
-              <div><label for="location" class="text-xs font-bold uppercase tracking-wider text-slate-500">Village / location</label><input id="location" name="location" autocomplete="address-level2" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Your village or town"></div>
-              <div class="sm:col-span-2"><label class="flex gap-3 items-start text-sm text-slate-600"><input id="hostelNeed" name="hostel" type="checkbox" class="mt-1 accent-[#1f6b4b]"> I would like information about hostel / residential options.</label></div>
-              <div class="sm:col-span-2"><label for="message" class="text-xs font-bold uppercase tracking-wider text-slate-500">Message (optional)</label><textarea id="message" name="message" rows="3" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] resize-none" placeholder="Any question for the school?"></textarea></div>
+              <div class="sm:col-span-2"><label for="parent" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_parent">Parent / Guardian</label><input required id="parent" name="parent" autocomplete="name" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Full name" data-i18n-placeholder="enquiry.ph_parent"></div>
+              <div><label for="student" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_student">Student name</label><input required id="student" name="student" autocomplete="off" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Student's full name" data-i18n-placeholder="enquiry.ph_student"></div>
+              <div><label for="phone" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_phone">Contact number</label><input required id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="10" pattern="[0-9]{10}" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="10-digit mobile number" data-i18n-placeholder="enquiry.ph_phone"></div>
+              <div><label for="class" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_class">Applying for</label><select id="class" name="class" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 bg-white outline-none focus:border-[#1f6b4b]"><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
+              <div><label for="location" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_location">Village / location</label><input id="location" name="location" autocomplete="address-level2" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Your village or town" data-i18n-placeholder="enquiry.ph_location"></div>
+              <div class="sm:col-span-2"><label class="flex gap-3 items-start text-sm text-slate-600"><input id="hostelNeed" name="hostel" type="checkbox" class="mt-1 accent-[#1f6b4b]"> <span data-i18n="enquiry.lbl_hostel">I would like information about hostel / residential options.</span></label></div>
+              <div class="sm:col-span-2"><label for="message" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_message">Message (optional)</label><textarea id="message" name="message" rows="3" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] resize-none" placeholder="Any question for the school?" data-i18n-placeholder="enquiry.ph_message"></textarea></div>
             </div>
-            <button type="submit" class="focus-ring mt-5 w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition">Submit admission enquiry</button>
+            <button type="submit" class="focus-ring mt-5 w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition" data-i18n="enquiry.submit_btn">Submit admission enquiry</button>
             <div id="formStatus" class="hidden mt-4 rounded-xl px-4 py-3 text-sm font-semibold" role="status" aria-live="polite"></div>
-            <p class="mt-4 text-xs text-slate-400 leading-5">Preview build: this enquiry is not stored yet. Live submission will be connected when the school database is added.</p>
+            <p class="mt-4 text-xs text-slate-400 leading-5" data-i18n="enquiry.note">Preview build: this enquiry is not stored yet. Live submission will be connected when the school database is added.</p>
           </form>
         </div>
       </div>
@@ -1013,12 +1086,12 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Support &amp; Guidance</span>
-            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900">Parent Help &amp; Admission FAQ</h2>
-            <p class="mt-2 text-sm text-slate-600">Answers to common questions from parents regarding enrolment, classes, and facilities.</p>
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="faq.kicker">Support &amp; Guidance</span>
+            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900" data-i18n="faq.title">Parent Help &amp; Admission FAQ</h2>
+            <p class="mt-2 text-sm text-slate-600" data-i18n="faq.desc">Answers to common questions from parents regarding enrolment, classes, and facilities.</p>
           </div>
           <a href="#enquiry" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#1f6b4b] text-white text-xs font-extrabold hover:bg-[#185b40] transition">
-            <span>Submit Enquiry</span>
+            <span data-i18n="faq.submit_enquiry_btn">Submit Enquiry</span>
             <i data-lucide="arrow-up" class="w-4 h-4"></i>
           </a>
         </div>
@@ -1027,22 +1100,22 @@
             <div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center mb-4">
               <i data-lucide="help-circle" class="w-5 h-5"></i>
             </div>
-            <h3 class="font-extrabold text-base text-slate-900">Which classes are open?</h3>
-            <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">Admissions are open for Classes 1 to 10 for Session 2026–27. Enquiries can be submitted directly through the form above.</p>
+            <h3 class="font-extrabold text-base text-slate-900" data-i18n="faq.q1">Which classes are open?</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="faq.a1">Admissions are open for Classes 1 to 10 for Session 2026–27. Enquiries can be submitted directly through the form above.</p>
           </div>
           <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
             <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 grid place-items-center mb-4">
               <i data-lucide="home" class="w-5 h-5"></i>
             </div>
-            <h3 class="font-extrabold text-base text-slate-900">Is hostel accommodation available?</h3>
-            <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">Yes, residential accommodation is available. Parents can check the hostel box on the enquiry form to receive accommodation guidelines.</p>
+            <h3 class="font-extrabold text-base text-slate-900" data-i18n="faq.q2">Is hostel accommodation available?</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="faq.a2">Yes, residential accommodation is available. Parents can check the hostel box on the enquiry form to receive accommodation guidelines.</p>
           </div>
           <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
             <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-700 grid place-items-center mb-4">
               <i data-lucide="file-check" class="w-5 h-5"></i>
             </div>
-            <h3 class="font-extrabold text-base text-slate-900">What documents are needed?</h3>
-            <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">Birth certificate, previous report card / transfer certificate, passport photographs, and address proof for the admission verification.</p>
+            <h3 class="font-extrabold text-base text-slate-900" data-i18n="faq.q3">What documents are needed?</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="faq.a3">Birth certificate, previous report card / transfer certificate, passport photographs, and address proof for the admission verification.</p>
           </div>
         </div>
       </div>
@@ -1053,11 +1126,11 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="rounded-[2rem] bg-[#f7f9f7] border border-slate-200 p-7 sm:p-9 flex flex-col lg:flex-row lg:items-center justify-between gap-7">
           <div class="max-w-2xl">
-            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">School digital portal</span>
-            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold">One secure place for school administration.</h2>
-            <p class="mt-3 text-slate-600 leading-7">A dedicated school portal is available for parents, students and teachers, with attendance, academics, assignments and results workflows ready for the next backend phase.</p>
+            <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="portal.kicker">School digital portal</span>
+            <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold" data-i18n="portal.title">One secure place for school administration.</h2>
+            <p class="mt-3 text-slate-600 leading-7" data-i18n="portal.desc">A dedicated school portal is available for parents, students and teachers, with attendance, academics, assignments and results workflows ready for the next backend phase.</p>
           </div>
-          <div class="flex flex-col sm:flex-row gap-3 shrink-0"><a href="portal.html" class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#1f6b4b] text-white hover:bg-[#185b40] transition"><div class="w-10 h-10 rounded-xl bg-white/10 grid place-items-center"><i data-lucide="layout-dashboard"></i></div><div><div class="font-bold text-sm">School portal</div><div class="text-xs text-white/60">Parent · Student · Teacher</div></div></a><a href="admin.html" class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white border border-slate-200 hover:border-[#b8d5c7] hover:bg-[#edf7f0] transition"><div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="lock-keyhole"></i></div><div><div class="font-bold text-sm">Admin preview</div><div class="text-xs text-slate-500">Open administration</div></div></a></div>
+          <div class="flex flex-col sm:flex-row gap-3 shrink-0"><a href="portal.html" class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#1f6b4b] text-white hover:bg-[#185b40] transition"><div class="w-10 h-10 rounded-xl bg-white/10 grid place-items-center"><i data-lucide="layout-dashboard"></i></div><div><div class="font-bold text-sm" data-i18n="portal.card_title">School portal</div><div class="text-xs text-white/60" data-i18n="portal.card_sub">Parent · Student · Teacher</div></div></a><a href="admin.html" class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-white border border-slate-200 hover:border-[#b8d5c7] hover:bg-[#edf7f0] transition"><div class="w-10 h-10 rounded-xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="lock-keyhole"></i></div><div><div class="font-bold text-sm" data-i18n="portal.admin_title">Admin preview</div><div class="text-xs text-slate-500" data-i18n="portal.admin_sub">Open administration</div></div></a></div>
         </div>
       </div>
     </section>
@@ -1066,21 +1139,21 @@
     <section id="contact" class="py-20 lg:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-5">
         <div class="lg:col-span-8 rounded-[2rem] bg-[#edf7f0] p-8 sm:p-10">
-          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]">Contact & visit</span>
-          <h2 class="mt-3 text-3xl font-extrabold">Gisela English Medium High School</h2>
-          <p class="mt-4 text-slate-600 leading-7">Silachari, Gomati District, Tripura — PIN 799104</p>
+          <span class="text-xs font-extrabold uppercase tracking-[.2em] text-[#1f6b4b]" data-i18n="contact.kicker">Contact &amp; visit</span>
+          <h2 class="mt-3 text-3xl font-extrabold" data-i18n="contact.title">Gisela English Medium High School</h2>
+          <p class="mt-4 text-slate-600 leading-7" data-i18n="contact.address">Silachari, Gomati District, Tripura — PIN 799104</p>
           <div class="mt-8 grid sm:grid-cols-2 gap-5 text-sm">
-            <div><div class="font-bold">UDISE Code</div><div class="text-slate-600 mt-1">16071200409</div></div>
-            <div><div class="font-bold">Board</div><div class="text-slate-600 mt-1">Tripura Board of Secondary Education</div></div>
-            <div><div class="font-bold">Classes</div><div class="text-slate-600 mt-1">Class 1 to Class 10</div></div>
-            <div><div class="font-bold">Admissions</div><div class="text-slate-600 mt-1">Use the enquiry form on this page</div></div>
+            <div><div class="font-bold" data-i18n="contact.lbl_udise">UDISE Code</div><div class="text-slate-600 mt-1">16071200409</div></div>
+            <div><div class="font-bold" data-i18n="contact.lbl_board">Board</div><div class="text-slate-600 mt-1" data-i18n="contact.board_name">Tripura Board of Secondary Education</div></div>
+            <div><div class="font-bold" data-i18n="contact.lbl_classes">Classes</div><div class="text-slate-600 mt-1" data-i18n="contact.classes_val">Class 1 to Class 10</div></div>
+            <div><div class="font-bold" data-i18n="contact.lbl_admissions">Admissions</div><div class="text-slate-600 mt-1" data-i18n="contact.admissions_val">Use the enquiry form on this page</div></div>
           </div>
         </div>
         <div class="lg:col-span-4 rounded-[2rem] bg-[#102f24] text-white p-8 sm:p-10">
           <i data-lucide="navigation" class="w-7 h-7 text-[#e8bf63]"></i>
-          <h3 class="mt-7 text-xl font-extrabold">Planning a visit?</h3>
-          <p class="mt-3 text-sm text-white/60 leading-7">For current directions, office timings and admission availability, please confirm details with the school before travelling.</p>
-          <a href="#admissions" class="focus-ring mt-7 inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white text-[#102f24] font-bold text-sm hover:bg-emerald-50 transition">Send an enquiry <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <h3 class="mt-7 text-xl font-extrabold" data-i18n="contact.planning_title">Planning a visit?</h3>
+          <p class="mt-3 text-sm text-white/60 leading-7" data-i18n="contact.planning_desc">For current directions, office timings and admission availability, please confirm details with the school before travelling.</p>
+          <a href="#admissions" class="focus-ring mt-7 inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white text-[#102f24] font-bold text-sm hover:bg-emerald-50 transition"><span data-i18n="contact.enquiry_btn">Send an enquiry</span> <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
       </div>
     </section>
@@ -1101,34 +1174,34 @@
 
   <!-- Mobile sticky conversion bar -->
   <div class="sm:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-white/95 backdrop-blur-xl border-t border-slate-200">
-    <a href="#admissions" class="focus-ring flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#1f6b4b] text-white font-extrabold shadow-lg"><i data-lucide="file-pen-line" class="w-4 h-4"></i> Admission Enquiry</a>
+    <a href="#admissions" class="focus-ring flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#1f6b4b] text-white font-extrabold shadow-lg"><i data-lucide="file-pen-line" class="w-4 h-4"></i> <span data-i18n="header.enquiry_btn">Admission Enquiry</span></a>
   </div>
 
   <footer class="bg-[#0b2118] text-white pb-20 sm:pb-0">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid md:grid-cols-3 gap-10">
       <div>
-        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-[#1f6b4b] grid place-items-center font-extrabold">GE</div><span class="font-extrabold">Gisela English Medium High School</span></div>
-        <p class="mt-4 text-sm text-white/50 leading-6">Silachari, Gomati District, Tripura — PIN 799104.</p>
+        <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-[#1f6b4b] grid place-items-center font-extrabold">GE</div><span class="font-extrabold" data-i18n="header.school_name">Gisela English Medium High School</span></div>
+        <p class="mt-4 text-sm text-white/50 leading-6" data-i18n="contact.address">Silachari, Gomati District, Tripura — PIN 799104.</p>
       </div>
       <div>
-        <h4 class="font-bold">Explore</h4>
+        <h4 class="font-bold" data-i18n="footer.explore">Explore</h4>
         <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-white/55">
-          <a href="#about" class="hover:text-white">About</a><a href="#academics" class="hover:text-white">Academics</a>
-          <a href="#campus" class="hover:text-white">Campus</a><a href="#hostel" class="hover:text-white">Hostel</a>
-          <a href="#gallery-photos" class="hover:text-white">Photos</a><a href="#video-tour" class="hover:text-white">Videos</a>
-          <a href="#achievements" class="hover:text-white">Achievements</a><a href="#principal-message" class="hover:text-white">Principal</a>
-          <a href="#admissions" class="hover:text-white">Admissions</a><a href="#admission-help" class="hover:text-white">Parent Help</a>
+          <a href="#about" class="hover:text-white" data-i18n="header.nav_about">About</a><a href="#academics" class="hover:text-white" data-i18n="header.nav_academics">Academics</a>
+          <a href="#campus" class="hover:text-white" data-i18n="header.nav_campus">Campus</a><a href="#hostel" class="hover:text-white" data-i18n="dropdown.hostel_title">Hostel</a>
+          <a href="#gallery-photos" class="hover:text-white" data-i18n="dropdown.photos_title">Photos</a><a href="#video-tour" class="hover:text-white" data-i18n="dropdown.videos_title">Videos</a>
+          <a href="#achievements" class="hover:text-white" data-i18n="dropdown.achievements_title">Achievements</a><a href="#principal-message" class="hover:text-white" data-i18n="dropdown.principal_title">Principal</a>
+          <a href="#admissions" class="hover:text-white" data-i18n="header.nav_admissions">Admissions</a><a href="#admission-help" class="hover:text-white" data-i18n="dropdown.help_title">Parent Help</a>
         </div>
       </div>
       <div>
-        <h4 class="font-bold">Digital roadmap</h4>
-        <p class="mt-4 text-sm text-white/50 leading-6">Public website · Modern school experience<br>School portal · Parent · Student · Teacher<br>Next: Secure database & live school operations</p>
+        <h4 class="font-bold" data-i18n="footer.roadmap_title">Digital roadmap</h4>
+        <p class="mt-4 text-sm text-white/50 leading-6" data-i18n="footer.roadmap_desc">Public website · Modern school experience<br>School portal · Parent · Student · Teacher<br>Next: Secure database &amp; live school operations</p>
       </div>
     </div>
     <div class="border-t border-white/10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-white/35 flex flex-col sm:flex-row justify-between gap-2">
-        <span>© 2003–2026 Gisela English Medium High School, Silachari, Tripura.</span>
-        <span>Built for a clearer digital school experience.</span>
+        <span data-i18n="footer.copyright">© 2003–2026 Gisela English Medium High School, Silachari, Tripura.</span>
+        <span data-i18n="footer.tagline">Built for a clearer digital school experience.</span>
       </div>
     </div>
   </footer>
@@ -1302,5 +1375,6 @@
     </script>
     <script src="js/banner-carousel.js"></script>
     <script src="js/navbar-dropdowns.js"></script>
+    <script src="js/translations.js"></script>
   </body>
 </html>
