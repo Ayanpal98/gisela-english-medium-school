@@ -360,14 +360,17 @@ html {
 }
 
 /* Targeted rotation angles pointing to active script */
-.lang-emblem-img[data-active-lang="en"] {
-  transform: rotate(-120deg); /* Points to A (English) */
-}
 .lang-emblem-img[data-active-lang="bn"] {
   transform: rotate(0deg);    /* Points to অ (Bengali) */
 }
+.lang-emblem-img[data-active-lang="en"] {
+  transform: rotate(-90deg);  /* Points to A (English) */
+}
+.lang-emblem-img[data-active-lang="kb"] {
+  transform: rotate(-180deg); /* Points to ক (Kokborok) */
+}
 .lang-emblem-img[data-active-lang="hi"] {
-  transform: rotate(-240deg); /* Points to अ (Hindi) */
+  transform: rotate(-270deg); /* Points to अ (Hindi) */
 }
 
 /* Counter-clockwise (anticlock) spin keyframes triggered upon switching */
