@@ -609,6 +609,10 @@ body {
   transform: translateY(-1px);
 }
 
+.mobile-nav-brand {
+  display: none;
+}
+
 .mobile-menu-toggle {
   display: none;
   align-items: center;
@@ -619,10 +623,18 @@ body {
   padding: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Mobile Drawer Flex Layout */
 .mobile-nav-drawer {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -1013,14 +1025,97 @@ body {
   }
 }
 
-/* Mobile & Tablet Portrait Menu Toggle: <= 920px */
+/* Mobile & Tablet Portrait Menu Toggle & Full Width Drawer: <= 920px */
 @media (max-width: 920px) {
+  .navbar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    height: auto !important;
+    min-height: 56px !important;
+    width: 100% !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+    box-sizing: border-box !important;
+  }
+
+  .navbar-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    padding: 0 1rem !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-nav-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    color: #ffffff !important;
+  }
+
+  .mobile-nav-brand:hover {
+    opacity: 0.9;
+  }
+
   .nav-menu,
   .nav-cta-btn {
     display: none !important;
   }
+
+  .navbar-right {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+    height: 100% !important;
+  }
+
   .mobile-menu-toggle {
     display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0.45rem !important;
+    border-radius: 0.55rem !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+  }
+
+  .mobile-menu-toggle:hover,
+  .mobile-menu-toggle:focus-visible {
+    background: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .mobile-nav-drawer {
+    width: 100% !important;
+    max-width: 100vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.45rem !important;
+    background: #ffffff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-bottom: 3px solid var(--inst-gold) !important;
+    padding: 1rem 1.15rem 1.75rem !important;
+    max-height: calc(100vh - 60px) !important;
+    overflow-y: auto !important;
+    box-shadow: 0 20px 45px rgba(7, 31, 56, 0.28) !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-nav-drawer.hidden {
+    display: none !important;
   }
 }
 
@@ -1199,20 +1294,6 @@ body {
     display: inline-block;
   }
 
-  .navbar {
-    min-height: 55px;
-    height: auto;
-  }
-
-  .nav-menu,
-  .nav-cta-btn {
-    display: none;
-  }
-
-  .mobile-menu-toggle {
-    display: inline-flex;
-  }
-
   .hero {
     height: 240px;
   }
@@ -1287,63 +1368,22 @@ body {
   }
 }
 
-/* ==========================================================================
-   6. MOBILE ACCORDION DRAWER
-   ========================================================================== */
-.mobile-nav-drawer {
-  background: #ffffff;
-  border-top: 1px solid rgba(7, 31, 56, 0.1);
-  padding: 1rem;
-  max-height: calc(100vh - 100px);
-  overflow-y: auto;
+/* When mobile menu drawer is open, keep navbar on top and hide floating widgets */
+body.mobile-nav-open .navbar,
+body:has(#mobileDrawer:not(.hidden)) .navbar {
+  z-index: 95 !important;
 }
 
-.mobile-nav-item {
-  border-bottom: 1px solid #f1f5f9;
+body.mobile-nav-open #floatingAds,
+body.mobile-nav-open #schoolChatbot,
+body:has(#mobileDrawer:not(.hidden)) #floatingAds,
+body:has(#mobileDrawer:not(.hidden)) #schoolChatbot {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.mobile-nav-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 0.5rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: #0f172a;
-  cursor: pointer;
-  list-style: none;
-}
-
-.mobile-nav-summary::-webkit-details-marker {
-  display: none;
-}
-
-.mobile-nav-links {
-  background: #f8fafc;
-  border-radius: 0.65rem;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.mobile-sub-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.65rem;
-  border-radius: 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #334155;
-  text-decoration: none;
-}
-
-.mobile-sub-link:hover {
-  background: #ffffff;
-  color: var(--inst-blue-primary);
-}
 
 /* Hero Slider Carousel Full Bleed Integration */
 .hero .banner-carousel-container {

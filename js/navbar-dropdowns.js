@@ -150,6 +150,7 @@
     if (mobileBtn && mobileDrawer) {
       mobileBtn.addEventListener('click', () => {
         const isHidden = mobileDrawer.classList.toggle('hidden');
+        document.body.classList.toggle('mobile-nav-open', !isHidden);
         mobileBtn.setAttribute('aria-expanded', String(!isHidden));
         mobileBtn.innerHTML = isHidden 
           ? '<i data-lucide="menu" class="w-6 h-6"></i>'
@@ -163,6 +164,7 @@
       mobileDrawer.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
           mobileDrawer.classList.add('hidden');
+          document.body.classList.remove('mobile-nav-open');
           mobileBtn.setAttribute('aria-expanded', 'false');
           mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
           if (window.lucide && typeof window.lucide.createIcons === 'function') {
