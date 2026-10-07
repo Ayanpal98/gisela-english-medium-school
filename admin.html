@@ -32,19 +32,19 @@
       </div>
     </section>
 
-    <section class="min-h-screen flex items-center justify-center p-5 sm:p-8">
+    <section class="min-h-screen flex items-center justify-center p-4 sm:p-8">
       <div class="w-full max-w-md">
         <a href="index.html" class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-[#1f6b4b]"><i data-lucide="arrow-left" class="w-4 h-4"></i> Back to school website</a>
-        <div class="mt-10 bg-white border border-slate-200 rounded-[2rem] p-7 sm:p-9 shadow-xl shadow-slate-200/50 glass-admin-card">
+        <div class="mt-8 bg-white border border-slate-200 rounded-[2rem] p-5 sm:p-9 shadow-xl shadow-slate-200/50 glass-admin-card">
           <div class="w-12 h-12 rounded-2xl bg-[#edf7f0] text-[#1f6b4b] grid place-items-center"><i data-lucide="shield-check"></i></div>
-          <h2 class="mt-6 text-3xl font-extrabold">Administration</h2>
-          <p class="mt-2 text-slate-500 leading-6">Access the school administration workspace to manage admissions, academic content and public website information.</p>
+          <h2 class="mt-6 text-2xl sm:text-3xl font-extrabold">Administration</h2>
+          <p class="mt-2 text-slate-500 text-sm sm:text-base leading-6">Access the school administration workspace to manage admissions, academic content and public website information.</p>
           <div class="mt-6 flex items-center gap-3 rounded-2xl bg-[#edf7f0] border border-[#cfe4d7] p-4 text-sm text-[#245c43]">
             <i data-lucide="lock-keyhole" class="w-5 h-5 shrink-0"></i><div><strong>Administrator access</strong><br>Use the school administrator account configured for this portal.</div>
           </div><form id="loginForm" class="mt-7 space-y-4">
             <div><label for="loginEmail" class="admin-label">Email</label><input id="loginEmail" type="email" required autocomplete="email" class="admin-input" placeholder="admin@school.edu.in"></div>
             <div><label for="loginPassword" class="admin-label">Password</label><input id="loginPassword" type="password" required autocomplete="current-password" class="admin-input" placeholder="••••••••"></div>
-            <button class="w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition" type="submit">Sign in to administration</button>
+            <button class="w-full py-3.5 px-3 rounded-xl bg-[#1f6b4b] text-white font-extrabold text-sm sm:text-base hover:bg-[#185b40] transition" type="submit">Sign in to administration</button>
           </form>
           <p id="loginStatus" class="hidden mt-4 text-sm rounded-xl px-4 py-3" role="status"></p>
           <p class="mt-5 text-xs text-slate-400 leading-5">Administrator access is intended for authorised school staff. Live authentication and persistent records can be connected to the school backend without changing this interface.</p>

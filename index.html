@@ -1222,13 +1222,13 @@
               <span class="inline-flex items-center gap-2 text-xs font-bold text-[#1f6b4b] bg-[#edf7f0] px-3 py-2 rounded-full"><i data-lucide="shield-check" class="w-4 h-4"></i> Secure workflow in Phase 2</span>
             </div>
             <div class="grid sm:grid-cols-2 gap-4">
-              <div class="sm:col-span-2"><label for="parent" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_parent">Parent / Guardian</label><input required id="parent" name="parent" autocomplete="name" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Full name" data-i18n-placeholder="enquiry.ph_parent"></div>
-              <div><label for="student" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_student">Student name</label><input required id="student" name="student" autocomplete="off" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Student's full name" data-i18n-placeholder="enquiry.ph_student"></div>
-              <div><label for="phone" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_phone">Contact number</label><input required id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="10" pattern="[0-9]{10}" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="10-digit mobile number" data-i18n-placeholder="enquiry.ph_phone"></div>
-              <div><label for="class" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_class">Applying for</label><select id="class" name="class" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 bg-white outline-none focus:border-[#1f6b4b]"><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
-              <div><label for="location" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_location">Village / location</label><input id="location" name="location" autocomplete="address-level2" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b]" placeholder="Your village or town" data-i18n-placeholder="enquiry.ph_location"></div>
+              <div class="sm:col-span-2"><label for="parent" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_parent">Parent / Guardian</label><input required id="parent" name="parent" autocomplete="name" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] text-base sm:text-sm" placeholder="Full name" data-i18n-placeholder="enquiry.ph_parent"></div>
+              <div><label for="student" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_student">Student name</label><input required id="student" name="student" autocomplete="off" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] text-base sm:text-sm" placeholder="Student's full name" data-i18n-placeholder="enquiry.ph_student"></div>
+              <div><label for="phone" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_phone">Contact number</label><input required id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="10" pattern="[0-9]{10}" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] text-base sm:text-sm" placeholder="10-digit mobile number" data-i18n-placeholder="enquiry.ph_phone"></div>
+              <div><label for="class" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_class">Applying for</label><select id="class" name="class" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 bg-white outline-none focus:border-[#1f6b4b] text-base sm:text-sm"><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
+              <div><label for="location" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_location">Village / location</label><input id="location" name="location" autocomplete="address-level2" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] text-base sm:text-sm" placeholder="Your village or town" data-i18n-placeholder="enquiry.ph_location"></div>
               <div class="sm:col-span-2"><label class="flex gap-3 items-start text-sm text-slate-600"><input id="hostelNeed" name="hostel" type="checkbox" class="mt-1 accent-[#1f6b4b]"> <span data-i18n="enquiry.lbl_hostel">I would like information about hostel / residential options.</span></label></div>
-              <div class="sm:col-span-2"><label for="message" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_message">Message (optional)</label><textarea id="message" name="message" rows="3" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] resize-none" placeholder="Any question for the school?" data-i18n-placeholder="enquiry.ph_message"></textarea></div>
+              <div class="sm:col-span-2"><label for="message" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_message">Message (optional)</label><textarea id="message" name="message" rows="3" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] resize-none text-base sm:text-sm" placeholder="Any question for the school?" data-i18n-placeholder="enquiry.ph_message"></textarea></div>
             </div>
             <button type="submit" class="focus-ring mt-5 w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition" data-i18n="enquiry.submit_btn">Submit admission enquiry</button>
             <div id="formStatus" class="hidden mt-4 rounded-xl px-4 py-3 text-sm font-semibold" role="status" aria-live="polite"></div>
@@ -1330,7 +1330,7 @@
   </div>
 
   <!-- Mobile sticky conversion bar -->
-  <div class="sm:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-white/95 backdrop-blur-xl border-t border-slate-200">
+  <div class="sm:hidden fixed bottom-0 inset-x-0 z-50 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-white/95 backdrop-blur-xl border-t border-slate-200">
     <a href="#admissions" class="focus-ring flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#1f6b4b] text-white font-extrabold shadow-lg"><i data-lucide="file-pen-line" class="w-4 h-4"></i> <span data-i18n="header.enquiry_btn">Admission Enquiry</span></a>
   </div>
 
@@ -1395,18 +1395,20 @@
 
     const menu=document.getElementById('menu');
     const mobile=document.getElementById('mobile');
-    menu.addEventListener('click',()=>{
-      const hidden=mobile.classList.toggle('hidden');
-      menu.setAttribute('aria-expanded',String(!hidden));
-      menu.innerHTML=hidden?'<i data-lucide="menu"></i>':'<i data-lucide="x"></i>';
-      lucide.createIcons();
-    });
-    document.querySelectorAll('#mobile a').forEach(a=>a.addEventListener('click',()=>{
-      mobile.classList.add('hidden');
-      menu.setAttribute('aria-expanded','false');
-      menu.innerHTML='<i data-lucide="menu"></i>';
-      lucide.createIcons();
-    }));
+    if (menu && mobile) {
+      menu.addEventListener('click',()=>{
+        const hidden=mobile.classList.toggle('hidden');
+        menu.setAttribute('aria-expanded',String(!hidden));
+        menu.innerHTML=hidden?'<i data-lucide="menu"></i>':'<i data-lucide="x"></i>';
+        if (window.lucide && lucide.createIcons) lucide.createIcons();
+      });
+      document.querySelectorAll('#mobile a').forEach(a=>a.addEventListener('click',()=>{
+        mobile.classList.add('hidden');
+        menu.setAttribute('aria-expanded','false');
+        menu.innerHTML='<i data-lucide="menu"></i>';
+        if (window.lucide && lucide.createIcons) lucide.createIcons();
+      }));
+    }
 
 
     // Lightweight website chatbot. This is intentionally local/static until a secure AI/backend is connected.
