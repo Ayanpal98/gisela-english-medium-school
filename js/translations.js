@@ -240,7 +240,7 @@
       // Vice-Principal's Desk Section
       'vice_principal.badge': "Vice-Principal's Desk",
       'vice_principal.leadership_pill': 'Academic Leadership',
-      'vice_principal.name': "Mr. Sujit Chakma",
+      'vice_principal.name': "Mrs. Shanti Rani Kaipeng",
       'vice_principal.designation': 'Vice-Principal',
       'vice_principal.qualifications': '[To Be Updated]',
       'vice_principal.school_loc': 'GEMHS · Silachari, Gomati, Tripura',
@@ -643,7 +643,7 @@
       // Vice-Principal's Desk Section
       'vice_principal.badge': 'সহ-অধ্যক্ষের বার্তা',
       'vice_principal.leadership_pill': 'শিক্ষাগত নেতৃত্ব',
-      'vice_principal.name': '[সহ-অধ্যক্ষের নাম]',
+      'vice_principal.name': 'শ্রীমতী শান্তি রানী কাইপেং',
       'vice_principal.designation': 'সহ-অধ্যক্ষ',
       'vice_principal.qualifications': '[পরবর্তীতে হালনাগাদ করা হবে]',
       'vice_principal.school_loc': 'গিসেলা স্কুল · শিলাছড়ি, গোমতী, ত্রিপুরা',
@@ -1046,7 +1046,7 @@
       // Vice-Principal's Desk Section
       'vice_principal.badge': 'उप-प्रधानाचार्य का संदेश',
       'vice_principal.leadership_pill': 'शैक्षणिक नेतृत्व',
-      'vice_principal.name': '[उप-प्रधानाचार्य का पूरा नाम]',
+      'vice_principal.name': 'श्रीमती शांति रानी काइपेंग',
       'vice_principal.designation': 'उप-प्रधानाचार्य',
       'vice_principal.qualifications': '[यथाशीघ्र अपडेट किया जाएगा]',
       'vice_principal.school_loc': 'गिसेला स्कूल · शिलाछड़ी, गोमती, त्रिपुरा',
@@ -1421,7 +1421,7 @@
       // Vice-Principal's Desk Section
       'vice_principal.badge': "Vice-Principal's Desk",
       'vice_principal.leadership_pill': 'Academic Leadership',
-      'vice_principal.name': "Mr. Sujit Chakma",
+      'vice_principal.name': "Mrs. Shanti Rani Kaipeng",
       'vice_principal.designation': 'Vice-Principal',
       'vice_principal.qualifications': '[Kaitok Swngmung]',
       'vice_principal.school_loc': 'GEMHS · Silachari, Gomati, Tripura',
