@@ -220,7 +220,7 @@
       // Principal's Desk Section
       'principal.badge': "Principal's Desk",
       'principal.leadership_pill': 'Head of Institution',
-      'principal.name': 'Dr. Subhash Chandra Debbarma',
+      'principal.name': 'Mrs. Shanti Rani Kaipeng',
       'principal.designation': 'Principal & Headmaster',
       'principal.experience': 'M.A., B.Ed., Ph.D. · 20+ Years in Education',
       'principal.school_loc': 'GEMHS · Silachari, Gomati, Tripura',
@@ -1341,7 +1341,7 @@
       'about.card_growth_desc': 'Porimung tei co-curricular activities bai joto-bhabe bwsak rangma.',
       'principal.badge': 'Principal\'s Desk',
       'principal.leadership_pill': 'School Phandi',
-      'principal.name': 'Dr. Subhash Chandra Debbarma',
+      'principal.name': 'Mrs. Shanti Rani Kaipeng',
       'principal.designation': 'Principal & Headmaster',
       'principal.experience': 'M.A., B.Ed., Ph.D. · 20+ Bisi Swrwngmungo',
       'principal.school_loc': 'GEMHS · Silachari, Gomati, Tripura',
