@@ -220,7 +220,7 @@
       // Principal's Desk Section
       'principal.badge': "Principal's Desk",
       'principal.leadership_pill': 'Head of Institution',
-      'principal.name': 'Mrs. Shanti Rani Kaipeng',
+      'principal.name': 'Mr. Sujit Chakma',
       'principal.designation': 'Principal & Headmaster',
       'principal.experience': 'M.A., B.Ed., Ph.D. · 20+ Years in Education',
       'principal.school_loc': 'GEMHS · Silachari, Gomati, Tripura',
@@ -240,7 +240,7 @@
       // Vice-Principal's Desk Section
       'vice_principal.badge': "Vice-Principal's Desk",
       'vice_principal.leadership_pill': 'Academic Leadership',
-      'vice_principal.name': "[Vice-Principal's Full Name]",
+      'vice_principal.name': "Mr. Sujit Chakma",
       'vice_principal.designation': 'Vice-Principal',
       'vice_principal.qualifications': '[To Be Updated]',
       'vice_principal.school_loc': 'GEMHS · Silachari, Gomati, Tripura',
@@ -1401,7 +1401,7 @@
       'about.card_growth_desc': 'Porimung tei co-curricular activities bai joto-bhabe bwsak rangma.',
       'principal.badge': 'Principal\'s Desk',
       'principal.leadership_pill': 'School Phandi',
-      'principal.name': 'Mrs. Shanti Rani Kaipeng',
+      'principal.name': 'Mr. Sujit Chakma',
       'principal.designation': 'Principal & Headmaster',
       'principal.experience': 'M.A., B.Ed., Ph.D. · 20+ Bisi Swrwngmungo',
       'principal.school_loc': 'GEMHS · Silachari, Gomati, Tripura',
@@ -1421,7 +1421,7 @@
       // Vice-Principal's Desk Section
       'vice_principal.badge': "Vice-Principal's Desk",
       'vice_principal.leadership_pill': 'Academic Leadership',
-      'vice_principal.name': "[Vice-Principal's Full Name]",
+      'vice_principal.name': "Mr. Sujit Chakma",
       'vice_principal.designation': 'Vice-Principal',
       'vice_principal.qualifications': '[Kaitok Swngmung]',
       'vice_principal.school_loc': 'GEMHS · Silachari, Gomati, Tripura',
