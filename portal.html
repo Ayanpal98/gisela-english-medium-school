@@ -11,13 +11,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/portal.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body class="bg-[#f7f9f7] text-[#12221b]">
 <div id="loginView" class="min-h-screen grid lg:grid-cols-2">
   <section class="bg-[#102f24] text-white p-7 sm:p-10 lg:p-14 flex flex-col justify-between relative overflow-hidden">
     <div class="absolute -right-32 -top-32 w-96 h-96 rounded-full bg-[#d9aa45]/10 blur-3xl"></div>
     <div class="relative">
-      <a href="index.html" class="inline-flex items-center gap-3 font-extrabold"><img src="images/ng" alt="Gisela Emblem" class="w-11 h-11 object-contain drop-shadow" width="44" height="44"> Gisela English Medium</a>
+      <a href="index.html" class="inline-flex items-center gap-3 font-extrabold"><img src="images/school-logo.png" alt="Gisela Emblem" class="w-11 h-11 object-contain drop-shadow" width="44" height="44"> Gisela English Medium</a>
       <div class="max-w-xl mt-24 sm:mt-32">
         <span class="eyebrow-light">School digital portal</span>
         <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight">Everything important, in one secure place.</h1>
@@ -39,11 +40,11 @@
         <button class="role-btn" data-role="teacher"><i data-lucide="presentation"></i>Teacher</button>
       </div>
       <form id="loginForm" class="portal-card p-6 sm:p-7">
-        <label class="field-label">Email / ID</label>
+        <label class="field-label" for="loginId">Email / ID</label>
         <input id="loginId" class="field-input" placeholder="Enter portal ID" autocomplete="username" required>
-        <label class="field-label mt-4">Password</label>
+        <label class="field-label mt-4" for="loginPassword">Password</label>
         <input id="loginPassword" type="password" class="field-input" placeholder="Enter password" autocomplete="current-password" required>
-        <div class="flex items-center justify-between mt-4 text-sm"><label class="flex gap-2 items-center text-slate-500"><input type="checkbox"> Remember me</label><button type="button" id="forgotBtn" class="font-bold text-[#1f6b4b]">Forgot password?</button></div>
+        <div class="flex items-center justify-between mt-4 text-sm"><label class="flex gap-2 items-center text-slate-500"><input type="checkbox" aria-label="Remember me"> Remember me</label><button type="button" id="forgotBtn" class="font-bold text-[#1f6b4b]">Forgot password?</button></div>
         <button class="mt-6 w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition">Continue to portal</button>
         <div id="loginStatus" class="hidden mt-4 status-box" role="status"></div>
       </form>
@@ -68,7 +69,7 @@
     <div class="mt-auto p-4"><div class="rounded-2xl bg-white/7 border border-white/10 p-4 text-white/70 text-xs leading-5">Live records will appear here after database and authentication are connected.</div><button id="logout" class="mt-3 w-full py-2.5 rounded-xl bg-white/8 text-white text-sm font-bold">Sign out</button></div>
   </aside>
   <div class="lg:pl-72 min-h-screen">
-    <header class="portal-topbar"><div class="flex items-center gap-3"><button id="mobilePortalMenu" class="lg:hidden p-2 rounded-xl hover:bg-slate-100"><i data-lucide="menu"></i></button><div><div class="text-xs text-slate-400 font-bold uppercase tracking-wider" id="roleLabel">Parent portal</div><h2 class="font-extrabold text-lg" id="pageTitle">Overview</h2></div></div><div class="flex items-center gap-3"><span class="preview-badge">Preview</span><div class="avatar">P</div></div></header>
+    <header class="portal-topbar"><div class="flex items-center gap-3"><button id="mobilePortalMenu" class="lg:hidden p-2 rounded-xl hover:bg-slate-100" aria-label="Open portal navigation"><i data-lucide="menu"></i></button><div><div class="text-xs text-slate-400 font-bold uppercase tracking-wider" id="roleLabel">Parent portal</div><h2 class="font-extrabold text-lg" id="pageTitle">Overview</h2></div></div><div class="flex items-center gap-3"><span class="preview-badge">Preview</span><div class="avatar">P</div></div></header>
     <main class="p-4 sm:p-6 lg:p-8 max-w-[1500px] mx-auto">
       <section data-pageview="overview" class="portal-page">
         <div class="mb-7"><p class="text-sm font-bold text-[#1f6b4b]" id="greeting">Good morning</p><h1 class="mt-1 text-3xl sm:text-4xl font-extrabold">Your school overview</h1><p class="mt-2 text-slate-500" id="profileText">Parent view · Student records will be linked here.</p></div>
@@ -84,13 +85,13 @@
         </div>
       </section>
       <section data-pageview="attendance" class="portal-page hidden">
-<div class="page-heading"><span class="eyebrow">Attendance management</span><h1>Attendance</h1><p id="attendanceSubtitle">Monitor attendance records and daily class status.</p></div>
+<div class="page-heading"><span class="eyebrow">Attendance management</span><h2>Attendance</h2><p id="attendanceSubtitle">Monitor attendance records and daily class status.</p></div>
 <div id="attendanceTeacherTools" class="portal-card p-5 mb-5">
  <div class="flex flex-col lg:flex-row gap-3 lg:items-end lg:justify-between">
   <div class="grid sm:grid-cols-3 gap-3 flex-1">
-   <div><label class="field-label">Class</label><select id="attendanceClass" class="field-input"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
-   <div><label class="field-label">Section</label><select id="attendanceSection" class="field-input"><option>Section A</option><option>Section B</option></select></div>
-   <div><label class="field-label">Date</label><input id="attendanceDate" type="date" class="field-input"></div>
+   <div><label class="field-label" for="attendanceClass">Class</label><select id="attendanceClass" class="field-input"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
+   <div><label class="field-label" for="attendanceSection">Section</label><select id="attendanceSection" class="field-input"><option>Section A</option><option>Section B</option></select></div>
+   <div><label class="field-label" for="attendanceDate">Date</label><input id="attendanceDate" type="date" class="field-input"></div>
   </div>
   <div class="flex gap-2"><button id="markAllPresent" class="attendance-action secondary">Mark all present</button><button id="saveAttendance" class="attendance-action primary">Save attendance</button></div>
  </div>
@@ -102,9 +103,9 @@
 <div class="mt-5 portal-card p-5"><div class="card-head -mx-5 -mt-5 mb-4"><div><h3>Attendance summary</h3><p>Recent records for the selected student/class.</p></div></div><div id="attendanceHistory" class="attendance-history"></div></div>
 <p class="preview-note">Phase 3C uses demo records only. Live attendance storage and role permissions will be connected through the secure backend phase.</p>
 </section>
-      <div id="attendanceStudentView" class="hidden"></div><section data-pageview="students" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Student management</span><h1>Student directory</h1><p>Profiles, class placement and guardian information.</p></div><div class="portal-card p-5"><div class="flex flex-col sm:flex-row gap-3 justify-between mb-5"><input id="studentSearch" class="field-input sm:max-w-sm" placeholder="Search student or admission ID"><select id="classFilter" class="field-input sm:max-w-xs"><option value="">All classes</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div><div class="grid gap-3" id="studentList"></div></div></section>
+      <div id="attendanceStudentView" class="hidden"></div><section data-pageview="students" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Student management</span><h2>Student directory</h2><p>Profiles, class placement and guardian information.</p></div><div class="portal-card p-5"><div class="flex flex-col sm:flex-row gap-3 justify-between mb-5"><input id="studentSearch" class="field-input sm:max-w-sm" placeholder="Search student or admission ID" aria-label="Search student or admission ID"><select id="classFilter" class="field-input sm:max-w-xs" aria-label="Filter students by class"><option value="">All classes</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div><div class="grid gap-3" id="studentList"></div></div></section>
       <section data-pageview="academics" class="portal-page hidden">
-<div class="page-heading"><span class="eyebrow">Academic management</span><h1>Academics</h1><p>Subjects, assessments and student performance in one workspace.</p></div>
+<div class="page-heading"><span class="eyebrow">Academic management</span><h2>Academics</h2><p>Subjects, assessments and student performance in one workspace.</p></div>
 <div id="academicTeacherTools" class="portal-card p-5 mb-5 teacher-admin-only hidden">
  <div class="card-head -mx-5 -mt-5 mb-5"><div><h3>Teacher assessment entry</h3><p>Preview workflow for recording marks.</p></div><span class="preview-badge">Demo</span></div>
  <div class="grid sm:grid-cols-4 gap-3">
@@ -121,21 +122,21 @@
 <p class="preview-note">Phase 4 academic records are demo data. Real marks require authenticated teacher entry and database persistence.</p>
 </section>
       <section data-pageview="assignments" class="portal-page hidden">
-<div class="page-heading"><span class="eyebrow">Assignment management</span><h1>Assignments</h1><p>Create, publish, track and review class work.</p></div>
+<div class="page-heading"><span class="eyebrow">Assignment management</span><h2>Assignments</h2><p>Create, publish, track and review class work.</p></div>
 <div id="assignmentTeacherTools" class="portal-card p-5 mb-5 teacher-admin-only hidden">
  <div class="card-head -mx-5 -mt-5 mb-5"><div><h3>Create assignment</h3><p>Teacher workflow for a class or section.</p></div><span class="preview-badge">Teacher</span></div>
  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-  <div><label class="field-label">Title</label><input id="assignmentTitle" class="field-input" placeholder="e.g. Fractions worksheet"></div>
-  <div><label class="field-label">Subject</label><select id="assignmentSubject" class="field-input"><option>Mathematics</option><option>English</option><option>Science</option><option>Social Science</option></select></div>
-  <div><label class="field-label">Class</label><select id="assignmentClass" class="field-input"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
-  <div><label class="field-label">Section</label><select id="assignmentSection" class="field-input"><option>All sections</option><option>Section A</option><option>Section B</option></select></div>
+  <div><label class="field-label" for="assignmentTitle">Title</label><input id="assignmentTitle" class="field-input" placeholder="e.g. Fractions worksheet"></div>
+  <div><label class="field-label" for="assignmentSubject">Subject</label><select id="assignmentSubject" class="field-input"><option>Mathematics</option><option>English</option><option>Science</option><option>Social Science</option></select></div>
+  <div><label class="field-label" for="assignmentClass">Class</label><select id="assignmentClass" class="field-input"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
+  <div><label class="field-label" for="assignmentSection">Section</label><select id="assignmentSection" class="field-input"><option>All sections</option><option>Section A</option><option>Section B</option></select></div>
  </div>
  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-3">
-  <div><label class="field-label">Due date</label><input id="assignmentDue" class="field-input" type="date" value="2026-10-05"></div>
-  <div><label class="field-label">Priority</label><select id="assignmentPriority" class="field-input"><option>Normal</option><option>Important</option><option>Urgent</option></select></div>
-  <div><label class="field-label">Status</label><select id="assignmentPublishStatus" class="field-input"><option>Published</option><option>Draft</option></select></div>
+  <div><label class="field-label" for="assignmentDue">Due date</label><input id="assignmentDue" class="field-input" type="date" value="2026-10-05"></div>
+  <div><label class="field-label" for="assignmentPriority">Priority</label><select id="assignmentPriority" class="field-input"><option>Normal</option><option>Important</option><option>Urgent</option></select></div>
+  <div><label class="field-label" for="assignmentPublishStatus">Status</label><select id="assignmentPublishStatus" class="field-input"><option>Published</option><option>Draft</option></select></div>
  </div>
- <textarea id="assignmentDescription" class="field-input mt-3" rows="3" placeholder="Assignment instructions / resources"></textarea>
+ <textarea id="assignmentDescription" aria-label="Assignment instructions or resources" class="field-input mt-3" rows="3" placeholder="Assignment instructions / resources"></textarea>
  <div class="flex flex-wrap gap-2 mt-3"><button id="createAssignment" class="attendance-action primary">Save assignment</button><button id="clearAssignment" type="button" class="attendance-action secondary">Clear</button></div>
  <div id="assignmentStatus" class="hidden mt-3 status-box"></div>
 </div>
@@ -143,9 +144,9 @@
  <div class="flex flex-col sm:flex-row gap-3 justify-between sm:items-end">
   <div><h3 class="font-extrabold">Assignment workspace</h3><p class="text-xs text-slate-400 mt-1">Filter by class, status or due state.</p></div>
   <div class="grid sm:grid-cols-3 gap-2 sm:min-w-[560px]">
-   <select id="assignmentFilterClass" class="field-input"><option value="">All classes</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select>
-   <select id="assignmentFilterStatus" class="field-input"><option value="">All statuses</option><option>Published</option><option>Draft</option></select>
-   <select id="assignmentFilterDue" class="field-input"><option value="">All due states</option><option>Due soon</option><option>Upcoming</option><option>Submitted</option></select>
+   <select id="assignmentFilterClass" aria-label="Filter assignments by class" class="field-input"><option value="">All classes</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select>
+   <select id="assignmentFilterStatus" aria-label="Filter assignments by status" class="field-input"><option value="">All statuses</option><option>Published</option><option>Draft</option></select>
+   <select id="assignmentFilterDue" aria-label="Filter assignments by due state" class="field-input"><option value="">All due states</option><option>Due soon</option><option>Upcoming</option><option>Submitted</option></select>
   </div>
  </div>
 </div>
@@ -162,14 +163,14 @@
 <p class="preview-note">Phase 4B is a frontend workflow preview. File uploads, real submissions, feedback, notifications and database persistence will be connected in the backend phase.</p>
 </section>
 <section data-pageview="results" class="portal-page hidden">
-<div class="page-heading"><span class="eyebrow">Results & performance</span><h1>Results</h1><p>Examination results, performance summaries and report-card preparation.</p></div>
+<div class="page-heading"><span class="eyebrow">Results & performance</span><h2>Results</h2><p>Examination results, performance summaries and report-card preparation.</p></div>
 <div id="resultTeacherTools" class="portal-card p-5 mb-5 teacher-admin-only hidden">
  <div class="card-head -mx-5 -mt-5 mb-5"><div><h3>Result management</h3><p>Enter, review and publish term results for a class.</p></div><span class="preview-badge">Teacher</span></div>
  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-  <div><label class="field-label">Term</label><select id="resultTerm" class="field-input"><option>Term I</option><option>Term II</option><option>Annual</option></select></div>
-  <div><label class="field-label">Class</label><select id="resultClass" class="field-input"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
-  <div><label class="field-label">Subject</label><select id="resultSubject" class="field-input"><option>English</option><option>Mathematics</option><option>Science</option><option>Social Science</option></select></div>
-  <div><label class="field-label">Maximum marks</label><input id="resultMax" class="field-input" type="number" min="1" value="100"></div>
+  <div><label class="field-label" for="resultTerm">Term</label><select id="resultTerm" class="field-input"><option>Term I</option><option>Term II</option><option>Annual</option></select></div>
+  <div><label class="field-label" for="resultClass">Class</label><select id="resultClass" class="field-input"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
+  <div><label class="field-label" for="resultSubject">Subject</label><select id="resultSubject" class="field-input"><option>English</option><option>Mathematics</option><option>Science</option><option>Social Science</option></select></div>
+  <div><label class="field-label" for="resultMax">Maximum marks</label><input id="resultMax" class="field-input" type="number" min="1" value="100"></div>
  </div>
  <div id="resultEntryRoster" class="mt-5 grid gap-2"></div>
  <div class="flex flex-wrap gap-2 mt-4"><button id="saveResultMarks" class="attendance-action primary">Save result marks</button><button id="publishResults" class="attendance-action secondary">Publish term results</button></div>
@@ -191,9 +192,9 @@
 </div>
 <p class="preview-note">Phase 4C uses demo records only. Live result publishing, permissions, database persistence and report-card storage will be connected through the secure backend phase.</p>
 </section>
-<section data-pageview="calendar" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Calendar</span><h1>School calendar</h1><p>Examinations, meetings, holidays and activities.</p></div><div class="portal-card p-5"><div class="calendar-row"><b>04</b><div><strong>Mathematics assessment</strong><small>October 2026 · Academic activity</small></div></div><div class="calendar-row"><b>08</b><div><strong>Parent meeting</strong><small>October 2026 · School activity</small></div></div><div class="calendar-row"><b>10</b><div><strong>School activity</strong><small>October 2026 · Details to be published</small></div></div></div></section>
-      <section data-pageview="notices" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Notices</span><h1>School notices</h1><p>Official announcements published by authorised school staff.</p></div><div id="noticeList" class="content-list"></div></section>
-      <section data-pageview="fees" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Fees</span><h1>Fee information</h1><p>Fee records and receipts will be available to authorised parents.</p></div><div class="portal-card p-6"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="receipt"></i></div><div><h3 class="font-extrabold">Live fee records are not connected</h3><p class="text-sm text-slate-500 mt-1">The interface is ready; payment and fee data will be connected after the database phase.</p></div></div></div></section>
+<section data-pageview="calendar" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Calendar</span><h2>School calendar</h2><p>Examinations, meetings, holidays and activities.</p></div><div class="portal-card p-5"><div class="calendar-row"><b>04</b><div><strong>Mathematics assessment</strong><small>October 2026 · Academic activity</small></div></div><div class="calendar-row"><b>08</b><div><strong>Parent meeting</strong><small>October 2026 · School activity</small></div></div><div class="calendar-row"><b>10</b><div><strong>School activity</strong><small>October 2026 · Details to be published</small></div></div></div></section>
+      <section data-pageview="notices" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Notices</span><h2>School notices</h2><p>Official announcements published by authorised school staff.</p></div><div id="noticeList" class="content-list"></div></section>
+      <section data-pageview="fees" class="portal-page hidden"><div class="page-heading"><span class="eyebrow">Fees</span><h2>Fee information</h2><p>Fee records and receipts will be available to authorised parents.</p></div><div class="portal-card p-6"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 grid place-items-center"><i data-lucide="receipt"></i></div><div><h3 class="font-extrabold">Live fee records are not connected</h3><p class="text-sm text-slate-500 mt-1">The interface is ready; payment and fee data will be connected after the database phase.</p></div></div></div></section>
     </main>
   </div>
 </div>

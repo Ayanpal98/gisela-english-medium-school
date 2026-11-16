@@ -1,0 +1,162 @@
+[
+  {
+    "requestId": "2362D20616429A3F9FB695736D734647",
+    "url": "http://127.0.0.1:8088/gallery.html",
+    "method": "GET",
+    "timestamp": 89538.369693,
+    "status": 200,
+    "mimeType": "text/html",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.102",
+    "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+    "method": "GET",
+    "timestamp": 89538.39323,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.103",
+    "url": "https://unpkg.com/lucide@latest",
+    "method": "GET",
+    "timestamp": 89538.394024,
+    "status": 200,
+    "mimeType": "text/javascript",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.105",
+    "url": "http://127.0.0.1:8088/css/banner-carousel.css",
+    "method": "GET",
+    "timestamp": 89538.394663,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.106",
+    "url": "http://127.0.0.1:8088/css/navbar-dropdowns.css",
+    "method": "GET",
+    "timestamp": 89538.394798,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.107",
+    "url": "http://127.0.0.1:8088/css/institutional-theme.css",
+    "method": "GET",
+    "timestamp": 89538.394894,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.108",
+    "url": "http://127.0.0.1:8088/images/language-emblem.png",
+    "method": "GET",
+    "timestamp": 89538.394971,
+    "status": 200,
+    "mimeType": "image/png",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.109",
+    "url": "http://127.0.0.1:8088/images/school-logo.png",
+    "method": "GET",
+    "timestamp": 89538.395047,
+    "status": 200,
+    "mimeType": "image/png",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.112",
+    "url": "http://127.0.0.1:8088/js/translations.js",
+    "method": "GET",
+    "timestamp": 89538.395154,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.113",
+    "url": "http://127.0.0.1:8088/js/navbar-dropdowns.js",
+    "method": "GET",
+    "timestamp": 89538.395251,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.103",
+    "url": "https://unpkg.com/lucide@1.73.0/dist/umd/lucide.min.js",
+    "method": "GET",
+    "timestamp": 89538.423941,
+    "status": null
+  },
+  {
+    "requestId": "23600.146",
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+    "method": "GET",
+    "timestamp": 89538.487629,
+    "status": 200,
+    "mimeType": "font/woff2",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.158",
+    "url": "https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2",
+    "method": "GET",
+    "timestamp": 89538.487784,
+    "status": 200,
+    "mimeType": "font/woff2",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.124",
+    "url": "http://127.0.0.1:8088/images/gallery/science-fair.jpg",
+    "method": "GET",
+    "timestamp": 89538.532177,
+    "status": 200,
+    "mimeType": "image/jpeg",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.125",
+    "url": "http://127.0.0.1:8088/images/gallery/sports-meet.jpg",
+    "method": "GET",
+    "timestamp": 89538.532265,
+    "status": 200,
+    "mimeType": "image/jpeg",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.126",
+    "url": "http://127.0.0.1:8088/images/gallery/cultural-day.jpg",
+    "method": "GET",
+    "timestamp": 89538.532289,
+    "status": 200,
+    "mimeType": "image/jpeg",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.127",
+    "url": "http://127.0.0.1:8088/images/gallery/classroom-learning.jpg",
+    "method": "GET",
+    "timestamp": 89538.532307,
+    "status": 200,
+    "mimeType": "image/jpeg",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.186",
+    "url": "http://127.0.0.1:8088/favicon.svg",
+    "method": "GET",
+    "timestamp": 89538.609794,
+    "status": 200,
+    "mimeType": "image/svg+xml",
+    "statusText": "OK"
+  }
+]

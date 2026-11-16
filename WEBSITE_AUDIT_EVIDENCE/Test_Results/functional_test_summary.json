@@ -1,0 +1,46 @@
+{
+  "homepage": {
+    "enquiryFormSubmission": {
+      "formSubmitted": true,
+      "referenceGenerated": true
+    },
+    "chatbot": {
+      "chatbotOpens": true,
+      "chatbotResponds": true
+    },
+    "multilingualSwitch": {
+      "langSwitchesToBn": true
+    }
+  },
+  "gallery": {
+    "lightbox": {
+      "opensOnCardClick": true,
+      "showsCorrectTitle": true,
+      "advancesOnNext": true,
+      "closesOnBtn": true
+    },
+    "filtering": {
+      "filterWorks": true
+    }
+  },
+  "portal": {
+    "roleSwitching": {
+      "roleSwitched": true
+    },
+    "authenticationSimulation": {
+      "loggedIn": true
+    },
+    "teacherPrivilegesRevealed": {
+      "teacherToolsVisible": true
+    }
+  },
+  "admin": {
+    "authSecurity": {
+      "rejectedWrongPass": true,
+      "authenticatedCorrect": true
+    },
+    "dashboardRendering": {
+      "tablePopulated": true
+    }
+  }
+}

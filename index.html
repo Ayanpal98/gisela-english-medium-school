@@ -1365,7 +1365,7 @@
               <div><label for="phone" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_phone">Contact number</label><input required id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="10" pattern="[0-9]{10}" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] text-base sm:text-sm" placeholder="10-digit mobile number" data-i18n-placeholder="enquiry.ph_phone"></div>
               <div><label for="class" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_class">Applying for</label><select id="class" name="class" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 bg-white outline-none focus:border-[#1f6b4b] text-base sm:text-sm"><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select></div>
               <div><label for="location" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_location">Village / location</label><input id="location" name="location" autocomplete="address-level2" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] text-base sm:text-sm" placeholder="Your village or town" data-i18n-placeholder="enquiry.ph_location"></div>
-              <div class="sm:col-span-2"><label class="flex gap-3 items-start text-sm text-slate-600"><input id="hostelNeed" name="hostel" type="checkbox" class="mt-1 accent-[#1f6b4b]"> <span data-i18n="enquiry.lbl_hostel">I would like information about hostel / residential options.</span></label></div>
+              <div class="sm:col-span-2"><label class="flex gap-3 items-start text-sm text-slate-600"><input id="hostelNeed" name="hostel" type="checkbox" aria-label="I would like information about hostel or residential options" class="mt-1 accent-[#1f6b4b]"> <span data-i18n="enquiry.lbl_hostel">I would like information about hostel / residential options.</span></label></div>
               <div class="sm:col-span-2"><label for="message" class="text-xs font-bold uppercase tracking-wider text-slate-500" data-i18n="enquiry.lbl_message">Message (optional)</label><textarea id="message" name="message" rows="3" class="focus-ring mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1f6b4b] resize-none text-base sm:text-sm" placeholder="Any question for the school?" data-i18n-placeholder="enquiry.ph_message"></textarea></div>
             </div>
             <button type="submit" class="focus-ring mt-5 w-full py-3.5 rounded-xl bg-[#1f6b4b] text-white font-extrabold hover:bg-[#185b40] transition" data-i18n="enquiry.submit_btn">Submit admission enquiry</button>
@@ -1530,24 +1530,6 @@
 
     function escPublic(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
     renderPublicAchievements();
-
-    const menu=document.getElementById('menu');
-    const mobile=document.getElementById('mobile');
-    if (menu && mobile) {
-      menu.addEventListener('click',()=>{
-        const hidden=mobile.classList.toggle('hidden');
-        menu.setAttribute('aria-expanded',String(!hidden));
-        menu.innerHTML=hidden?'<i data-lucide="menu"></i>':'<i data-lucide="x"></i>';
-        if (window.lucide && lucide.createIcons) lucide.createIcons();
-      });
-      document.querySelectorAll('#mobile a').forEach(a=>a.addEventListener('click',()=>{
-        mobile.classList.add('hidden');
-        menu.setAttribute('aria-expanded','false');
-        menu.innerHTML='<i data-lucide="menu"></i>';
-        if (window.lucide && lucide.createIcons) lucide.createIcons();
-      }));
-    }
-
 
     // Lightweight website chatbot. This is intentionally local/static until a secure AI/backend is connected.
     const chatbotToggle=document.getElementById('chatbotToggle');

@@ -1,0 +1,108 @@
+[
+  {
+    "requestId": "35D5463DFC40D749F5EE829BC53775DB",
+    "url": "http://127.0.0.1:8088/portal.html",
+    "method": "GET",
+    "timestamp": 89545.201071,
+    "status": 200,
+    "mimeType": "text/html",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.202",
+    "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+    "method": "GET",
+    "timestamp": 89545.209409,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.203",
+    "url": "https://unpkg.com/lucide@latest",
+    "method": "GET",
+    "timestamp": 89545.209617,
+    "status": 200,
+    "mimeType": "text/javascript",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.204",
+    "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap",
+    "method": "GET",
+    "timestamp": 89545.209716,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.205",
+    "url": "http://127.0.0.1:8088/css/portal.css",
+    "method": "GET",
+    "timestamp": 89545.209782,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.206",
+    "url": "http://127.0.0.1:8088/images/ng",
+    "method": "GET",
+    "timestamp": 89545.209826,
+    "status": 404,
+    "mimeType": "text/plain",
+    "statusText": "Not Found"
+  },
+  {
+    "requestId": "23600.207",
+    "url": "http://127.0.0.1:8088/images/school-logo.png",
+    "method": "GET",
+    "timestamp": 89545.209864,
+    "status": 200,
+    "mimeType": "image/png",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.208",
+    "url": "http://127.0.0.1:8088/js/portal.js",
+    "method": "GET",
+    "timestamp": 89545.209893,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.203",
+    "url": "https://unpkg.com/lucide@1.73.0/dist/umd/lucide.min.js",
+    "method": "GET",
+    "timestamp": 89545.219612,
+    "status": null
+  },
+  {
+    "requestId": "23600.217",
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+    "method": "GET",
+    "timestamp": 89545.430314,
+    "status": 200,
+    "mimeType": "font/woff2",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.229",
+    "url": "https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2",
+    "method": "GET",
+    "timestamp": 89545.430402,
+    "status": 200,
+    "mimeType": "font/woff2",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.242",
+    "url": "http://127.0.0.1:8088/favicon.ico",
+    "method": "GET",
+    "timestamp": 89545.480344,
+    "status": 404,
+    "mimeType": "text/plain",
+    "statusText": "Not Found"
+  }
+]

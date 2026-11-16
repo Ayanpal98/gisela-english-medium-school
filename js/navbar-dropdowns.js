@@ -69,7 +69,7 @@
         } else if (query.includes('hostel') || query.includes('room') || query.includes('stay')) {
           window.location.hash = '#hostel';
         } else if (query.includes('photo') || query.includes('video') || query.includes('galler')) {
-          window.location.hash = '#gallery';
+          window.location.hash = '#gallery-photos';
         } else if (query.includes('contact') || query.includes('phone') || query.includes('mail') || query.includes('locat')) {
           window.location.hash = '#contact';
         } else if (query.includes('portal') || query.includes('login')) {

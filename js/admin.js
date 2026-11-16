@@ -201,8 +201,33 @@ $("exportAdmissions").addEventListener("click",()=>{
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download="gisela-admissions-preview.csv";a.click();URL.revokeObjectURL(a.href);showToast("Preview CSV exported.");
 });
 $("saveSettings").addEventListener("click",()=>{$("settingsStatus").textContent="Saved locally for this preview.";showToast("Settings saved in preview mode.")});
-const PREVIEW_ADMIN_EMAIL="admin@giselaenglishmedium.edu.in";
-const PREVIEW_ADMIN_PASSWORD="Admin@2003";
-$("loginForm").addEventListener("submit",e=>{e.preventDefault();const email=$("loginEmail").value.trim().toLowerCase();const password=$("loginPassword").value;if(email!==PREVIEW_ADMIN_EMAIL||password!==PREVIEW_ADMIN_PASSWORD){$("loginStatus").className="mt-4 text-sm rounded-xl px-4 py-3 bg-red-50 text-red-700";$("loginStatus").textContent="Invalid preview admin email or password.";return;}$("loginStatus").className="mt-4 text-sm rounded-xl px-4 py-3 bg-emerald-50 text-emerald-700";$("loginStatus").textContent="Signed in to the admin preview.";setTimeout(()=>{$("loginView").classList.add("hidden");$("appView").classList.remove("hidden");renderDashboard();lucide.createIcons()},300)});
+const PREVIEW_ADMIN_EMAIL = "admin@giselaenglishmedium.edu.in";
+const PREVIEW_ADMIN_HASH = "bc7bc6a7caa10f6e6f9923474ca84194e246fabdbad885b16cb3fb6f64afd273";
+
+async function sha256Hex(str) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+$("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = $("loginEmail").value.trim().toLowerCase();
+  const password = $("loginPassword").value;
+  const passHash = await sha256Hex(password);
+
+  if (email !== PREVIEW_ADMIN_EMAIL || passHash !== PREVIEW_ADMIN_HASH) {
+    $("loginStatus").className = "mt-4 text-sm rounded-xl px-4 py-3 bg-red-50 text-red-700";
+    $("loginStatus").textContent = "Invalid administrator credentials.";
+    return;
+  }
+  $("loginStatus").className = "mt-4 text-sm rounded-xl px-4 py-3 bg-emerald-50 text-emerald-700";
+  $("loginStatus").textContent = "Signed in to administration.";
+  setTimeout(() => {
+    $("loginView").classList.add("hidden");
+    $("appView").classList.remove("hidden");
+    renderDashboard();
+    lucide.createIcons();
+  }, 300);
+});
 $("logoutBtn").addEventListener("click",()=>{$("appView").classList.add("hidden");$("loginView").classList.remove("hidden");});
 renderDashboard();lucide.createIcons();

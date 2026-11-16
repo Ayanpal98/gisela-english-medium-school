@@ -1,0 +1,22 @@
+{
+  "hardcodedCredentials": [
+    "PREVIEW_ADMIN_EMAIL=\"admin@giselaenglishmedium.edu.in\"",
+    "PREVIEW_ADMIN_PASSWORD=\"Admin@2003\""
+  ],
+  "domXssVulnerabilities": [
+    {
+      "file": "js/portal.js",
+      "line": 117,
+      "variable": "s.fileName",
+      "desc": "Unescaped user-supplied file name directly injected into detail.innerHTML (DOM XSS vulnerability)."
+    },
+    {
+      "file": "js/portal.js",
+      "line": 106,
+      "variable": "a.title / a.description",
+      "desc": "Unescaped assignment title and description injected into detail.innerHTML (DOM XSS vulnerability)."
+    }
+  ],
+  "missingSecurityHeaders": true,
+  "authModel": "Client-side demonstration without server validation or token issuance"
+}

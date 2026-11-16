@@ -1,0 +1,733 @@
+{
+  "timestamp": "2026-11-16T07:29:33.938Z",
+  "pages": {
+    "index.html": {
+      "page": "index.html",
+      "url": "http://127.0.0.1:8089/index.html",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "successfulRequests": [
+        {
+          "url": "http://127.0.0.1:8089/index.html",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/css/banner-carousel.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/css/navbar-dropdowns.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/css/institutional-theme.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/language-emblem.png",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/school-logo.png",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/js/banner-carousel.js",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/js/navbar-dropdowns.js",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/manifest.webmanifest",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/js/translations.js",
+          "status": 200
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap",
+          "status": 200
+        },
+        {
+          "url": "https://unpkg.com/lucide@1.73.0/dist/umd/lucide.min.js",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/banners/admission-2026-desktop.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/banners/annual-exhibition-desktop.svg",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/caveat/v23/Wnz6HAc5bAfYB2Q7ZjYY.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/favicon.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/favicon.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/banners/admission-2026-mobile.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/banners/annual-exhibition-mobile.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/banners/excellence-awards-mobile.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/banners/excellence-awards-desktop.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/banners/admission-2026-desktop.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/banners/annual-exhibition-desktop.svg",
+          "status": 200
+        }
+      ],
+      "viewports": [
+        {
+          "viewport": "mobile-320",
+          "width": 320,
+          "metrics": {
+            "scrollWidth": 320,
+            "clientWidth": 320,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-375",
+          "width": 375,
+          "metrics": {
+            "scrollWidth": 375,
+            "clientWidth": 375,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-390",
+          "width": 390,
+          "metrics": {
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-430",
+          "width": 430,
+          "metrics": {
+            "scrollWidth": 430,
+            "clientWidth": 430,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "tablet-768",
+          "width": 768,
+          "metrics": {
+            "scrollWidth": 753,
+            "clientWidth": 753,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "tablet-1024",
+          "width": 1024,
+          "metrics": {
+            "scrollWidth": 1009,
+            "clientWidth": 1009,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "laptop-1366",
+          "width": 1366,
+          "metrics": {
+            "scrollWidth": 1351,
+            "clientWidth": 1351,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "desktop-1440",
+          "width": 1440,
+          "metrics": {
+            "scrollWidth": 1425,
+            "clientWidth": 1425,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "desktop-1920",
+          "width": 1920,
+          "metrics": {
+            "scrollWidth": 1905,
+            "clientWidth": 1905,
+            "hasOverflow": false
+          }
+        }
+      ],
+      "functionalTests": {}
+    },
+    "gallery.html": {
+      "page": "gallery.html",
+      "url": "http://127.0.0.1:8089/gallery.html",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "successfulRequests": [
+        {
+          "url": "http://127.0.0.1:8089/gallery.html",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/css/navbar-dropdowns.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/css/institutional-theme.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/language-emblem.png",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/school-logo.png",
+          "status": 200
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+          "status": 200
+        },
+        {
+          "url": "https://unpkg.com/lucide@1.73.0/dist/umd/lucide.min.js",
+          "status": 200
+        },
+        {
+          "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/js/navbar-dropdowns.js",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/js/translations.js",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/manifest.webmanifest",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/science-fair.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/sports-meet.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/cultural-day.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/classroom-learning.jpg",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/favicon.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/computer-lab.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/national-day.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/prize-distribution.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/tree-plantation.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/art-craft.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/yoga-drill.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/library.jpg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/gallery/campus-grounds.jpg",
+          "status": 200
+        }
+      ],
+      "viewports": [
+        {
+          "viewport": "mobile-320",
+          "width": 320,
+          "metrics": {
+            "scrollWidth": 320,
+            "clientWidth": 320,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-375",
+          "width": 375,
+          "metrics": {
+            "scrollWidth": 375,
+            "clientWidth": 375,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-390",
+          "width": 390,
+          "metrics": {
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-430",
+          "width": 430,
+          "metrics": {
+            "scrollWidth": 430,
+            "clientWidth": 430,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "tablet-768",
+          "width": 768,
+          "metrics": {
+            "scrollWidth": 753,
+            "clientWidth": 753,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "tablet-1024",
+          "width": 1024,
+          "metrics": {
+            "scrollWidth": 1009,
+            "clientWidth": 1009,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "laptop-1366",
+          "width": 1366,
+          "metrics": {
+            "scrollWidth": 1351,
+            "clientWidth": 1351,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "desktop-1440",
+          "width": 1440,
+          "metrics": {
+            "scrollWidth": 1425,
+            "clientWidth": 1425,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "desktop-1920",
+          "width": 1920,
+          "metrics": {
+            "scrollWidth": 1905,
+            "clientWidth": 1905,
+            "hasOverflow": false
+          }
+        }
+      ],
+      "functionalTests": {
+        "lightboxEmptySrcPrevented": {
+          "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E",
+          "validDataUri": true
+        }
+      }
+    },
+    "portal.html": {
+      "page": "portal.html",
+      "url": "http://127.0.0.1:8089/portal.html",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "successfulRequests": [
+        {
+          "url": "http://127.0.0.1:8089/portal.html",
+          "status": 200
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/css/portal.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/js/portal.js",
+          "status": 200
+        },
+        {
+          "url": "https://unpkg.com/lucide@1.73.0/dist/umd/lucide.min.js",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/school-logo.png",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        }
+      ],
+      "viewports": [
+        {
+          "viewport": "mobile-320",
+          "width": 320,
+          "metrics": {
+            "scrollWidth": 320,
+            "clientWidth": 320,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-375",
+          "width": 375,
+          "metrics": {
+            "scrollWidth": 375,
+            "clientWidth": 375,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-390",
+          "width": 390,
+          "metrics": {
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-430",
+          "width": 430,
+          "metrics": {
+            "scrollWidth": 430,
+            "clientWidth": 430,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "tablet-768",
+          "width": 768,
+          "metrics": {
+            "scrollWidth": 753,
+            "clientWidth": 753,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "tablet-1024",
+          "width": 1024,
+          "metrics": {
+            "scrollWidth": 1009,
+            "clientWidth": 1009,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "laptop-1366",
+          "width": 1366,
+          "metrics": {
+            "scrollWidth": 1366,
+            "clientWidth": 1366,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "desktop-1440",
+          "width": 1440,
+          "metrics": {
+            "scrollWidth": 1440,
+            "clientWidth": 1440,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "desktop-1920",
+          "width": 1920,
+          "metrics": {
+            "scrollWidth": 1920,
+            "clientWidth": 1920,
+            "hasOverflow": false
+          }
+        }
+      ],
+      "functionalTests": {
+        "domXssPrevented": {
+          "executed": false,
+          "properlyEscaped": true
+        },
+        "headingHierarchy": {
+          "count": 2,
+          "texts": [
+            "Everything important, in one secure place.",
+            "Your school overview"
+          ]
+        }
+      }
+    },
+    "admin.html": {
+      "page": "admin.html",
+      "url": "http://127.0.0.1:8089/admin.html",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "successfulRequests": [
+        {
+          "url": "http://127.0.0.1:8089/admin.html",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/css/admin.css",
+          "status": 200
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/js/admin.js",
+          "status": 200
+        },
+        {
+          "url": "https://unpkg.com/lucide@1.73.0/dist/umd/lucide.min.js",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8089/images/school-logo.png",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2",
+          "status": 200
+        }
+      ],
+      "viewports": [
+        {
+          "viewport": "mobile-320",
+          "width": 320,
+          "metrics": {
+            "scrollWidth": 320,
+            "clientWidth": 320,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-375",
+          "width": 375,
+          "metrics": {
+            "scrollWidth": 375,
+            "clientWidth": 375,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-390",
+          "width": 390,
+          "metrics": {
+            "scrollWidth": 390,
+            "clientWidth": 390,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "mobile-430",
+          "width": 430,
+          "metrics": {
+            "scrollWidth": 430,
+            "clientWidth": 430,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "tablet-768",
+          "width": 768,
+          "metrics": {
+            "scrollWidth": 768,
+            "clientWidth": 768,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "tablet-1024",
+          "width": 1024,
+          "metrics": {
+            "scrollWidth": 1009,
+            "clientWidth": 1009,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "laptop-1366",
+          "width": 1366,
+          "metrics": {
+            "scrollWidth": 1351,
+            "clientWidth": 1351,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "desktop-1440",
+          "width": 1440,
+          "metrics": {
+            "scrollWidth": 1440,
+            "clientWidth": 1440,
+            "hasOverflow": false
+          }
+        },
+        {
+          "viewport": "desktop-1920",
+          "width": 1920,
+          "metrics": {
+            "scrollWidth": 1920,
+            "clientWidth": 1920,
+            "hasOverflow": false
+          }
+        }
+      ],
+      "functionalTests": {
+        "wrongPasswordRejected": {
+          "rejected": true,
+          "msg": "Invalid administrator credentials."
+        },
+        "correctPasswordAuthenticated": {
+          "authenticated": true
+        }
+      }
+    }
+  },
+  "fixesVerified": {
+    "ISSUE-SEC-01": {
+      "title": "SHA-256 Web Crypto Admin Authentication",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-SEC-02": {
+      "title": "DOM-Based XSS Sanitization in Portal",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-BUG-01": {
+      "title": "Broken Logo Image in Portal Header (images/ng -> images/school-logo.png)",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-SEC-03": {
+      "title": "Vercel Security Headers Configured",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-BUG-02": {
+      "title": "Lightbox Empty src Page Duplication Eliminated",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-A11Y-01": {
+      "title": "Portal Heading Hierarchy Restored (Single h1 per view)",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-A11Y-02": {
+      "title": "Form Inputs & Hostel Checkbox Aria-Labels",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-SEO-01": {
+      "title": "Sitemap Updated with Gallery and Portal",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-BUG-03": {
+      "title": "Navbar Search Anchor Updated to #gallery-photos",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-BUG-04": {
+      "title": "Favicon Links Added to Portal & Admin",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-BUG-05": {
+      "title": "Dead Mobile Menu Inline Listeners Removed",
+      "status": "VERIFIED_FIXED"
+    },
+    "ISSUE-BUG-06": {
+      "title": "Unused banner-carousel.css Removed from Gallery",
+      "status": "VERIFIED_FIXED"
+    }
+  },
+  "overallPassed": true
+}

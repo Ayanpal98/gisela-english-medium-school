@@ -1,0 +1,160 @@
+[
+  {
+    "requestId": "086F334817C111DA0ED3A4492B5B75EA",
+    "url": "http://127.0.0.1:8088/index.html",
+    "method": "GET",
+    "timestamp": 89530.964965,
+    "status": 200,
+    "mimeType": "text/html",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.2",
+    "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+    "method": "GET",
+    "timestamp": 89530.982124,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.3",
+    "url": "https://unpkg.com/lucide@latest",
+    "method": "GET",
+    "timestamp": 89530.982388,
+    "status": 200,
+    "mimeType": "text/javascript",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.4",
+    "url": "https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap",
+    "method": "GET",
+    "timestamp": 89530.982472,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.5",
+    "url": "http://127.0.0.1:8088/css/banner-carousel.css",
+    "method": "GET",
+    "timestamp": 89530.98258,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.6",
+    "url": "http://127.0.0.1:8088/css/navbar-dropdowns.css",
+    "method": "GET",
+    "timestamp": 89530.982652,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.7",
+    "url": "http://127.0.0.1:8088/css/institutional-theme.css",
+    "method": "GET",
+    "timestamp": 89530.982681,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.8",
+    "url": "http://127.0.0.1:8088/images/language-emblem.png",
+    "method": "GET",
+    "timestamp": 89530.98276,
+    "status": 200,
+    "mimeType": "image/png",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.9",
+    "url": "http://127.0.0.1:8088/images/school-logo.png",
+    "method": "GET",
+    "timestamp": 89530.982818,
+    "status": 200,
+    "mimeType": "image/png",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.12",
+    "url": "http://127.0.0.1:8088/js/banner-carousel.js",
+    "method": "GET",
+    "timestamp": 89530.982864,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.13",
+    "url": "http://127.0.0.1:8088/js/navbar-dropdowns.js",
+    "method": "GET",
+    "timestamp": 89530.982895,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.14",
+    "url": "http://127.0.0.1:8088/js/translations.js",
+    "method": "GET",
+    "timestamp": 89530.982916,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.3",
+    "url": "https://unpkg.com/lucide@1.73.0/dist/umd/lucide.min.js",
+    "method": "GET",
+    "timestamp": 89531.806384,
+    "status": null
+  },
+  {
+    "requestId": "23600.42",
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+    "method": "GET",
+    "timestamp": 89532.335356,
+    "status": 200,
+    "mimeType": "font/woff2",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.54",
+    "url": "https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2",
+    "method": "GET",
+    "timestamp": 89532.338783,
+    "status": 200,
+    "mimeType": "font/woff2",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.36",
+    "url": "https://fonts.gstatic.com/s/caveat/v23/Wnz6HAc5bAfYB2Q7ZjYY.woff2",
+    "method": "GET",
+    "timestamp": 89532.339145,
+    "status": null
+  },
+  {
+    "requestId": "23600.80",
+    "url": "http://127.0.0.1:8088/images/banners/admission-2026-desktop.svg",
+    "method": "GET",
+    "timestamp": 89532.676202,
+    "status": 200,
+    "mimeType": "image/svg+xml",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.81",
+    "url": "http://127.0.0.1:8088/images/banners/annual-exhibition-desktop.svg",
+    "method": "GET",
+    "timestamp": 89532.784517,
+    "status": 200,
+    "mimeType": "image/svg+xml",
+    "statusText": "OK"
+  }
+]

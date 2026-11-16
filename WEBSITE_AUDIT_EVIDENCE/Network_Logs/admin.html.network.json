@@ -1,0 +1,90 @@
+[
+  {
+    "requestId": "9ED4C545B4D42C9AF730C9039301365C",
+    "url": "http://127.0.0.1:8088/admin.html",
+    "method": "GET",
+    "timestamp": 89551.291295,
+    "status": 200,
+    "mimeType": "text/html",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.247",
+    "url": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4",
+    "method": "GET",
+    "timestamp": 89551.309551,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.248",
+    "url": "https://unpkg.com/lucide@latest",
+    "method": "GET",
+    "timestamp": 89551.310244,
+    "status": 200,
+    "mimeType": "text/javascript",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.249",
+    "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap",
+    "method": "GET",
+    "timestamp": 89551.310632,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.250",
+    "url": "http://127.0.0.1:8088/css/admin.css",
+    "method": "GET",
+    "timestamp": 89551.310848,
+    "status": 200,
+    "mimeType": "text/css",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.251",
+    "url": "http://127.0.0.1:8088/images/school-logo.png",
+    "method": "GET",
+    "timestamp": 89551.310989,
+    "status": 200,
+    "mimeType": "image/png",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.253",
+    "url": "http://127.0.0.1:8088/js/admin.js",
+    "method": "GET",
+    "timestamp": 89551.311112,
+    "status": 200,
+    "mimeType": "application/javascript",
+    "statusText": "OK"
+  },
+  {
+    "requestId": "23600.248",
+    "url": "https://unpkg.com/lucide@1.73.0/dist/umd/lucide.min.js",
+    "method": "GET",
+    "timestamp": 89551.327722,
+    "status": null
+  },
+  {
+    "requestId": "23600.262",
+    "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+    "method": "GET",
+    "timestamp": 89551.486892,
+    "status": 200,
+    "mimeType": "font/woff2",
+    "statusText": ""
+  },
+  {
+    "requestId": "23600.274",
+    "url": "https://fonts.gstatic.com/s/manrope/v23/xn7gYHE41ni1AdIRggexSg.woff2",
+    "method": "GET",
+    "timestamp": 89551.487043,
+    "status": 200,
+    "mimeType": "font/woff2",
+    "statusText": ""
+  }
+]
